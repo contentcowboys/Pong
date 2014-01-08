@@ -1,0 +1,25 @@
+{
+    "name": "contentcowboys/fb-bootstrap",
+    "description": "Facebook Tab Bootstrap",
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "Simon Peters",
+            "email": "simon@contentcowboys.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "twig/twig": "1.15.*",
+        "illuminate/database": "4.*",
+        "slim/slim": "2.4.*",
+        "swiftmailer/swiftmailer": "5.1.*@dev",
+        "filp/whoops": "dev-master",
+        "facebook/php-sdk": "dev-master"
+    },
+    "autoload": {
+        "files": [
+            "pong/app.php"
+        ]
+    }
+}
