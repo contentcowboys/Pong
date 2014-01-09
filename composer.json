@@ -15,11 +15,14 @@
         "slim/slim": "2.4.*",
         "swiftmailer/swiftmailer": "5.1.*@dev",
         "filp/whoops": "dev-master",
-        "facebook/php-sdk": "dev-master"
+        "facebook/php-sdk": "dev-master",
+        "mobiledetect/mobiledetectlib": "2.7.*",
+        "zeuxisoo/slim-whoops": "dev-master"
     },
     "autoload": {
         "files": [
-            "pong/app.php"
+            "pong/app.php",
+            "pong/functions.php"
         ]
     }
 }

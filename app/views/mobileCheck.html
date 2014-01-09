@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	{% if deviceType == "computer" %}
+    	<script>top.location="{{ tabUrl }}"</script>;
+	{% else %}
+		<script>top.location="{{ mobileUrl }}"</script>;
+	{% endif %}
+</body>
+</html>
