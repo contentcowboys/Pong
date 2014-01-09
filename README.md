@@ -86,11 +86,11 @@ Pong is really easy to install.
 
 1. Clone this project into a folder
 
-    $ git clone git@github.com:contentcowboys/Pong.git Folder-name
+        $ git clone git@github.com:contentcowboys/Pong.git Folder-name
 
 2. Run composer to install dependencies
 
-    $ composer install
+        $ composer install
 
 3. Configure settings
 
