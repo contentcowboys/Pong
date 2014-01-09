@@ -1,4 +1,6 @@
+### WARNING
 
+This project is still in early development! Don't use this in your projects!
                                                                                                     
                                                  `,;;;';:`                                          
                                              .'+''+'''''''''.                                       
@@ -77,6 +79,20 @@
                                                                                  
                                                                                  
 # A Facebook Tab Framwork
+
+## Install
+
+Pong is really easy to install. 
+
+1. Clone this project into a folder
+
+    $ git clone git@github.com:contentcowboys/Pong.git Folder-name
+
+2. Run composer to install dependencies
+
+    $ composer install
+
+3. Configure settings
 
 ## To do
 
