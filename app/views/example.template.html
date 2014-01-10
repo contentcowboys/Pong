@@ -1,0 +1,34 @@
+{# This is the master template to use, only change if you made your own master template #}
+{% extends "templates/master.boilerplate.html" %}
+
+{# Set your html title here, this will be displayed in the header of the browser #}
+{% block title %}Title of your page{% endblock %}
+
+{# Add your Google analytics tracking code here: change UA-XXXXX-X to be your site's ID. #}
+{% block trackingcode %}UA-XXXXX-X{% endblock %}
+
+{% block styles %}
+	{# If you don't want to include main.css, remove the next line #}
+    {{ parent() }}
+    {# You can include other css files here #}
+    <!-- <style type="text/css" src="css/somefile.css"></style> -->
+{% endblock %}
+
+{% block scripts %}
+	{# If you don't want to include the main and libs javascript file, remove the next line #}
+    {{ parent() }}    
+    {# You can include other css files here #}
+    <!--<script type="text/javascript" src="javascript/somejsfile.js"></script>-->
+{% endblock %}
+
+{# Add all html code here #}
+{% block content %}
+	<div class="content">
+		<h1>Tis is an example</h1>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, 
+			ipsum, ducimus cupiditate numquam nobis pariatur molestiae ad fugiat maiores 
+			velit accusamus nesciunt ab deserunt nam delectus rerum quae officia eveniet!
+		</p>
+	</div>
+{% endblock %}

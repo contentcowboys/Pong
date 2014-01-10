@@ -20,5 +20,9 @@
 	$app->router->get('/mobile/', function() use ($app) {
 		dd($app->data);
 	});
+
+	$app->router->get('/test/', function() use ($app) {
+		$app->render('example.template', $app->data);
+	});
 	
 ?>

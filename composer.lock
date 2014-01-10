@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "8acfa0eb67c67f537b56a670283d38d9",
+    "hash": "421a121bc40e2088fcf1c9d316ec27bd",
     "packages": [
         {
             "name": "facebook/php-sdk",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/facebook-php-sdk.git",
-                "reference": "55f179f3741bfb3732d92b7c041b7e56966173a7"
+                "reference": "5c5a3e80af30ea00e7682e94b31112c505051f50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/facebook-php-sdk/zipball/55f179f3741bfb3732d92b7c041b7e56966173a7",
-                "reference": "55f179f3741bfb3732d92b7c041b7e56966173a7",
+                "url": "https://api.github.com/repos/facebook/facebook-php-sdk/zipball/5c5a3e80af30ea00e7682e94b31112c505051f50",
+                "reference": "5c5a3e80af30ea00e7682e94b31112c505051f50",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 "facebook",
                 "sdk"
             ],
-            "time": "2013-12-17 00:24:57"
+            "time": "2014-01-09 21:38:48"
         },
         {
             "name": "filp/whoops",
