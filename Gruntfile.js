@@ -40,7 +40,7 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             libs: {
-                src: [ 'src/javascript/libs/jquery-2.0.3.min.js' ],
+                src: [ 'src/javascript/libs/jquery-2.0.3.min.js', 'src/javascript/libs/remove.console.js' ],
                 dest:  'src/javascript/libs.js'
             }
         },
@@ -59,7 +59,7 @@ module.exports = function(grunt) {
                     dest: 'public/images'
                 }]
             }
-        }
+        },
         //copy files
         copy: 
         {
