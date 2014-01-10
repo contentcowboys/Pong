@@ -1,5 +1,5 @@
 <?php
-	//error_reporting(E_ALL);
+	error_reporting(E_ALL);
 	require '../vendor/autoload.php';
 	$app = new App();
 	$app->run();

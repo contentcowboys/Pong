@@ -1,4 +1,6 @@
 <?php
+	use Illuminate\Database\Capsule\Manager as Db;
+
 	class App {
 		
 		public $router;
@@ -28,11 +30,11 @@
 			
 			//setup modules
 			$this->initalizeRouter();
+			$this->initalizeWhoops();
 			$this->initalizeFacebook();
 			$this->initalizeTwig();
 
-			$this->initalizeWhoops();
-
+			$this->initalizeORM();
 			
 		}
 
@@ -89,6 +91,26 @@
 			}else{
 				$this->environment = 'online';
 			}
+			$this->data['environment'] = $this->environment;
+		}
+
+		protected function initalizeORM(){
+			
+			$db = new Db;
+
+			$db->addConnection([
+			    'driver'    => 'mysql',
+			    'host'      => 'localhost',
+			    'database'  => 'pong',
+			    'username'  => 'root',
+			    'password'  => 'root',
+			    'charset'   => 'utf8',
+			    'collation' => 'utf8_unicode_ci',
+			    'prefix'    => '',
+			]);
+
+			$db->setAsGlobal();
+
 		}
 
 		protected function detectDevice(){
@@ -100,6 +122,8 @@
 		public function isDevelopment(){
 			return $this->environment == 'development' ? true : false;
 		}
+
+
 
 
 
