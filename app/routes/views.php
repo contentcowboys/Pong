@@ -10,8 +10,8 @@
 		}
 	})->via('GET', 'POST');
 
-	$app->router->get('/mobile', function() use ($app) {
-		
+	$app->router->get('/mobile/', function() use ($app) {
+		dd($app->data);
 	});
 	
 ?>
