@@ -33,9 +33,7 @@
 			$this->initalizeWhoops();
 			$this->initalizeFacebook();
 			$this->initalizeTwig();
-
 			$this->initalizeORM();
-			
 		}
 
 		protected function initalizeWhoops(){
@@ -85,6 +83,7 @@
 		}
 
 		protected function detectEnvironment(){
+
 			$environment = require('../app/config/environments.php');
 			if(in_array(gethostname(), $environment['development'])){
 				$this->environment = 'development';
@@ -95,15 +94,19 @@
 		}
 
 		protected function initalizeORM(){
+
+			$config = require('../app/config/'.$this->environment.'/database.php');
+
+			if(empty($config['user'])) return false;
 			
 			$db = new Db;
 
 			$db->addConnection([
 			    'driver'    => 'mysql',
-			    'host'      => 'localhost',
-			    'database'  => 'pong',
-			    'username'  => 'root',
-			    'password'  => 'root',
+			    'host'      => $config['host'],
+			    'database'  => $config['database'],
+			    'username'  => $config['user'],
+			    'password'  => $config['password'],
 			    'charset'   => 'utf8',
 			    'collation' => 'utf8_unicode_ci',
 			    'prefix'    => '',

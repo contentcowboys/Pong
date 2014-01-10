@@ -15,7 +15,6 @@
 		}
 	})->via('GET', 'POST');
 
-
 	//mobile website
 	$app->router->get('/mobile/', function() use ($app) {
 		dd($app->data);
