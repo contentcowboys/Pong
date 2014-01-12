@@ -105,3 +105,4 @@ Pong is really easy to install.
 ### possible additions / tweaks
 
 * https://github.com/c9s/Pux
+* https://github.com/mrmrs/colors
