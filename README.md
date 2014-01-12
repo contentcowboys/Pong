@@ -102,6 +102,6 @@ Pong is really easy to install.
 * Setup Sass 
 * ...
 
-### possibel aadtions / tweaks
+### possible additions / tweaks
 
 * https://github.com/c9s/Pux
