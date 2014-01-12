@@ -92,7 +92,7 @@ Pong is really easy to install.
 
         $ composer install
 
-3. Configure settings
+3. Configure settings in cofig file
 
 ## To do
 
@@ -101,3 +101,7 @@ Pong is really easy to install.
 * Add frint end tools ( Grunt or Gulp ect)
 * Setup Sass 
 * ...
+
+### possibel aadtions / tweaks
+
+* https://github.com/c9s/Pux
