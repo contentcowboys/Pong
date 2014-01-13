@@ -56,14 +56,14 @@
 		}
 
 		protected function initalizeFacebook(){
-			$config = require('../app/config/'.$this->environment.'/facebook.php');
+			$config = require('../app/config/facebook.php');
 			$debug = require('../app/config/debug.php');
 			
-			if(empty($config['appId']) || empty($config['secret'])) throw new Exception('Please set facebook config!');
+			if(empty($config[$this->environment]['appId']) || empty($config[$this->environment]['secret'])) throw new Exception('Please set facebook config!');
 
 			$this->facebook = new Facebook(array(
-			  'appId'  => $config['appId'],
-			  'secret' => $config['secret'],
+			  'appId'  => $config[$this->environment]['appId'],
+			  'secret' => $config[$this->environment]['secret'],
 			));
 
 			// get signed request
@@ -79,7 +79,7 @@
 	            $this->data['get'] =  $this->request->params();
 	        }
 
-			$this->data['appId'] = $config['appId'];
+			$this->data['appId'] = $config[$this->environment]['appId'];
 			$this->data['tabUrl'] = $config['tabUrl'];
 
 		}
