@@ -130,6 +130,7 @@ $app->router->get('/example/:one:two', function($one, $two) use ($app)
   echo "The first paramter is " . $one;
   echo "The second parameter is " . $two;
 });
+```
 
 ### HTTP Methods
 
