@@ -20,17 +20,21 @@
 	 * change the route in 'pong/routes.php'
 	 * 
 	 */
-	$app->router->map('/facebook/', function() use ($app) {
+	$app->router->map('/facebook/', function() use ($app) 
+	{
 		/**
 		 * Check if the user already liked the page configured inside
+		 *
+		 * The default view for non fans is 'likeGate' and 
 		 */
-		if($app->data['userIsFan']){
-			//show tab
+		if($app->data['userIsFan'])
+		{
 			$app->render('facebook', $app->data);
-		}else{
-			//show likegate
+		}else
+		{
 			$app->render('likeGate', $app->data);
 		}
+		
 	})->via('GET', 'POST');
 
 
@@ -42,7 +46,8 @@
 	 * change the route in 'pong/routes.php'
 	 * 
 	 */
-	$app->router->get('/mobile/', function() use ($app) {
+	$app->router->get('/mobile/', function() use ($app) 
+	{
 		dd($app->data);
 	});
 
@@ -55,8 +60,23 @@
 	 *
 	 * Add what you want this route to do inside it's closure 
 	 * after 'use ($app){' en before '});'
+	 *
+	 * To show an page you can use our rendering engine.
+	 * It is called by using the '$app->render()' method. 
+	 * 
+	 * This method accepts two parameters
+	 * the first one is witch view you want to use, this can ba a native html or twig.
+	 * you dont have to add the extension (.html)
+	 *
+	 * The seccond parameter is the data you want to pass to the view
+	 * Default this is $app->data, this variable contains some handy default variables
+	 * To add your own to this variable use the following syntax:
+	 * $app->data['key'] = "value";
+	 * 
 	 */
-	$app->router->get('/example/', function() use ($app) {
+	$app->router->get('/example/', function() use ($app) 
+	{
+		$app->data['foo'] = "bar";
 		$app->render('example.template', $app->data);
 	});
 	
