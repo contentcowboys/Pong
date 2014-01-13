@@ -78,7 +78,7 @@ This project is still in early development! Don't use this on line environements
                                                                                  ,    
                                                                                  
                                                                                  
-# A Facebook Tab Framwork
+# Pong / A Facebook Tab Framwork
 
 ## Install
 
@@ -92,12 +92,34 @@ Pong is really easy to install.
 
         $ composer install
 
-3. Configure settings in the cofig file, located in the 'app/config/' folder
+3. Configure settings in the cofig files, located in the 'app/config/' folder
 
 ## Templating
 
 Pong uses Twig as its template parses, it's documentation can be found here:
 [http://twig.sensiolabs.org/documentation](http://twig.sensiolabs.org/documentation)
+
+To show an page you can use our rendering engine. It is called by using the '$app->render()' method. 
+
+This method accepts two parameters
+the first one is what view you want to use, this can ba a native html or twig. you dont have to add the extension (.html)
+
+```php
+$app->render('example.template');
+```
+
+The seccond parameter is the data you want to pass to the view
+Default this is $app->data, this variable contains some handy default variables
+
+```php
+$app->render('example.template', $app->data);
+```
+
+To add your own to this variable use the following syntax:
+
+```php
+$app->data['key'] = "value";
+```
 
 ### HTML5 Boilerplate
 
