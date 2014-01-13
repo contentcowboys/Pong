@@ -79,9 +79,9 @@ This project is still in early development! Don't use this on line environements
 
 # Table of contents
 
-* [#install](Install)                                                                              
-* [#templating](Templating)                                                                              
-* [#helpers](Helpers)                                                                              
+* [Install](#install)                                                                              
+* [Templating](#templating)                                                                              
+* [Helpers](#helpers)                                                                              
                                                                                  
 # Pong / A Facebook Tab Framwork
 
