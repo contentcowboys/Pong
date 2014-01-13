@@ -1,0 +1,15 @@
+//	Pong mixins sass file |  https://github.com/contentcowboys/Pong 
+//	
+//	This file contaons some handy mixins, but you can add your own
+
+
+//vertical align an element inside it's parent
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

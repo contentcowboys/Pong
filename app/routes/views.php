@@ -68,7 +68,7 @@
 	 * the first one is witch view you want to use, this can ba a native html or twig.
 	 * you dont have to add the extension (.html)
 	 *
-	 * The seccond parameter is the data you want to pass to the view
+	 * The second parameter is the data you want to pass to the view
 	 * Default this is $app->data, this variable contains some handy default variables
 	 * To add your own to this variable use the following syntax:
 	 * $app->data['key'] = "value";

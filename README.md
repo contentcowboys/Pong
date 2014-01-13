@@ -76,7 +76,12 @@ This project is still in early development! Don't use this on line environements
                                                                                 ';';::              
                                                                                 :;;:                
                                                                                  ,    
-                                                                                 
+
+# Table of contents
+
+* [#install](Install)                                                                              
+* [#templating](Templating)                                                                              
+* [#helpers](Helpers)                                                                              
                                                                                  
 # Pong / A Facebook Tab Framwork
 
@@ -108,7 +113,7 @@ the first one is what view you want to use, this can ba a native html or twig. y
 $app->render('example.template');
 ```
 
-The seccond parameter is the data you want to pass to the view
+The second parameter is the data you want to pass to the view
 Default this is $app->data, this variable contains some handy default variables
 
 ```php
@@ -146,6 +151,7 @@ It also has an correspondig Twig function
 ```html
 <link rel="stylesheet" href="{{ asset('css/somefile.css') }}" />
 ```
+
 
 ## possible additions / tweaks
 
