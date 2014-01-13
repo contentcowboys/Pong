@@ -4,26 +4,27 @@
 		/**
 		 * Facebook app id and secret of the development version of the Facebook app,
 		 * This is only used for development on local machine
+		 * Wich devices use the development settings can be set in 'app/config/environments.php'
 		 *
 		 * These can be found here: https://developers.facebook.com/apps
 		 * 
 		 */
 		'development' =>  array(
-			'appId' => '456545646456',
-			'secret' => '456545646456'
+			'appId' => '1234',
+			'secret' => '1234'
 	 	),
 
 	 	/**
 		 * Facebook app id and secret of the online versionof the Facebook app,
 		 * This is the app the end user will be using, 
-		 * and will only be available in the online envirement
+		 * and will only be available in the online environment
 		 *
 		 * These can be found here: https://developers.facebook.com/apps
 		 * 
 		 */
 	 	'online' => array(
-			'appId' => '',
-			'secret' => ''
+			'appId' => '1234',
+			'secret' => '1234'
 	 	),
 
 	 	/**

@@ -95,7 +95,8 @@
 
 		protected function initalizeORM(){
 
-			$config = require('../app/config/'.$this->environment.'/database.php');
+			$config = require('../app/config/database.php');
+			$config = $config[$this->environment];
 
 			if(empty($config['user'])) return false;
 			
