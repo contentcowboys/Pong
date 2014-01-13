@@ -1,6 +1,6 @@
-### WARNING
+# WARNING
 
-This project is still in early development! Don't use this in your projects!
+This project is still in early development! Don't use this on line environements
                                                                                                     
                                                  `,;;;';:`                                          
                                              .'+''+'''''''''.                                       
@@ -104,13 +104,16 @@ Url generation.
 
 Generate url for an asset.
 
-        echo URL::asset('css/somefile.css');
+```php
+echo URL::asset('css/somefile.css');
+```
 
-You can also use these in the twig templates
+You can also use these in the twig templates with the following function
 
-        <link rel="stylesheet" href="{{ asset('css/somefile.css') }}" />   
+```html
+<link rel="stylesheet" href="{{ asset('css/somefile.css') }}" />
+```
 
 ### possible additions / tweaks
 
 * https://github.com/c9s/Pux
-* https://github.com/mrmrs/colors
