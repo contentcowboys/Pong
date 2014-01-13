@@ -92,7 +92,18 @@ Pong is really easy to install.
 
         $ composer install
 
-3. Configure settings in cofig file
+3. Configure settings in the cofig file, located in the 'app/config/' folder
+
+## Templating
+
+Pong uses Twig as its template parses, it's documentation can be found here:
+[http://twig.sensiolabs.org/documentation](http://twig.sensiolabs.org/documentation)
+
+### HTML5 Boilerplate
+
+There is a default template that uses HTML5 Boilerplate as a base and can be found at 'app/view/templates/master.boilerplate.html'
+
+More detailed information how to use this template can be found in the example view as it includes comments for each action needed to use the master template 
 
 ## Helpers
 
@@ -108,12 +119,12 @@ Generate url for an asset.
 echo URL::asset('css/somefile.css');
 ```
 
-You can also use these in the twig templates with the following function
+It also has an correspondig Twig function
 
 ```html
 <link rel="stylesheet" href="{{ asset('css/somefile.css') }}" />
 ```
 
-### possible additions / tweaks
+## possible additions / tweaks
 
 * https://github.com/c9s/Pux
