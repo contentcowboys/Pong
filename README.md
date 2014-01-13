@@ -94,13 +94,6 @@ Pong is really easy to install.
 
 3. Configure settings in cofig file
 
-## To do
-
-* Facebook SDK integration
-* Integerate Illuminate ORM
-* Add frint end tools ( Grunt or Gulp ect)
-* Setup Sass 
-* ...
 
 ### possible additions / tweaks
 

@@ -1,7 +1,8 @@
 <?php
 	use Illuminate\Database\Capsule\Manager as Db;
 
-	class App {
+	class App 
+	{
 		
 		public $router;
 		public $facebook;
@@ -9,16 +10,19 @@
 		public $data;
 		protected $twig;
 		
-		public function run(){
+		public function run()
+		{
 			$this->initalize();
 		}
 
-		public function render($template, $data = null){
+		public function render($template, $data = null)
+		{
 			if(!$data) $data =  array();
 			echo $this->twig->render($template.".html", $data);
 		}
 
-		protected function initalize(){
+		protected function initalize()
+		{
 			//set up variables
 			$this->data = array();
 
@@ -36,24 +40,27 @@
 			$this->initalizeORM();
 		}
 
-		protected function initalizeWhoops(){
-			
+		protected function initalizeWhoops()
+		{			
 			$this->router->config('whoops.editor', 'sublime');  // add this line
 			$this->router->add(new \Zeuxisoo\Whoops\Provider\Slim\WhoopsMiddleware);
 		}
 
 
-		protected function initalizeTwig(){
+		protected function initalizeTwig()
+		{
 			$loader = new Twig_Loader_Filesystem('../app/views');
 			$this->twig = new Twig_Environment($loader);
 		}
 
-		protected function initalizeRouter(){
+		protected function initalizeRouter()
+		{
 			$this->router = new \Slim\Slim(array('debug' => $this->isDevelopment()));
 			$this->request = $this->router->request;
 		}
 
-		protected function initalizeFacebook(){
+		protected function initalizeFacebook()
+		{
 			$config = require('../app/config/facebook.php');
 			$debug = require('../app/config/debug.php');
 			
@@ -67,11 +74,13 @@
 			// get signed request
         	$signedRequest = $this->facebook->getSignedRequest();
 
-        	if($signedRequest){
+        	if($signedRequest)
+        	{
 	            if(isset($signedRequest['app_data'])) $this->data['get'] = fbtab_decode($signedRequest['app_data']);
 	            $this->data['userIsFan'] = isset($signedRequest['page']['liked']) && $signedRequest['page']['liked'];
 	            $this->data['userLanguage'] = fbtab_language($signedRequest['user']['locale']);
-	        }else{
+	        }else
+	        {
 	        	$this->data['userIsFan'] = $debug['userIsFan'];
 	            $this->data['userLanguage'] = $debug['userLanguage'];
 	            $this->data['get'] =  $this->request->params();
@@ -82,19 +91,22 @@
 
 		}
 
-		protected function detectEnvironment(){
-
+		protected function detectEnvironment()
+		{
 			$environment = require('../app/config/environments.php');
-			if(in_array(gethostname(), $environment['development'])){
+
+			if(in_array(gethostname(), $environment['development']))
+			{
 				$this->environment = 'development';
-			}else{
+			}else
+			{
 				$this->environment = 'online';
 			}
 			$this->data['environment'] = $this->environment;
 		}
 
-		protected function initalizeORM(){
-
+		protected function initalizeORM()
+		{
 			$config = require('../app/config/database.php');
 			$config = $config[$this->environment];
 
@@ -117,13 +129,15 @@
 
 		}
 
-		protected function detectDevice(){
+		protected function detectDevice()
+		{
 			$detect = new Mobile_Detect;
 			$this->data['deviceType'] = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 		}
 
 
-		public function isDevelopment(){
+		public function isDevelopment()
+		{
 			return $this->environment == 'development' ? true : false;
 		}
 

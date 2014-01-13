@@ -1,11 +1,16 @@
-/*
-*	Pong main sass file |  https://github.com/contentcowboys/Pong 
-*
-* 	Dont change any thing in this file. 
-*/
+//	Pong main sass file |  https://github.com/contentcowboys/Pong 
+//
+// 	Dont change any thing in this file. 
+// 	Except for importing more sass files
 
 // Normalize css in all browsers (http://necolas.github.io/normalize.css/)
 @import "libs/normilize"; 
+
+// import all sass variables
+@import "partials/variables"; 
+
+// import default styling
+@import "partials/defaults"; 
 
 //Your own custom sass styling
 @import "custom";
