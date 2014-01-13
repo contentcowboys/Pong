@@ -1,11 +1,15 @@
 {
-    "name": "contentcowboys/fb-bootstrap",
-    "description": "Facebook Tab Bootstrap",
+    "name": "contentcowboys/pong",
+    "description": "Pong - Facebook Tab Framework",
     "license": "BSD",
     "authors": [
         {
             "name": "Simon Peters",
             "email": "simon@contentcowboys.com"
+        },
+         {
+            "name": "Vincent Peters",
+            "email": "me@vincentpeters.be"
         }
     ],
     "minimum-stability": "dev",
@@ -22,7 +26,8 @@
     "autoload": {
         "files": [
             "pong/app.php",
-            "pong/functions.php"
+            "pong/functions.php",
+            "pong/libraries/Url.php"
         ]
     }
 }

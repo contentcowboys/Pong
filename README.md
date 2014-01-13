@@ -94,6 +94,21 @@ Pong is really easy to install.
 
 3. Configure settings in cofig file
 
+## Helpers
+
+### URL helper
+
+Url generation.
+
+#### assets
+
+Generate url for an asset.
+
+        echo URL::asset('css/somefile.css');
+
+You can also use these in the twig templates
+
+        <link rel="stylesheet" href="{{ asset('css/somefile.css') }}" />   
 
 ### possible additions / tweaks
 

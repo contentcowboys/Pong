@@ -51,6 +51,16 @@
 		{
 			$loader = new Twig_Loader_Filesystem('../app/views');
 			$this->twig = new Twig_Environment($loader);
+			$this->extendTwig();
+		}
+
+		protected function extendTwig()
+		{
+			//custom twig functions
+			$function = new Twig_SimpleFunction("asset", function ($path) {
+			    return URL::asset($path);
+			});
+			$this->twig->addFunction($function);
 		}
 
 		protected function initalizeRouter()
