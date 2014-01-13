@@ -34,6 +34,7 @@
 	})->via('GET', 'POST');
 
 
+
 	/**
 	 * Routing for the mobile part of the facebook tab
 	 *
@@ -47,6 +48,13 @@
 
 	/**
 	 * This is an example route
+	 *
+	 * the '/example/' after '$app->router->get' is the URI that you would want to use, 
+	 * you can change this in anything you want, you can even add multilayered URi's,
+	 * for example '/lorem/ipsum/do'
+	 *
+	 * Add what you want this route to do inside it's closure 
+	 * after 'use ($app){' en before '});'
 	 */
 	$app->router->get('/example/', function() use ($app) {
 		$app->render('example.template', $app->data);

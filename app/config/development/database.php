@@ -3,7 +3,8 @@
 	return array(
 		'user' => 'root',
 		'password' => 'root',
-		'database' => ''
+		'host' => 'localhost',
+		'database' => 'pong'
  	);
 
 ?>
