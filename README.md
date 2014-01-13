@@ -80,6 +80,7 @@ This project is still in early development! Don't use this on line environements
 # Table of contents
 
 * [Install](#install)                                                                              
+* [Routing](#routing)                                                                              
 * [Templating](#templating)                                                                              
 * [Helpers](#helpers)                                                                              
                                                                                  
@@ -98,6 +99,61 @@ Pong is really easy to install.
         $ composer install
 
 3. Configure settings in the cofig files, located in the 'app/config/' folder
+
+## Routing
+
+Pong uses the Slim framework for it's routing. Documentation can be found here:
+[http://docs.slimframework.com/#Routing-Overview](http://docs.slimframework.com/#Routing-Overview)
+
+### Page routing
+
+Page routing goes into 'app/routes/views.php'
+
+You can add your own routes like this:
+
+```php
+$app->router->get('/example/', function() use ($app) 
+{
+  // do something here
+});
+```
+
+The '/example/' after '$app->router->get' is the URI that you would want to use, you can change this in anything you want, you can even add multilayered URi's, for example '/lorem/ipsum/do'
+
+### Parameters
+
+This example shows how to add parameters to your route:
+
+```php
+$app->router->get('/example/:one:two', function($one, $two) use ($app) 
+{
+  echo "The first paramter is " . $one;
+  echo "The second parameter is " . $two;
+});
+
+### HTTP Methods
+
+You can set the HTTP method by changing the router method like so:
+
+```php
+// POST route
+$app->router->post('/user/', function() use ($app) 
+{
+  // add a new user
+});
+
+// PUT route
+$app->router->put('/user/:id', function($id) use ($app) 
+{
+  // update user
+});
+
+// DELETE route
+$app->router->delete('/user/:id', function($id) use ($app) 
+{
+  // update user
+});
+```
 
 ## Templating
 
