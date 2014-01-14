@@ -240,7 +240,7 @@ foreach ($users as $user)
 ##### Retrieving single rows
 
 ```php
-$user = DB::table('users')->where('name', 'John')->first();
+$user = DB::table('users')->where('fid', '12548545355485112')->first();
 
 var_dump($user->name);
 ```
@@ -255,10 +255,45 @@ $users = DB::table('users')->skip(10)->take(5)->get();
 
 ```php
 DB::table('users')
-            ->join('contacts', 'users.id', '=', 'contacts.user_id')
-            ->join('orders', 'users.id', '=', 'orders.user_id')
-            ->select('users.id', 'contacts.phone', 'orders.price');
+            ->join('votes', 'users.id', '=', 'votes.user_id')
+            ->join('images', 'users.id', '=', 'image.user_id')
+            ->select('users.fid', 'votes.image_id', 'images.url');
 ```
+
+#### Inserts
+
+```php
+DB::table('users')->insert(array(
+    array('email' => 'john@example.com', 'fid' => 8465485484654564),
+    array('email' => 'doe@example.com', 'fid' => 1234578461545475),
+));
+```
+
+#### Updates
+
+```php
+DB::table('Images')
+            ->where('user_id', 1)
+            ->update(array('votes' => 10));
+```
+
+#### Deletes
+
+##### Delete single record
+
+```php
+DB::table('users')->where('fid', '=', 15645648454)->delete();
+```
+
+##### Delete single record
+
+```php
+DB::table('users')->delete();
+```
+
+#### And many more
+
+This is just a selecting of things the ORM can do, go (here)[http://laravel.com/docs/queries] for a more detailed documentation.
 
 ## Helpers
 
