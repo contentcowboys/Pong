@@ -99,7 +99,7 @@ Pong is really easy to install.
 
         $ composer install
 
-3. Install hgrunt dependencies
+3. Install grunt dependencies
 
         $ npm install
 
@@ -135,6 +135,13 @@ $app->router->get('/example/:one:two', function($one, $two) use ($app)
   echo "The first paramter is " . $one;
   echo "The second parameter is " . $two;
 });
+```
+
+So the url `wwww.asite.com/example/foo/bar` would output this:
+
+```
+The first paramter is foo
+The second parameter is bar
 ```
 
 ### HTTP Methods
@@ -215,9 +222,9 @@ It also has an correspondig Twig function
 ```
 ## Mixins
 
-There are some preset mixins included in pong for your convience
+There are some preset mixins included in pong for your convenience
 
-There are also an examples for each mixin, a templates is available at `app/view/examples/mixins.html` and an example sass file at `src/sass/examples/_example.scss`
+There are an examples for each mixin, a templates is available at `app/view/examples/mixins.html` and an example sass file at `src/sass/examples/_example.scss`
 
 ### Vertical align
 
