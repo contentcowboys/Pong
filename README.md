@@ -89,6 +89,11 @@ This project is still in early development! Don't use this on a live environneme
                                                                                  
 # Pong / A Facebook Tab Framwork
 
+## Support and requirements
+
+There is no support for IE8 and lower.
+
+
 ## Install
 
 Pong is really easy to install. 
@@ -207,7 +212,7 @@ There is a default template that uses HTML5 Boilerplate as a base and can be fou
 
 Here is a copy of an example template, can also be found in `app/view/examples/template.html`.
 
-```twig
+```html
 {# This is the master template to use, only change if you made your own master template #}
 {% extends "templates/master.boilerplate.html" %}
 
