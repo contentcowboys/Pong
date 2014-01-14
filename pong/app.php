@@ -15,12 +15,6 @@
 			$this->initalize();
 		}
 
-		public function render($template, $data = null)
-		{
-			if(!$data) $data =  array();
-			echo $this->twig->render($template.".html", $data);
-		}
-
 		protected function initalize()
 		{
 			//set up variables
@@ -31,6 +25,9 @@
 			
 			//detect mobile/tablet/pc
 			$this->detectDevice();
+
+			//get config
+			$this->getConfig();
 			
 			//setup modules
 			$this->initalizeRouter();
@@ -38,6 +35,13 @@
 			$this->initalizeFacebook();
 			$this->initalizeTwig();
 			$this->initalizeORM();
+		}
+
+		protected function getConfig(){
+			//fetch config from file
+			$config = require('../app/config/app.php');
+			//set google analytiocs code to app data
+			$this->data['googleAnalyticsCode'] = $config['googleAnalyticsCode'];
 		}
 
 		protected function initalizeWhoops()
@@ -61,6 +65,12 @@
 			    return URL::asset($path);
 			});
 			$this->twig->addFunction($function);
+		}
+
+		public function render($template, $data = null)
+		{
+			if(!$data) $data =  array();
+			echo $this->twig->render($template.".html", $data);
 		}
 
 		protected function initalizeRouter()
