@@ -1,6 +1,6 @@
 # WARNING
 
-This project is still in early development! Don't use this on a live environnement
+This project is still in early development! Don't use this on a live environnement.
                                                                                                     
                                                  `,;;;';:`                                          
                                              .'+''+'''''''''.                                       
@@ -77,7 +77,7 @@ This project is still in early development! Don't use this on a live environneme
                                                                                 :;;:                
                                                                                  ,    
 
-# Pong / A Facebook Tab Framwork
+# Pong / A Facebook Tab Framework
 
 ## Table of contents
 
@@ -402,13 +402,17 @@ There are an examples for each mixin, a templates is available at `app/view/exam
 ### Vertical align
 
 Used to verticaly align an element inside it parent. The parent needs a fixed height or it wont work!
+
 #### Html
+
 ```html
 <div class="parent">
     <p class="child">Vertical align me!</p>
 </div>
 ```
+
 #### Sass
+
 ```sass
 .parent{
   height:300px;
@@ -424,3 +428,7 @@ Used to verticaly align an element inside it parent. The parent needs a fixed he
 
 * https://github.com/c9s/Pux
 * https://github.com/Gregwar/ImageBundle
+
+## License
+
+The Pong framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
