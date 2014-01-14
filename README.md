@@ -1,6 +1,6 @@
 # WARNING
 
-This project is still in early development! Don't use this on line environements
+This project is still in early development! Don't use this on a live environnement
                                                                                                     
                                                  `,;;;';:`                                          
                                              .'+''+'''''''''.                                       
@@ -80,7 +80,7 @@ This project is still in early development! Don't use this on line environements
 # Table of contents
 
 * [Install](#install) 
-* [Environements](#environements)                                                                             
+* [Environnements](#environnements)                                                                             
 * [Routing](#routing)                                                                              
 * [Templating](#templating)   
 * [Database](#database)                                                                           
@@ -107,7 +107,7 @@ Pong is really easy to install.
 
 4. Configure settings in the cofig files, located in the `app/config/` folder
 
-## Environements
+## Environnements
 
 coming soon...
 
@@ -210,7 +210,7 @@ More detailed information how to use this template can be found in the example v
 ## Database
 
 You can set your database settings in `app/confog.database.php`.
-There are two sets of database credentials, one for your local development environement and one for your live server environement.
+There are two sets of database credentials, one for your local development environnement and one for your live server environnement.
 
 ### Databse ORM
 
