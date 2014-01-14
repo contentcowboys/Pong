@@ -98,7 +98,11 @@ Pong is really easy to install.
 
         $ composer install
 
-3. Configure settings in the cofig files, located in the 'app/config/' folder
+3. Install hgrunt dependencies
+
+        $ npm install
+
+4. Configure settings in the cofig files, located in the 'app/config/' folder
 
 ## Routing
 
