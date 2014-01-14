@@ -217,3 +217,4 @@ It also has an correspondig Twig function
 ## possible additions / tweaks
 
 * https://github.com/c9s/Pux
+* https://github.com/Gregwar/ImageBundle
