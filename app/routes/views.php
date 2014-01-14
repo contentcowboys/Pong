@@ -11,7 +11,7 @@
 	/**
 	 * Alias for database ORM
 	 */
-	use Illuminate\Database\Capsule\Manager as Db;
+	use Illuminate\Database\Capsule\Manager as DB;
 
 	/**
 	 * Routing to the facebook tab for desktop users

@@ -79,9 +79,11 @@ This project is still in early development! Don't use this on line environements
 
 # Table of contents
 
-* [Install](#install)                                                                              
+* [Install](#install) 
+* [Environements](#environements)                                                                             
 * [Routing](#routing)                                                                              
-* [Templating](#templating)                                                                              
+* [Templating](#templating)   
+* [Database](#database)                                                                           
 * [Helpers](#helpers)
 * [Mixins](#mixins)                                                                               
                                                                                  
@@ -104,6 +106,10 @@ Pong is really easy to install.
         $ npm install
 
 4. Configure settings in the cofig files, located in the `app/config/` folder
+
+## Environements
+
+coming soon...
 
 ## Routing
 
@@ -200,6 +206,59 @@ $app->data['key'] = "value";
 There is a default template that uses HTML5 Boilerplate as a base and can be found at `app/view/templates/master.boilerplate.html`
 
 More detailed information how to use this template can be found in the example view as it includes comments for each action needed to use the master template 
+
+## Database
+
+You can set your database settings in `app/confog.database.php`.
+There are two sets of database credentials, one for your local development environement and one for your live server environement.
+
+### Databse ORM
+
+Pong uses Laravels ORM, you can find teh documentation here: [http://laravel.com/docs/queries](http://laravel.com/docs/queries)
+
+#### Note
+
+You need to include the alias on teh top of the page you want to use the ORM, this is already included in the main routes files. If you want to use it anywhere else add the following alias:
+
+´´´php
+use Illuminate\Database\Capsule\Manager as DB;
+```
+
+#### Selects
+
+##### Retrieving all rows
+
+´´´php
+$users = DB:table('users')->get();
+
+foreach ($users as $user)
+{
+    var_dump($user->name);
+}
+```
+
+##### Retrieving single rows
+
+´´´php
+$user = DB::table('users')->where('name', 'John')->first();
+
+var_dump($user->name);
+```
+
+##### Offsets and Limits
+
+´´´php
+$users = DB::table('users')->skip(10)->take(5)->get();
+```
+
+#### Joins
+
+´´´php
+DB::table('users')
+            ->join('contacts', 'users.id', '=', 'contacts.user_id')
+            ->join('orders', 'users.id', '=', 'orders.user_id')
+            ->select('users.id', 'contacts.phone', 'orders.price');
+```
 
 ## Helpers
 
