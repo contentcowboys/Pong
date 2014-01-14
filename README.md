@@ -77,22 +77,33 @@ This project is still in early development! Don't use this on a live environneme
                                                                                 :;;:                
                                                                                  ,    
 
-# Table of contents
+# Pong / A Facebook Tab Framwork
 
+## Table of contents
+
+* [Support](#support) 
 * [Install](#install) 
+
+### Backend 
+
 * [Environnements](#environnements)                                                                             
 * [Routing](#routing)                                                                              
 * [Templating](#templating)   
 * [Database](#database)                                                                           
 * [Helpers](#helpers)
-* [Mixins](#mixins)                                                                               
-                                                                                 
-# Pong / A Facebook Tab Framwork
 
-## Support and requirements
+### Frontend
+
+* [Grunt](#grunt)
+* [Javascript](#javascript)
+* [Images](#images)
+* [Sass](#sass)
+* [Mixins](#mixins)
+
+
+## Support
 
 There is no support for IE8 and lower.
-
 
 ## Install
 
@@ -111,6 +122,8 @@ Pong is really easy to install.
         $ npm install
 
 4. Configure settings in the cofig files, located in the `app/config/` folder
+
+# Backend
 
 ## Environnements
 
@@ -226,7 +239,7 @@ Here is a copy of an example template, can also be found in `app/view/examples/t
       velit accusamus nesciunt ab deserunt nam delectus rerum quae officia eveniet!
     </p>
     {# You can add php variables like so #}
-    <p>This is the variable defined your routes as $app->data['foo'] ==> {{ foo }}</p>
+    <p>This is the variable defined in your routes as $app->data['foo'] ==> {{ foo }}</p>
   </div>
 {% endblock %}
 
@@ -361,6 +374,27 @@ It also has an correspondig Twig function
 ```html
 <link rel="stylesheet" href="{{ asset('css/somefile.css') }}" />
 ```
+
+# Frontend
+
+## Grunt
+
+comming soon...
+
+
+
+## Javascript
+
+comming soon...
+
+## Images
+
+comming soon...
+
+## Sass
+
+comming soon...
+
 ## Mixins
 
 There are some preset mixins included in pong for your convenience
