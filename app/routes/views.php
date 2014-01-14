@@ -77,7 +77,7 @@
 	$app->router->get('/example/', function() use ($app) 
 	{
 		$app->data['foo'] = "bar";
-		$app->render('example.template', $app->data);
+		$app->render('examples/template', $app->data);
 	});
 	
 ?>
