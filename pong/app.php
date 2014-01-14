@@ -8,6 +8,7 @@
 		public $facebook;
 		public $request;
 		public $data;
+		public $config;
 		protected $twig;
 		
 		public function run()
@@ -42,6 +43,8 @@
 			$config = require('../app/config/app.php');
 			//set google analytiocs code to app data
 			$this->data['googleAnalyticsCode'] = $config['googleAnalyticsCode'];
+			// add default routes to app config
+			$this->config['routes'] = $config['routes'];
 		}
 
 		protected function initalizeWhoops()
