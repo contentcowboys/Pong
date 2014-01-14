@@ -205,7 +205,49 @@ $app->data['key'] = "value";
 
 There is a default template that uses HTML5 Boilerplate as a base and can be found at `app/view/templates/master.boilerplate.html`
 
-More detailed information how to use this template can be found in the example view as it includes comments for each action needed to use the master template 
+Here is a copy of an example template, can also be found in `app/view/examples/template.html`.
+
+```twig
+{# This is the master template to use, only change if you made your own master template #}
+{% extends "templates/master.boilerplate.html" %}
+
+{# Add all html code between these block elements #}
+{% block content %}
+  <div class="content">
+    <h1>Tis is an example</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, 
+      ipsum, ducimus cupiditate numquam nobis pariatur molestiae ad fugiat maiores 
+      velit accusamus nesciunt ab deserunt nam delectus rerum quae officia eveniet!
+    </p>
+    {# You can add php variables like so #}
+    <p>This is the variable defined your routes as $app->data['foo'] ==> {{ foo }}</p>
+  </div>
+{% endblock %}
+
+{# Set your html title here, this will be displayed in the header of the browser #}
+{% block title %}Title of your page{% endblock %}
+
+{# Add your Google analytics tracking code here: change UA-XXXXX-X to be your site's ID. #}
+{% block trackingcode %}UA-XXXXX-X{% endblock %}
+
+{# If you want you can specify a class name you want the body element to have, this is optional #}
+{% block bodyClass %}some-page{% endblock %}
+
+{% block styles %}
+  {# If you don't want to include main.css, remove the next line #}
+    {{ parent() }}
+    {# You can include other css files here #}
+    <!-- <style type="text/css" src="css/somefile.css"></style> -->
+{% endblock %}
+
+{% block scripts %}
+  {# If you don't want to include the main and libs javascript file, remove the next line #}
+    {{ parent() }}    
+    {# You can include other css files here #}
+    <!--<script type="text/javascript" src="javascript/somejsfile.js"></script>-->
+{% endblock %}
+```
 
 ## Database
 
