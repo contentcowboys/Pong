@@ -222,13 +222,13 @@ There are also an examples for each mixin, a templates is available at `app/view
 ### Vertical align
 
 Used to verticaly align an element inside it parent. The parent needs a fixed height or it wont work!
-
+#### Html
 ```html
 <div class="parent">
     <p class="child">Vertical align me!</p>
 </div>
 ```
-
+#### Sass
 ```sass
 .parent{
   height:300px;
