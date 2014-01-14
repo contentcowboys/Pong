@@ -188,7 +188,7 @@ $app->router->put('/user/:id', function($id) use ($app)
 // DELETE route
 $app->router->delete('/user/:id', function($id) use ($app) 
 {
-  // update user
+  // delete user
 });
 ```
 
@@ -269,12 +269,12 @@ Here is a copy of an example template, can also be found in `app/view/examples/t
 
 ## Database
 
-You can set your database settings in `app/confog.database.php`.
+You can set your database settings in `app/config/database.php`.
 There are two sets of database credentials, one for your local development environnement and one for your live server environnement.
 
 ### Databse ORM
 
-Pong uses Laravels ORM, you can find teh documentation here: [http://laravel.com/docs/queries](http://laravel.com/docs/queries)
+Pong uses Laravels ORM, you can find the documentation here: [http://laravel.com/docs/queries](http://laravel.com/docs/queries)
 
 #### Note
 
@@ -353,7 +353,7 @@ DB::table('users')->delete();
 
 #### And many more
 
-This is just a selecting of things the ORM can do, go (here)[http://laravel.com/docs/queries] for a more detailed documentation.
+This is just a selecting of things the ORM can do, go [here](http://laravel.com/docs/queries) for a more detailed documentation.
 
 ## Helpers
 
