@@ -220,45 +220,45 @@ Pong uses Laravels ORM, you can find teh documentation here: [http://laravel.com
 
 You need to include the alias on teh top of the page you want to use the ORM, this is already included in the main routes files. If you want to use it anywhere else add the following alias:
 
-´´´php
+```php
 use Illuminate\Database\Capsule\Manager as DB;
-´´´
+```
 
 #### Selects
 
 ##### Retrieving all rows
 
-´´´php
+```php
 $users = DB:table('users')->get();
 
 foreach ($users as $user)
 {
     var_dump($user->name);
 }
-´´´
+```
 
 ##### Retrieving single rows
 
-´´´php
+```php
 $user = DB::table('users')->where('name', 'John')->first();
 
 var_dump($user->name);
-´´´
+```
 
 ##### Offsets and Limits
 
-´´´php
+```php
 $users = DB::table('users')->skip(10)->take(5)->get();
-´´´
+```
 
 #### Joins
 
-´´´php
+```php
 DB::table('users')
             ->join('contacts', 'users.id', '=', 'contacts.user_id')
             ->join('orders', 'users.id', '=', 'orders.user_id')
             ->select('users.id', 'contacts.phone', 'orders.price');
-´´´
+```
 
 ## Helpers
 
