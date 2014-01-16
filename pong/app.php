@@ -16,6 +16,21 @@
 			$this->initalize();
 		}
 
+		public function cli($argv = NULL)
+		{
+			
+			
+			$ping = New Ping();
+			
+			$ping->setCommand($argv[1]);
+
+			unset($argv[0]);
+			unset($argv[1]);
+
+			$ping->run(array_values($argv));
+			$ping->sterf();
+		}
+
 		protected function initalize()
 		{
 			//set up variables

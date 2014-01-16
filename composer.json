@@ -26,8 +26,11 @@
     "autoload": {
         "files": [
             "pong/app.php",
-            "pong/functions.php",
-            "pong/libraries/Url.php"
+            "pong/functions.php"
+        ],
+        "classmap": [
+            "pong/ping/",
+            "pong/libraries/"
         ]
     }
 }
