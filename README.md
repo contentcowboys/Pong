@@ -429,3 +429,6 @@ Used to verticaly align an element inside it parent. The parent needs a fixed he
 ## License
 
 The Pong framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/contentcowboys/pong/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
