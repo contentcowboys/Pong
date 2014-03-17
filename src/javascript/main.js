@@ -6,5 +6,5 @@
 
 jQuery(document).ready(function($) 
 {
-	// Your code 
+	// Your code
 });

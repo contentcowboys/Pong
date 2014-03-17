@@ -12,7 +12,9 @@
 		 */
 		'development' => array(
 			'MyMac',
-			'LaptopWork'
+			'LaptopWork',
+			'web-apaches-iMac.local',
+			'webapachesimac'
 		)
 	);
 ?>

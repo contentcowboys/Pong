@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "421a121bc40e2088fcf1c9d316ec27bd",
+    "hash": "ac1bcee013e6cfa87fcbaf7675512075",
     "packages": [
         {
             "name": "facebook/php-sdk",
@@ -57,26 +57,34 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "ea8e2bc200ef2f475cd9a7b69d0850d72b5e6b24"
+                "reference": "64b31913794e3b9846f3b0dfc84139f577622d16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/ea8e2bc200ef2f475cd9a7b69d0850d72b5e6b24",
-                "reference": "ea8e2bc200ef2f475cd9a7b69d0850d72b5e6b24",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/64b31913794e3b9846f3b0dfc84139f577622d16",
+                "reference": "64b31913794e3b9846f3b0dfc84139f577622d16",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "mockery/mockery": "dev-master",
-                "silex/silex": "1.0.*@dev"
+                "mockery/mockery": "0.9.*",
+                "php": ">=5.3.3"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Whoops": "src/"
-                }
+                },
+                "classmap": [
+                    "src/deprecated"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -100,7 +108,7 @@
                 "whoops",
                 "zf2"
             ],
-            "time": "2013-12-31 13:41:37"
+            "time": "2014-03-13 10:51:45"
         },
         {
             "name": "illuminate/container",
@@ -109,16 +117,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "edb382d3aa31a2e02f831815e3806560743d7e73"
+                "reference": "aad26110ba0a1577e72b9588a0441aa27cec1ddd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/edb382d3aa31a2e02f831815e3806560743d7e73",
-                "reference": "edb382d3aa31a2e02f831815e3806560743d7e73",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/aad26110ba0a1577e72b9588a0441aa27cec1ddd",
+                "reference": "aad26110ba0a1577e72b9588a0441aa27cec1ddd",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.4.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "3.7.*"
@@ -146,7 +154,7 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2013-12-13 02:49:39"
+            "time": "2014-02-26 21:37:09"
         },
         {
             "name": "illuminate/database",
@@ -155,12 +163,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "33bfc4eb6fe9fca3ea9c5c0fb54acfbdb8f432bb"
+                "reference": "5140981e84352363b7236a4df84043a9fa4ac621"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/33bfc4eb6fe9fca3ea9c5c0fb54acfbdb8f432bb",
-                "reference": "33bfc4eb6fe9fca3ea9c5c0fb54acfbdb8f432bb",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/5140981e84352363b7236a4df84043a9fa4ac621",
+                "reference": "5140981e84352363b7236a4df84043a9fa4ac621",
                 "shasum": ""
             },
             "require": {
@@ -168,7 +176,7 @@
                 "illuminate/events": "4.2.*",
                 "illuminate/support": "4.2.*",
                 "nesbot/carbon": "1.*",
-                "php": ">=5.3.0"
+                "php": ">=5.4.0"
             },
             "require-dev": {
                 "illuminate/cache": "4.2.*",
@@ -176,7 +184,7 @@
                 "illuminate/filesystem": "4.2.*",
                 "illuminate/pagination": "4.2.*",
                 "illuminate/support": "4.2.*",
-                "mockery/mockery": "0.7.2",
+                "mockery/mockery": "0.9.*",
                 "phpunit/phpunit": "3.7.*"
             },
             "type": "library",
@@ -208,7 +216,7 @@
                 "orm",
                 "sql"
             ],
-            "time": "2014-01-08 19:55:26"
+            "time": "2014-03-09 18:42:31"
         },
         {
             "name": "illuminate/events",
@@ -217,21 +225,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
-                "reference": "a8d0157f069994f212e82468983b2c7dc39d7977"
+                "reference": "736dfc7df80fd87623efd464a6dfaeeed08a3f1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/events/zipball/a8d0157f069994f212e82468983b2c7dc39d7977",
-                "reference": "a8d0157f069994f212e82468983b2c7dc39d7977",
+                "url": "https://api.github.com/repos/illuminate/events/zipball/736dfc7df80fd87623efd464a6dfaeeed08a3f1a",
+                "reference": "736dfc7df80fd87623efd464a6dfaeeed08a3f1a",
                 "shasum": ""
             },
             "require": {
                 "illuminate/container": "4.2.*",
                 "illuminate/support": "4.2.*",
-                "php": ">=5.3.0"
+                "php": ">=5.4.0"
             },
             "require-dev": {
-                "mockery/mockery": "0.7.2",
+                "mockery/mockery": "0.9.*",
                 "phpunit/phpunit": "3.7.*"
             },
             "type": "library",
@@ -257,7 +265,7 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2013-12-13 02:49:39"
+            "time": "2014-02-25 18:34:24"
         },
         {
             "name": "illuminate/support",
@@ -266,19 +274,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "ee75af06f763baa6fa04d94a64de328652e731ec"
+                "reference": "e22504b78685b08edfe3744984bf58f14d778cc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/ee75af06f763baa6fa04d94a64de328652e731ec",
-                "reference": "ee75af06f763baa6fa04d94a64de328652e731ec",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/e22504b78685b08edfe3744984bf58f14d778cc1",
+                "reference": "e22504b78685b08edfe3744984bf58f14d778cc1",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.4.0"
             },
             "require-dev": {
-                "mockery/mockery": "0.7.2",
+                "jeremeamia/superclosure": "1.0.*",
+                "mockery/mockery": "0.9.*",
                 "patchwork/utf8": "1.1.*",
                 "phpunit/phpunit": "3.7.*"
             },
@@ -308,20 +317,20 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2014-01-08 19:55:26"
+            "time": "2014-03-07 10:32:53"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
-            "version": "2.7.6",
+            "version": "2.7.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/serbanghita/Mobile-Detect.git",
-                "reference": "b7631859df47ceca6609278b59ec61e86f60c483"
+                "reference": "610846237295e3e50a1923e7cc1639a956ead22a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/b7631859df47ceca6609278b59ec61e86f60c483",
-                "reference": "b7631859df47ceca6609278b59ec61e86f60c483",
+                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/610846237295e3e50a1923e7cc1639a956ead22a",
+                "reference": "610846237295e3e50a1923e7cc1639a956ead22a",
                 "shasum": ""
             },
             "require": {
@@ -360,7 +369,7 @@
                 "mobile detector",
                 "php mobile detect"
             ],
-            "time": "2013-12-05 22:00:17"
+            "time": "2014-03-07 13:33:54"
         },
         {
             "name": "nesbot/carbon",
@@ -410,16 +419,16 @@
         },
         {
             "name": "slim/slim",
-            "version": "2.4.0",
+            "version": "2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codeguy/Slim.git",
-                "reference": "ff7d7148848fa4f45712984d7b91ac3cbced586b"
+                "reference": "3a2ac723f17b5d81607287ff28575d38b9fbc70e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeguy/Slim/zipball/ff7d7148848fa4f45712984d7b91ac3cbced586b",
-                "reference": "ff7d7148848fa4f45712984d7b91ac3cbced586b",
+                "url": "https://api.github.com/repos/codeguy/Slim/zipball/3a2ac723f17b5d81607287ff28575d38b9fbc70e",
+                "reference": "3a2ac723f17b5d81607287ff28575d38b9fbc70e",
                 "shasum": ""
             },
             "require": {
@@ -452,7 +461,7 @@
                 "rest",
                 "router"
             ],
-            "time": "2013-11-29 20:33:36"
+            "time": "2014-02-16 18:18:25"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -460,12 +469,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "f0be8302f28913af7bd7df6639e5bec5b5e79257"
+                "reference": "f791cfb1c62a6d5a82f4a6c067716ee64e33354b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/f0be8302f28913af7bd7df6639e5bec5b5e79257",
-                "reference": "f0be8302f28913af7bd7df6639e5bec5b5e79257",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/f791cfb1c62a6d5a82f4a6c067716ee64e33354b",
+                "reference": "f791cfb1c62a6d5a82f4a6c067716ee64e33354b",
                 "shasum": ""
             },
             "require": {
@@ -489,7 +498,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Chris Corbyn"
@@ -501,7 +512,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2013-12-03 13:34:24"
+            "time": "2014-03-13 08:32:17"
         },
         {
             "name": "twig/twig",
@@ -509,12 +520,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "ae89c8853582f074c1e8f26ac3b67b2c4fff2609"
+                "reference": "dab8d90755a7c1a54cd20be5098f5b5bf3346d9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/ae89c8853582f074c1e8f26ac3b67b2c4fff2609",
-                "reference": "ae89c8853582f074c1e8f26ac3b67b2c4fff2609",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/dab8d90755a7c1a54cd20be5098f5b5bf3346d9b",
+                "reference": "dab8d90755a7c1a54cd20be5098f5b5bf3346d9b",
                 "shasum": ""
             },
             "require": {
@@ -538,11 +549,19 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Armin Ronacher",
-                    "email": "armin.ronacher@active-4.com"
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
+                },
+                {
+                    "name": "Twig Team",
+                    "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
+                    "role": "Contributors"
                 }
             ],
             "description": "Twig, the flexible, fast, and secure template language for PHP",
@@ -550,7 +569,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2014-01-08 07:21:35"
+            "time": "2014-03-15 10:50:05"
         },
         {
             "name": "zeuxisoo/slim-whoops",
@@ -558,20 +577,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zeuxisoo/php-slim-whoops.git",
-                "reference": "edb5737b9250e40dc8d65579d73151363f219613"
+                "reference": "3f602b5518be325b885aca1d09f75e2ced40ab76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zeuxisoo/php-slim-whoops/zipball/edb5737b9250e40dc8d65579d73151363f219613",
-                "reference": "edb5737b9250e40dc8d65579d73151363f219613",
+                "url": "https://api.github.com/repos/zeuxisoo/php-slim-whoops/zipball/3f602b5518be325b885aca1d09f75e2ced40ab76",
+                "reference": "3f602b5518be325b885aca1d09f75e2ced40ab76",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "codeception/codeception": "@stable",
                 "filp/whoops": "1.*",
+                "phpunit/phpunit": "3.7.*@dev",
                 "slim/slim": "2.*"
             },
             "type": "library",
@@ -600,7 +619,7 @@
                 "slim",
                 "whoops"
             ],
-            "time": "2014-01-05 12:16:07"
+            "time": "2014-02-26 11:27:48"
         }
     ],
     "packages-dev": [

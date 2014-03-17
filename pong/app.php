@@ -58,8 +58,7 @@
 			$config = require('../app/config/app.php');
 			//set google analytiocs code to app data
 			$this->data['googleAnalyticsCode'] = $config['googleAnalyticsCode'];
-			// add default routes to app config
-			$this->config['routes'] = $config['routes'];
+			$this->data['url'] = $config['url'];
 		}
 
 		protected function initalizeWhoops()
@@ -117,14 +116,16 @@
 	            if(isset($signedRequest['app_data'])) $this->data['get'] = fbtab_decode($signedRequest['app_data']);
 	            $this->data['userIsFan'] = isset($signedRequest['page']['liked']) && $signedRequest['page']['liked'];
 	            $this->data['userLanguage'] = fbtab_language($signedRequest['user']['locale']);
-	        }else
-	        {
+	            $this->data['onFacebook'] = true;
+	        }else{
 	        	$this->data['userIsFan'] = $debug['userIsFan'];
 	            $this->data['userLanguage'] = $debug['userLanguage'];
 	            $this->data['get'] =  $this->request->params();
+	            $this->data['onFacebook'] = false;
 	        }
 
 			$this->data['appId'] = $config[$this->environment]['appId'];
+			$this->data["onlineAppId"] = $config["online"]['appId'];
 			$this->data['tabUrl'] = $config['tabUrl'];
 
 		}
@@ -178,10 +179,6 @@
 		{
 			return $this->environment == 'development' ? true : false;
 		}
-
-
-
-
 
 	}
 ?>

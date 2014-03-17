@@ -8,10 +8,10 @@
 		 * 
 		 */
 		'development' => array(
-			'user' => '',
-			'password' => '',
-			'host' => '',
-			'database' => ''
+			'user' => 'root',
+			'password' => 'root',
+			'host' => 'localhost',
+			'database' => 'pong'
 	 	),
 
 		/**

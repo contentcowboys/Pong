@@ -10,8 +10,8 @@
 		 * 
 		 */
 		'development' =>  array(
-			'appId' => '1234',
-			'secret' => '1234'
+			'appId' => '199353350255638',
+			'secret' => '214d8ce5e8acf83ce4558c99de54e619'
 	 	),
 
 	 	/**
@@ -23,8 +23,8 @@
 		 * 
 		 */
 	 	'online' => array(
-			'appId' => '1234',
-			'secret' => '1234'
+			'appId' => '798641053498883',
+			'secret' => '797ec95d0d1cca35e2b9ca52091360c6'
 	 	),
 
 	 	/**
