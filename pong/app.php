@@ -141,6 +141,7 @@
 				$this->environment = 'online';
 			}
 			$this->data['environment'] = $this->environment;
+			$this->data['isDevelopment'] = $this->isDevelopment();
 		}
 
 		protected function initalizeORM()

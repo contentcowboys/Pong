@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Facebook page</title>
+	<title>Pong</title>
 </head>
-<body>
+<body class="{{ userLanguage }} {{#if onFacebook}}facebook{{else}}mobile{{/if}}">
   
 </body>
 <script>
 </script>
+{{#if isDevelopment}}
+  <script data-main="../src/js/main" src="../src/js/libs/requirejs/requirejs.js"></script>
+{{else}}
+  <script src="js/optimized.js"></script>
+{{/if}}
 </html>
