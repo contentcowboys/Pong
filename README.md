@@ -1,5 +1,5 @@
 # WARNING
-
+# DOCS OUTDATED
 This project is still in early development! Don't use this on a live environnement.
                                                                                                     
                                                  `,;;;';:`                                          
