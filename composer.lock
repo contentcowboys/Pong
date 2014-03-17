@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "ac1bcee013e6cfa87fcbaf7675512075",
+    "hash": "5a33fb4d610f92a947fe7c2c89f3b5ee",
     "packages": [
         {
             "name": "facebook/php-sdk",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/facebook-php-sdk.git",
-                "reference": "5c5a3e80af30ea00e7682e94b31112c505051f50"
+                "reference": "8e20b40868b6beb72a0d4452d2c275f48f25cbc5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/facebook-php-sdk/zipball/5c5a3e80af30ea00e7682e94b31112c505051f50",
-                "reference": "5c5a3e80af30ea00e7682e94b31112c505051f50",
+                "url": "https://api.github.com/repos/facebook/facebook-php-sdk/zipball/8e20b40868b6beb72a0d4452d2c275f48f25cbc5",
+                "reference": "8e20b40868b6beb72a0d4452d2c275f48f25cbc5",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 "facebook",
                 "sdk"
             ],
-            "time": "2014-01-09 21:38:48"
+            "time": "2014-02-21 17:24:51"
         },
         {
             "name": "filp/whoops",
@@ -515,61 +515,46 @@
             "time": "2014-03-13 08:32:17"
         },
         {
-            "name": "twig/twig",
+            "name": "xamin/handlebars.php",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fabpot/Twig.git",
-                "reference": "dab8d90755a7c1a54cd20be5098f5b5bf3346d9b"
+                "url": "https://github.com/XaminProject/handlebars.php.git",
+                "reference": "7f6dcf6c3e1fdc5d277d493566894590d7060121"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/dab8d90755a7c1a54cd20be5098f5b5bf3346d9b",
-                "reference": "dab8d90755a7c1a54cd20be5098f5b5bf3346d9b",
+                "url": "https://api.github.com/repos/XaminProject/handlebars.php/zipball/7f6dcf6c3e1fdc5d277d493566894590d7060121",
+                "reference": "7f6dcf6c3e1fdc5d277d493566894590d7060121",
                 "shasum": ""
             },
-            "require": {
-                "php": ">=5.2.4"
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "1.*"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.15-dev"
-                }
-            },
             "autoload": {
                 "psr-0": {
-                    "Twig_": "lib/"
+                    "Handlebars": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-3-Clause"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
+                    "name": "fzerorubigd",
+                    "email": "fzerorubigd@gmail.com"
                 },
                 {
-                    "name": "Armin Ronacher",
-                    "email": "armin.ronacher@active-4.com",
-                    "role": "Project Founder"
-                },
-                {
-                    "name": "Twig Team",
-                    "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
-                    "role": "Contributors"
+                    "name": "Behrooz Shabani (everplays)",
+                    "email": "everplays@gmail.com"
                 }
             ],
-            "description": "Twig, the flexible, fast, and secure template language for PHP",
-            "homepage": "http://twig.sensiolabs.org",
-            "keywords": [
-                "templating"
-            ],
-            "time": "2014-03-15 10:50:05"
+            "description": "Handlebars processor for php",
+            "homepage": "https://github.com/XaminProject/handlebars.php",
+            "time": "2014-03-17 10:14:21"
         },
         {
             "name": "zeuxisoo/slim-whoops",
@@ -630,6 +615,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "xamin/handlebars.php": 20,
         "swiftmailer/swiftmailer": 20,
         "filp/whoops": 20,
         "facebook/php-sdk": 20,

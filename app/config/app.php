@@ -8,7 +8,16 @@
 		 */
 		'googleAnalyticsCode' => 'UA-XXXXX-X',
 
-		'url' => 'http://f.cowb.eu/pong/tab/public/'
+		/**
+		* Online url
+		*/
+		'url' => 'http://f.cowb.eu/pong/tab/public/',
+
+		/**
+		* Online url
+		*/
+		'url' => 'http://f.cowb.eu/pong/tab/public/',
+
 
  	);
 

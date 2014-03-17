@@ -1,5 +1,6 @@
 <?php
 	use Illuminate\Database\Capsule\Manager as Db;
+	use Handlebars\Handlebars;
 
 	class App 
 	{
@@ -49,7 +50,7 @@
 			$this->initalizeRouter();
 			$this->initalizeWhoops();
 			$this->initalizeFacebook();
-			$this->initalizeTwig();
+			$this->initalizeHandlebars();
 			$this->initalizeORM();
 		}
 
@@ -68,26 +69,24 @@
 		}
 
 
-		protected function initalizeTwig()
+		protected function initalizeHandlebars()
 		{
-			$loader = new Twig_Loader_Filesystem('../app/views');
-			$this->twig = new Twig_Environment($loader);
-			$this->extendTwig();
-		}
-
-		protected function extendTwig()
-		{
-			//custom twig functions
-			$function = new Twig_SimpleFunction("asset", function ($path) {
-			    return URL::asset($path);
-			});
-			$this->twig->addFunction($function);
+			//dd(__DIR__.'/../app/views');
+			$this->handleBars = new Handlebars(array(
+			    'loader' => new \Handlebars\Loader\FilesystemLoader(__DIR__.'/../app/views'),
+			    'partials_loader' => new \Handlebars\Loader\FilesystemLoader(
+			        __DIR__.'/../app/views',
+			        array(
+			            'prefix' => '_'
+			        )
+			    )
+			));
 		}
 
 		public function render($template, $data = null)
 		{
 			if(!$data) $data =  array();
-			echo $this->twig->render($template.".html", $data);
+			echo $this->handleBars->render($template,$data);
 		}
 
 		protected function initalizeRouter()

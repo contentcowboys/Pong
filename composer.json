@@ -14,7 +14,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "twig/twig": "1.15.*",
+        "xamin/handlebars.php": "dev-master",
         "illuminate/database": "4.*",
         "slim/slim": "2.4.*",
         "swiftmailer/swiftmailer": "5.1.*@dev",

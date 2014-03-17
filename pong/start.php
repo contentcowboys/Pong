@@ -11,6 +11,6 @@
 	require '../app/routes/api.php';
 	//set the app url root
 	URL::setRoot(  '//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] );
-
+	
 	$app->router->run();
 ?>

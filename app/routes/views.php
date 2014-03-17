@@ -13,9 +13,8 @@
 	$app->router->map('/', function() use ($app) 
 	{
 		if( !$app->isDevelopment() && $app->data['deviceType'] == "computer" && !$app->data['onFacebook'] ){
-			$app->router->redirect( $app->config['routes']['desktop'].'?'.http_build_query($app->request->params()));
+			$app->router->redirect( $app->data['tabUrl'].'?'.http_build_query($app->request->params()));
 		}
 		$app->render('main', $app->data);
-		
 	})->via('GET', 'POST');
 ?>

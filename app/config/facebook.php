@@ -32,7 +32,7 @@
 	 	 * //developers.facebook.com/apps 
 	 	 * 
 	 	 */
-	 	'tabUrl' => '',
+	 	'tabUrl' => 'https://www.facebook.com/contentcowboysshowcase/app_798641053498883',
 
 	 	/*
 	 	 * The page of wich want to check if the user has liked for the like gate
