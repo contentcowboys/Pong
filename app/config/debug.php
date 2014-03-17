@@ -15,6 +15,8 @@
 		 */
 		'userIsFan' => true,
 
+		'onFacebook' => NULL,
+
 		/**
 		 * This will define teh language of teh faked user
 		 * You can change this to test your multilanguage facebook tab

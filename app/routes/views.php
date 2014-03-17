@@ -12,18 +12,10 @@
 
 	$app->router->map('/', function() use ($app) 
 	{
-		/**
-		 * Check if the user already liked the page configured inside
-		 *
-		 * The default view for non fans is 'likeGate' and 
-		 */
-		if($app->data['userIsFan'])
-		{
-			$app->render('facebook', $app->data);
-		}else
-		{
-			$app->render('likeGate', $app->data);
+		if( !$app->isDevelopment() && $app->data['deviceType'] == "computer" && !$app->data['onFacebook'] ){
+			$app->router->redirect( $app->config['routes']['desktop'].'?'.http_build_query($app->request->params()));
 		}
+		$app->render('main', $app->data);
 		
 	})->via('GET', 'POST');
 ?>
