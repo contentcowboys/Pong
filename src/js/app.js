@@ -11,15 +11,17 @@ define([
 		$,
 		_,
 		facebook,
-		endView
+		EndView
 	){
 		var app = {
 			pages: {},
+			currentPage: undefined,
+			prevPage: undefined,
 			init: function(){
-				//if action is done
-				if(bootstrap.end){
+				
+				if(bootstrap.end){ // if action is done
 					this.showEnd();
-				}else{
+				}else{ // if action is still running
 					facebook.init();
 				}
 			},
@@ -28,11 +30,14 @@ define([
 			},
 			showEnd : function () {
 				if(!this.pages.end) this.pages.end = new EndView();
-				this.page.end.render();
+				this.pages.end.render();
 				this.switchPage("end");
-			}
+			},
 			switchPage : function (page) {
-				console.log(page);
+				if(this.prevPage) this.prevPage.$el.removeClass("show");
+				this.prevPage = this.currentPage;
+				this.currentPage = this.pages[page];
+				this.currentPage.$el.addClass("show");
 			}
 		};
 		return app;
