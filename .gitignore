@@ -1,4 +1,4 @@
 /vendor
 /node_modules
-/src/js/bower
+/src/bower
 /.sass-cache
