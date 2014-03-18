@@ -1,6 +1,7 @@
 <?php
 	use Illuminate\Database\Capsule\Manager as Db;
 	use Handlebars\Handlebars;
+	use Carbon\Carbon;
 
 	class App 
 	{
@@ -19,10 +20,7 @@
 
 		public function cli($argv = NULL)
 		{
-			
-			
 			$ping = New Ping();
-			
 			$ping->setCommand($argv[1]);
 
 			unset($argv[0]);
@@ -52,6 +50,7 @@
 			$this->initalizeFacebook();
 			$this->initalizeHandlebars();
 			$this->initalizeORM();
+
 		}
 
 		protected function getConfig(){
@@ -60,6 +59,13 @@
 			//set google analytiocs code to app data
 			$this->data['googleAnalyticsCode'] = $config['googleAnalyticsCode'];
 			$this->data['url'] = $config['url'];
+			if(empty($config['endDate'])){
+				$this->data['end'] = 'false';
+			}else{
+				$end = Carbon::now()->diffInHours(Carbon::createFromFormat($config['format'] , $config['endDate']), false);
+				$this->data['end'] = ($end > 0 ? "false" : "true");
+			}
+			$this->data['rootUrl'] = URL::asset("");
 		}
 
 		protected function initalizeWhoops()
@@ -109,7 +115,6 @@
 
 			// get signed request
         	$signedRequest = $this->facebook->getSignedRequest();
-
         	if($signedRequest)
         	{
 	            if(isset($signedRequest['app_data'])) $this->data['get'] = fbtab_decode($signedRequest['app_data']);
@@ -122,11 +127,9 @@
 	            $this->data['get'] =  $this->request->params();
 	            $this->data['onFacebook'] = false;
 	        }
-
 			$this->data['appId'] = $config[$this->environment]['appId'];
 			$this->data["onlineAppId"] = $config["online"]['appId'];
 			$this->data['tabUrl'] = $config['tabUrl'];
-
 		}
 
 		protected function detectEnvironment()

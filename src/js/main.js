@@ -21,8 +21,9 @@ require(
         'common',
         'backbone',
         'jquery',
+        'app'
     ],
-    function(common,Backbone, $){
-        
+    function(common,Backbone, $, app){
+        app.init();
     }
 );
