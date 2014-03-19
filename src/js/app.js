@@ -4,14 +4,16 @@ define([
 		'jquery',
 		'underscore',
 		'controllers/facebook',
-		'views/end'
+		'views/end',
+		'views/likeGate'
 	], function(
 		common,
 		Backbone,
 		$,
 		_,
 		facebook,
-		EndView
+		EndView,
+		LikeGate
 	){
 		var app = {
 			pages: {},
@@ -25,22 +27,31 @@ define([
 					if(common.liked){
 						this.showHome();
 					}else{
-						$.when(facebook.checkLogin(), function(){
-						
-						});
+						$.when( facebook.checkLogin() ).then(_.bind(this.checkLiked, this));
 					}
-					
 				}
 			},
-			start: function(){
-
+			checkLiked: function(){
+				if( common.pageLiked ) {
+					this.showHome();
+				} else {
+					this.showLikeGate();
+				}
 			},
 			showEnd : function () {
 				if(!this.pages.end) this.pages.end = new EndView();
 				this.pages.end.render();
 				this.switchPage("end");
 			},
+			showLikeGate : function () {
+				console.log(this);
+				if(!this.pages.likeGate) this.pages.likeGate = new LikeGate();
+				this.pages.likeGate.render();
+				this.switchPage("likeGate");
+			},
 			switchPage : function (page) {
+				//if current page is being rerendered return false
+				if(this.prevPage == page) return false;
 				if(this.prevPage) this.prevPage.$el.removeClass("show");
 				this.prevPage = this.currentPage;
 				this.currentPage = this.pages[page];

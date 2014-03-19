@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
 	<meta charset="UTF-8">
 	<title>Pong</title>
@@ -7,6 +7,7 @@
 <body class="{{ userLanguage }} {{#if onFacebook}}facebook{{else}}mobile{{/if}}">
 	<div id="fb-root"></div>
 	<div id="js-end-page" class="end page"></div>
+	<div id="js-likeGate-page" class="likeGate page"></div>
 </body>
 <script>
 	var bootstrap = {
@@ -15,7 +16,7 @@
 		end : {{end}},
 		onFacebook : {{#if onFacebook}}true{{else}}false{{/if}},
 		url : "{{rootUrl}}",
-		liked : {{#if pageLiked}}true{{else}}false{{/if}}
+		pageLiked : {{#if pageLiked}}true{{else}}false{{/if}}
 	};
 </script>
 {{#if isDevelopment}}

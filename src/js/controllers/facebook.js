@@ -32,15 +32,14 @@ define(
                 query: 'SELECT uid FROM page_fan WHERE page_id = '+common.pageId+' and uid=me()',
                 }, function(response){
                     if(response.length > 0){
-                        common.liked = true;
+                        common.pageLiked = true;
                         deferred.resolve();
                     }else{
-                        common.liked = false;
                         deferred.resolve();
                     }
             });
             return deferred.promise();
-        }
+        },
         login : function(){
 
         }
