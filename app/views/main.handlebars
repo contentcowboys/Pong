@@ -15,7 +15,7 @@
 		end : {{end}},
 		onFacebook : {{#if onFacebook}}true{{else}}false{{/if}},
 		url : "{{rootUrl}}",
-		liked : 
+		liked : {{#if pageLiked}}true{{else}}false{{/if}}
 	};
 </script>
 {{#if isDevelopment}}

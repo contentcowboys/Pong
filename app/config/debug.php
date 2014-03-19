@@ -5,8 +5,8 @@
 	 */
 	
 	return array(
-		'userIsFan' => true,
-		'onFacebook' => false,
+		'pageLiked' => false,
+		'onFacebook' => true,
 		'userLanguage' => "nl"
 	);
 

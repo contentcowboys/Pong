@@ -59,6 +59,7 @@
 			//set google analytiocs code to app data
 			$this->data['googleAnalyticsCode'] = $config['googleAnalyticsCode'];
 			$this->data['url'] = $config['url'];
+			
 			if(empty($config['endDate'])){
 				$this->data['end'] = 'false';
 			}else{
@@ -117,21 +118,24 @@
         	$signedRequest = $this->facebook->getSignedRequest();
         	if($signedRequest){
 	            if(isset($signedRequest['app_data'])) $this->data['get'] = fbtab_decode($signedRequest['app_data']);
-	            $this->data['liked'] = isset($signedRequest['page']['liked']) && $signedRequest['page']['liked'];
+	            $this->data['pageLiked'] = isset($signedRequest['page']['liked']) && $signedRequest['page']['liked'];
 	            $this->data['userLanguage'] = fbtab_language($signedRequest['user']['locale']);
 	            $this->data['onFacebook'] = true;
 	        }else{
-	        	$this->data['liked'] = false;
-	            $this->data['userLanguage'] = nl;
+	        	$this->data['pageLiked'] = false;
+	            $this->data['userLanguage'] = "nl";
 	            $this->data['get'] =  $this->request->params();
 	            $this->data['onFacebook'] = false;
 	        }
-	        if(isDevelopment()){
-	        	
+	        if($this->isDevelopment()){
+	        	$this->data['pageLiked'] = $debug['pageLiked'];
+	        	$this->data['userLanguage'] = $debug['userLanguage'];
+	        	$this->data['onFacebook'] = $debug['onFacebook'];
 	        }
 			$this->data['appId'] = $config[$this->environment]['appId'];
 			$this->data["onlineAppId"] = $config["online"]['appId'];
 			$this->data['tabUrl'] = $config['tabUrl'];
+			$this->data['pageId'] = $config['pageId'];
 		}
 
 		protected function detectEnvironment()
