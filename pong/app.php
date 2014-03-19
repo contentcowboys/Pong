@@ -116,7 +116,7 @@
 
 			// get signed request
         	$signedRequest = $this->facebook->getSignedRequest();
-        	if($signedRequest){
+        	if($signedRequest && isset($signedRequest['page'])){
 	            if(isset($signedRequest['app_data'])) $this->data['get'] = fbtab_decode($signedRequest['app_data']);
 	            $this->data['pageLiked'] = isset($signedRequest['page']['liked']) && $signedRequest['page']['liked'];
 	            $this->data['userLanguage'] = fbtab_language($signedRequest['user']['locale']);

@@ -5,7 +5,8 @@ define([
 		'underscore',
 		'controllers/facebook',
 		'views/end',
-		'views/likeGate'
+		'views/likeGate',
+		'views/home',
 	], function(
 		common,
 		Backbone,
@@ -13,7 +14,8 @@ define([
 		_,
 		facebook,
 		EndView,
-		LikeGate
+		LikeGate,
+		Home
 	){
 		var app = {
 			pages: {},
@@ -21,6 +23,8 @@ define([
 			prevPage: undefined,
 			init: function(){
 				facebook.init();
+				//set listeners
+				Backbone.on("app:checkLiked", this.checkLiked, this);
 				if(bootstrap.end){ // if action is done
 					this.showEnd();
 				}else{ // if action is still running
@@ -44,10 +48,14 @@ define([
 				this.switchPage("end");
 			},
 			showLikeGate : function () {
-				console.log(this);
 				if(!this.pages.likeGate) this.pages.likeGate = new LikeGate();
 				this.pages.likeGate.render();
 				this.switchPage("likeGate");
+			},
+			showHome : function () {
+				if(!this.pages.home) this.pages.home = new Home();
+				this.pages.home.render();
+				this.switchPage("home");
 			},
 			switchPage : function (page) {
 				//if current page is being rerendered return false

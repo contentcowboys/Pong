@@ -25,7 +25,7 @@ define(
              });
             return deferred.promise();
         },
-        checkLiked: function(){
+        checkLiked: function(deferred){
             if(!deferred) deferred = $.Deferred();
             FB.api({
                 method: 'fql.query',
@@ -40,8 +40,18 @@ define(
             });
             return deferred.promise();
         },
-        login : function(){
-
+        login : function(deferred){
+            if(!deferred) deferred = $.Deferred();
+            var that = this;
+             FB.login(function(response){
+                if(!response.authResponse){
+                    deferred.resolve();
+                }else{
+                    common.loggedIn = true;
+                    that.checkLiked(deferred);
+                }
+            }, {scope : "email , user_likes" });
+            return deferred.promise();
         }
     };
     return facebook;
