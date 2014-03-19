@@ -18,11 +18,18 @@ define([
 			currentPage: undefined,
 			prevPage: undefined,
 			init: function(){
-				
+				facebook.init();
 				if(bootstrap.end){ // if action is done
 					this.showEnd();
 				}else{ // if action is still running
-					facebook.init();
+					if(common.liked){
+						this.showHome();
+					}else{
+						$.when(facebook.checkLogin(), function(){
+						
+						});
+					}
+					
 				}
 			},
 			start: function(){

@@ -10,6 +10,7 @@
     "gulp-rename": "~1.2.0",
     "gulp-minify-css": "~0.3.0",
     "gulp-watch": "~0.5.2",
-    "requirejs": "~2.1.11"
+    "requirejs": "~2.1.11",
+    "gulp-concat": "~2.2.0"
   }
 }

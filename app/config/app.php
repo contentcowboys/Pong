@@ -19,7 +19,7 @@
 		* Set end date for action
 		*/
 
-		'endDate' => '11-03-2014 12',
+		'endDate' => '21-03-2014 12',
 
 		'format' => 'd-m-Y H',
 

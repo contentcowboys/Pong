@@ -115,17 +115,19 @@
 
 			// get signed request
         	$signedRequest = $this->facebook->getSignedRequest();
-        	if($signedRequest)
-        	{
+        	if($signedRequest){
 	            if(isset($signedRequest['app_data'])) $this->data['get'] = fbtab_decode($signedRequest['app_data']);
-	            $this->data['userIsFan'] = isset($signedRequest['page']['liked']) && $signedRequest['page']['liked'];
+	            $this->data['liked'] = isset($signedRequest['page']['liked']) && $signedRequest['page']['liked'];
 	            $this->data['userLanguage'] = fbtab_language($signedRequest['user']['locale']);
 	            $this->data['onFacebook'] = true;
 	        }else{
-	        	$this->data['userIsFan'] = $debug['userIsFan'];
-	            $this->data['userLanguage'] = $debug['userLanguage'];
+	        	$this->data['liked'] = false;
+	            $this->data['userLanguage'] = nl;
 	            $this->data['get'] =  $this->request->params();
 	            $this->data['onFacebook'] = false;
+	        }
+	        if(isDevelopment()){
+	        	
 	        }
 			$this->data['appId'] = $config[$this->environment]['appId'];
 			$this->data["onlineAppId"] = $config["online"]['appId'];

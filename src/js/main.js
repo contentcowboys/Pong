@@ -1,6 +1,6 @@
 require.config({
     paths: {
-        jquery: '../bower/jquery/jquery.min',
+        jquery: '../bower/jquery/dist/jquery.min',
         underscore: '../bower/lodash/dist/lodash.underscore.min',
         backbone: '../bower/backbone-amd/backbone-min',
         handlebars: '../bower/handlebars/handlebars.min',

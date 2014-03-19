@@ -12,6 +12,38 @@ define(
                 xfbml      : true
             });
         },
+        checkLogin : function(deferred){
+            if(!deferred) deferred = $.Deferred();
+            var that = this;
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                    common.loggedIn = true;
+                    that.checkLiked(deferred);
+                } else {
+                    deferred.resolve();
+                }
+             });
+            return deferred.promise();
+        },
+        checkLiked: function(){
+            if(!deferred) deferred = $.Deferred();
+            FB.api({
+                method: 'fql.query',
+                query: 'SELECT uid FROM page_fan WHERE page_id = '+common.pageId+' and uid=me()',
+                }, function(response){
+                    if(response.length > 0){
+                        common.liked = true;
+                        deferred.resolve();
+                    }else{
+                        common.liked = false;
+                        deferred.resolve();
+                    }
+            });
+            return deferred.promise();
+        }
+        login : function(){
+
+        }
     };
     return facebook;
 });
