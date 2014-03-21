@@ -22,7 +22,7 @@ define([
 			currentPage: undefined,
 			prevPage: undefined,
 			init: function(){
-				facebook.init();
+				//facebook.init();
 				//set listeners
 				Backbone.on("page:show:form", this.showForm, this);
 				Backbone.on("page:show:thankYou", this.showThankYou, this);
@@ -31,9 +31,11 @@ define([
 				if(bootstrap.end){ // if action is done
 					this.showEnd();
 				}else{ // if action is still running
-					if(common.liked){
+					if(!common.liked){
+						console.log("msg");
 						this.showForm();
 					}else{
+						console.log("msg2");
 						$.when( facebook.checkLogin() ).then(_.bind(this.checkLiked, this));
 					}
 				}

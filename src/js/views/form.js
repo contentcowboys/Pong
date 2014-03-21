@@ -21,11 +21,15 @@ define([
             this.$el.html(this.compiled());
             this.dom.$form = this.$el.find("#js-form");
             this.dom.$formError = this.$el.find("#js-form-error");
+            this.setPlaceholder();
             this.setValidation();
             return this;
         },
         submit : function () {
             this.dom.$form.submit();
+        },
+        setPlaceholder : function () {
+            this.$el.find('input, textarea').placeholder();
         },
         setValidation : function () {
             var self = this;

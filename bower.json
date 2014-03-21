@@ -17,6 +17,8 @@
     "requirejs": "2.*",
     "requirejs-text": "2.*",
     "handlebars": "1.*",
-    "animate.css": "3.*"
+    "animate.css": "3.*",
+    "jquery-placeholder": "~2.0.7",
+    "jquery-validation": "~1.11.2"
   }
 }

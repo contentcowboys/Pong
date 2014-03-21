@@ -7,9 +7,11 @@ require.config({
         facebook: '//connect.facebook.net/en_US/all',
         text: '../bower/requirejs-text/text',
         "jquery-validation" : '../bower/jquery-validation/jquery.validate',
+        "jquery-placeholder" : '../bower/jquery-placeholder/jquery.placeholder',
     },
     shim: {
         "jquery-validation" : ["jquery"],
+        "jquery-placeholder" : ["jquery"],
         'facebook' : {
               exports: 'FB'
         },
@@ -24,9 +26,10 @@ require(
         'backbone',
         'jquery',
         'app',
-        'jquery-validation'
+        'jquery-validation',
+        'jquery-placeholder'
     ],
-    function(common,Backbone, $, app, undefined){
+    function(common,Backbone, $, app, undefined, undefined){
         app.init();
     }
 );
