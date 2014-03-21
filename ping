@@ -1,3 +1,2 @@
-
 <?php
-require('/pong/cli.php');
+require('pong/cli.php');

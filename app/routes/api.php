@@ -1,5 +1,5 @@
 <?php
-	// $app->router->get('/', function(){
-	// 	echo "test";
-	// });
+	$app->router->post('/api/entry', function(){
+		echo "test";
+	});
 ?>

@@ -14,7 +14,7 @@ class Schema{
 
 	protected function run()
 	{
-		require_once(URL::path()."app\schema\\" . $this->buildFile .".php");
+		require_once(URL::path()."app/schema/" . $this->buildFile .".php");
 	}
 
 	protected function setBuildFile()
@@ -26,7 +26,7 @@ class Schema{
 			die();
 		}
 		//check if build file excists
-		if(!file_exists(URL::path()."app\schema\\".$this->arguments[0] .".php"))
+		if(!file_exists(URL::path()."app/schema/".$this->arguments[0] .".php"))
 		{
 			Ping::error('Build file not found!');
 			die();

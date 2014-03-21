@@ -31,12 +31,12 @@ define([
         setPlaceholder : function () {
             this.$el.find('input, textarea').placeholder();
         },
-        setValidation : function () {
+        setValidation : function () { //set validation for form
             var self = this;
             this.dom.$form.validate({
                 debug : true,
                 submitHandler: function(form) {
-                    console.log(form);
+                    _.bind(self.sendAjax, self)();
                 },
                 invalidHandler: function(event, validator) {
                     var errors = validator.numberOfInvalids();
@@ -48,6 +48,23 @@ define([
                 },
                 errorPlacement: function(error, element) {
                     //
+                }
+            });
+        },
+        sendAjax : function () { //when validation is done
+            if(this.sending) return false;
+            this.sending = true;
+            $.ajax({
+                url : common.apiUrl+"entry",
+                type: "POST",
+                data : this.dom.$form.serialize(),
+                success: function () {
+                    this.sending = false;
+                    console.log(arguments);
+                },
+                error : function () {
+                    this.sending = false;
+                    alert("error");
                 }
             });
         }

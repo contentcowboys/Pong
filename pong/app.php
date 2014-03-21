@@ -20,6 +20,8 @@
 
 		public function cli($argv = NULL)
 		{
+			$this->detectEnvironment();
+			$this->initalizeORM();
 			$ping = New Ping();
 			$ping->setCommand($argv[1]);
 
@@ -140,7 +142,7 @@
 
 		protected function detectEnvironment()
 		{
-			$environment = require('../app/config/environments.php');
+			$environment = require(URL::path().'app/config/environments.php');
 
 			if(in_array(gethostname(), $environment['development']))
 			{
@@ -155,7 +157,7 @@
 
 		protected function initalizeORM()
 		{
-			$config = require('../app/config/database.php');
+			$config = require(URL::path().'app/config/database.php');
 			$config = $config[$this->environment];
 
 			if(empty($config['user'])) return false;
@@ -174,7 +176,6 @@
 			]);
 
 			$db->setAsGlobal();
-
 		}
 
 		protected function detectDevice()

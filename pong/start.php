@@ -5,7 +5,7 @@
 	date_default_timezone_set ("Europe/Brussels");
 	require '../vendor/autoload.php';
 	//set the app url root
-	URL::setRoot(  '//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] );
+	URL::setPath(  __DIR__ );
 	$app = new App();
 	$app->run();
 	require 'routes.php';
