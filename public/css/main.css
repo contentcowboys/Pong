@@ -2552,3 +2552,18 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .rollOut {
   -webkit-animation-name: rollOut;
   animation-name: rollOut; }
+
+.error {
+  background-color: red; }
+
+.form-error {
+  display: none; }
+
+.page {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; }
+  .page.active {
+    display: block; }

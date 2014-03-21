@@ -6,7 +6,7 @@ define([
 		'controllers/facebook',
 		'views/end',
 		'views/likeGate',
-		'views/home',
+		'views/form'
 	], function(
 		common,
 		Backbone,
@@ -15,7 +15,7 @@ define([
 		facebook,
 		EndView,
 		LikeGate,
-		Home
+		Form
 	){
 		var app = {
 			pages: {},
@@ -24,12 +24,15 @@ define([
 			init: function(){
 				facebook.init();
 				//set listeners
+				Backbone.on("page:show:form", this.showForm, this);
+				Backbone.on("page:show:thankYou", this.showThankYou, this);
+				Backbone.on("page:show:likeGate", this.showLikeGate, this);
 				Backbone.on("app:checkLiked", this.checkLiked, this);
 				if(bootstrap.end){ // if action is done
 					this.showEnd();
 				}else{ // if action is still running
 					if(common.liked){
-						this.showHome();
+						this.showForm();
 					}else{
 						$.when( facebook.checkLogin() ).then(_.bind(this.checkLiked, this));
 					}
@@ -37,7 +40,7 @@ define([
 			},
 			checkLiked: function(){
 				if( common.pageLiked ) {
-					this.showHome();
+					this.showForm();
 				} else {
 					this.showLikeGate();
 				}
@@ -48,22 +51,30 @@ define([
 				this.switchPage("end");
 			},
 			showLikeGate : function () {
+				console.log("showLikeGate");
 				if(!this.pages.likeGate) this.pages.likeGate = new LikeGate();
 				this.pages.likeGate.render();
 				this.switchPage("likeGate");
 			},
-			showHome : function () {
-				if(!this.pages.home) this.pages.home = new Home();
-				this.pages.home.render();
-				this.switchPage("home");
+			showForm : function () {
+				if(!this.pages.form) this.pages.form = new Form();
+				this.pages.form.render();
+				this.switchPage("form");
 			},
 			switchPage : function (page) {
 				//if current page is being rerendered return false
 				if(this.prevPage == page) return false;
-				if(this.prevPage) this.prevPage.$el.removeClass("show");
-				this.prevPage = this.currentPage;
+				if(this.prevPage){
+					this.prevPage.$el.addClass(common.pages.effectOut).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+						$(this).removeClass("active");
+					});
+				}
 				this.currentPage = this.pages[page];
-				this.currentPage.$el.addClass("show");
+				this.prevPage = this.currentPage;
+				this.currentPage.$el.addClass("active");
+				this.currentPage.$el.addClass(common.pages.effectIn).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+					$(this).removeClass(common.pages.effectIn);
+				});
 			}
 		};
 		return app;

@@ -2,13 +2,15 @@
 <html lang="en" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
 	<meta charset="UTF-8">
+	<meta name=viewport content="width=device-width, initial-scale=1">
 	<title>Pong</title>
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body class="{{ userLanguage }} {{#if onFacebook}}facebook{{else}}mobile{{/if}}">
 	<div id="fb-root"></div>
-	<div id="js-end-page" class="end page"></div>
-	<div id="js-likeGate-page" class="likeGate page"></div>
-	<div id="js-home-page" class="home page"></div>
+	<div id="js-end-page" class="animated end page"></div>
+	<div id="js-likeGate-page" class="animated likeGate page"></div>
+	<div id="js-form-page" class="animated form page"></div>
 </body>
 <script>
 	var bootstrap = {
@@ -17,7 +19,11 @@
 		end : {{end}},
 		onFacebook : {{#if onFacebook}}true{{else}}false{{/if}},
 		url : "{{rootUrl}}",
-		pageLiked : {{#if pageLiked}}true{{else}}false{{/if}}
+		pageLiked : {{#if pageLiked}}true{{else}}false{{/if}},
+		pages : {
+			effectIn : "bounceInLeft",
+			effectOut : "bounceOutLeft"
+		}
 	};
 </script>
 {{#if isDevelopment}}

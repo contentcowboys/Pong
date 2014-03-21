@@ -5,7 +5,8 @@ define([], function() {
     	onFacebook : bootstrap.onFacebook,
     	pageId : bootstrap.pageId,
     	loggedIn : false,
-    	pageLiked: bootstrap.pageLiked
+    	pageLiked: bootstrap.pageLiked,
+    	pages: bootstrap.pages
     };
     return common;
 });

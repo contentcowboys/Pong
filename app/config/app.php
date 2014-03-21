@@ -1,7 +1,4 @@
 <?php
-
-
-
 	return array(
 		/**
 		 * Add your Google analytics tracking code here: change UA-XXXXX-X to be your site's ID.
@@ -16,10 +13,13 @@
 		'url' => 'http://f.cowb.eu/pong/tab/public/',
 
 		/**
-		* Set end date for action
+		* Set end date
 		*/
 
-		'endDate' => '21-03-2014 12',
+		'endDate' => '22-03-2014 12',
+		/**
+		* Set end date format
+		*/
 
 		'format' => 'd-m-Y H',
 

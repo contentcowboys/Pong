@@ -1,0 +1,16 @@
+<h1>Form</h1>
+<form id="js-form" method="POST" action="#" name="form">
+	<input type="text" id="js-form-tiebreaker" name="tiebreaker" placeholder="tieBreaker" required>
+	<input type="text" id="js-form-tiebreakerExtra" name="tiebreakerExtra" placeholder="tiebreakerExtra">
+	<input type="text" id="js-form-firstName" name="first_name" placeholder="first_name" value="{{user.first_name}}" required>
+	<input type="text" id="js-form-lastName" name="last_name" placeholder="last_name" value="{{user.last_name}}" required>
+	<input type="text" id="js-form-email" name="email" placeholder="email" value="{{user.email}}" required>
+	<input type="text" id="js-form-gsm" name="gsm" placeholder="gsm" value="{{user.gsm}}" required>
+	<input type="text" id="js-form-adres" name="adres" placeholder="adres" value="{{user.adres}}" required>
+	<input type="text" id="js-form-zip" name="zip" placeholder="zip" value="{{user.zip}}" required>
+	<input type="text" id="js-form-city" name="city" placeholder="city" value="{{user.city}}" required>
+	<input type="hidden" name="code" id="js-form-code" value='{{code}}'>
+	<input type="hidden" name="lang" id="js-form-lang" value='{{lang}}'>
+	<div class="form-error" id="js-form-error">Erno</div>
+	<div id="submit">send</div>
+</form>

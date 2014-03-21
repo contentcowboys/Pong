@@ -17,3 +17,24 @@
 @import "custom";
 
 @import "animate";
+
+//PLEASE ADD TO REAL CSS
+
+.error{
+	background-color: red;
+}
+.form-error{
+	display:none;
+}
+
+
+.page{ //add transistions to this
+	display: none;
+	position: absolute;
+	top:0;
+	left:0;
+	right:0;
+	&.active{
+		display:block;
+	}
+}
