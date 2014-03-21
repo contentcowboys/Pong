@@ -77,7 +77,7 @@ This project is still in early development! Don't use this on a live environneme
                                                                                 :;;:                
                                                                                  ,    
 
-# Pong / A Facebook Tab Framework
+<!-- # Pong / A Facebook Tab Framework
 
 ## Table of contents
 
@@ -253,15 +253,14 @@ Here is a copy of an example template, can also be found in `app/view/examples/t
   {# If you don't want to include main.css, remove the next line #}
     {{ parent() }}
     {# You can include other css files here #}
-    <!-- <style type="text/css" src="css/somefile.css"></style> -->
+    <!-- <style type="text/css" src="css/somefile.css"></style>
 {% endblock %}
 
 {% block scripts %}
   {# If you don't want to include the main and libs javascript file, remove the next line #}
     {{ parent() }}    
     {# You can include other css files here #}
-    <!--<script type="text/javascript" src="javascript/somejsfile.js"></script>-->
-{% endblock %}
+    <!--<script type="text/javascript" src="javascript/somejsfile.js"></script>
 ```
 
 ## Database
@@ -432,3 +431,4 @@ The Pong framework is open-sourced software licensed under the [MIT license](htt
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/contentcowboys/pong/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+ -->
