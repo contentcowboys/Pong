@@ -22,6 +22,7 @@ class URL
 
 	public static function asset($path)
 	{
+
 		return self::$baseUrl .'public/'. $path;
 	}
 

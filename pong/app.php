@@ -68,7 +68,7 @@
 				$end = Carbon::now()->diffInHours(Carbon::createFromFormat($config['format'] , $config['endDate']), false);
 				$this->data['end'] = ($end > 0 ? "false" : "true");
 			}
-			$this->data['rootUrl'] = URL::asset("");
+			$this->data['rootUrl'] = URL::root();
 		}
 
 		protected function initalizeWhoops()

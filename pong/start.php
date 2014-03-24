@@ -6,6 +6,7 @@
 	require '../vendor/autoload.php';
 	//set the app url root
 	URL::setPath(  __DIR__ );
+	URL::setRoot( $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"] );
 	$app = new App();
 	$app->run();
 	require 'routes.php';

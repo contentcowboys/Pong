@@ -28,6 +28,11 @@ define([
         submit : function () {
             this.dom.$form.submit();
         },
+        setError : function (error) {
+            //#TODO : set correct error from language stuff;
+            this.dom.$formError.html(error);
+            this.dom.$formError.fadeIn();
+        },
         setPlaceholder : function () {
             this.$el.find('input, textarea').placeholder();
         },
@@ -41,7 +46,7 @@ define([
                 invalidHandler: function(event, validator) {
                     var errors = validator.numberOfInvalids();
                     if (errors) {
-                        self.dom.$formError.fadeIn();
+                        this.setError("form");
                     }else{
                         self.dom.$formError.fadeOut();
                     }
@@ -53,18 +58,27 @@ define([
         },
         sendAjax : function () { //when validation is done
             if(this.sending) return false;
+            var self = this;
             this.sending = true;
             $.ajax({
                 url : common.apiUrl+"entry",
                 type: "POST",
                 data : this.dom.$form.serialize(),
                 success: function () {
-                    this.sending = false;
+                    self.sending = false;
                     console.log(arguments);
+                    //#TODO: show new page
                 },
-                error : function () {
-                    this.sending = false;
-                    alert("error");
+                error : function (xhr) {
+                    self.sending = false;
+                    console.log(arguments);
+                    //#TODO: if error code is 409
+                    // set same email error
+                    if(xhr.status === 409){
+                        self.setError("email");
+                    }else{
+                        self.setError("server");
+                    }
                 }
             });
         }

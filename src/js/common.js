@@ -1,6 +1,6 @@
 define([], function() {
     var common = {
-    	apiUrl : bootstrap.url+"api/",
+    	apiUrl : bootstrap.url+"public/api/",
     	appId : bootstrap.appId,
     	onFacebook : bootstrap.onFacebook,
     	pageId : bootstrap.pageId,
