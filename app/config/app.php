@@ -23,5 +23,9 @@
 
 		'format' => 'd-m-Y H',
 
+		'multiLanguage' => true,
+
+		'defaultLanguage' => "nl"
+
  	);
 ?>

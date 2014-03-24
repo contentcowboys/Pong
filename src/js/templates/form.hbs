@@ -1,15 +1,15 @@
-<h1>Form</h1>
+{{lang "form" "header"}}
 <form id="js-form" method="POST" action="#" name="form">
-	<input type="text" id="js-form-tiebreaker" name="tiebreaker" placeholder="tiebreaker" required>
-	<input type="text" id="js-form-tiebreakerExtra" name="tiebreaker_extra" placeholder="tiebreaker_extra">
-	<input type="text" id="js-form-firstName" name="first_name" placeholder="first_name" value="{{user.first_name}}" required>
-	<input type="text" id="js-form-lastName" name="last_name" placeholder="last_name" value="{{user.last_name}}" required>
-	<input type="text" id="js-form-email" name="email" placeholder="email" value="{{user.email}}" required>
-	<input type="text" id="js-form-gsm" name="gsm" placeholder="gsm" value="{{user.gsm}}" required>
-	<input type="text" id="js-form-adres" name="adres" placeholder="adres" value="{{user.adres}}" required>
-	<input type="text" id="js-form-zip" name="zip" placeholder="zip" value="{{user.zip}}" required>
-	<input type="text" id="js-form-city" name="city" placeholder="city" value="{{user.city}}" required>
-	<input type="hidden" name="lang" id="js-form-lang" value='{{lang}}'>
+	<input type="text" id="js-form-tiebreaker" name="tiebreaker" placeholder="{{lang "form" "tiebreaker"}}" required>
+	<input type="text" id="js-form-tiebreakerExtra" name="tiebreaker_extra" placeholder="{{lang "form" "tiebreaker_extra"}}">
+	<input type="text" id="js-form-firstName" name="first_name" placeholder="{{lang "form" "first_name"}}" value="{{user.first_name}}" required>
+	<input type="text" id="js-form-lastName" name="last_name" placeholder="{{lang "form" "last_name"}}" value="{{user.last_name}}" required>
+	<input type="text" id="js-form-email" name="email" placeholder="{{lang "form" "email"}}" value="{{user.email}}" required>
+	<input type="text" id="js-form-gsm" name="gsm" placeholder="{{lang "form" "gsm"}}" value="{{user.gsm}}" required>
+	<input type="text" id="js-form-adres" name="adres" placeholder="{{lang "form" "adres"}}" value="{{user.adres}}" required>
+	<input type="text" id="js-form-zip" name="zip" placeholder="{{lang "form" "zip"}}" value="{{user.zip}}" required>
+	<input type="text" id="js-form-city" name="city" placeholder="{{lang "form" "city"}}" value="{{user.city}}" required>
+	<input type="hidden" name="lang" id="js-form-lang" value='{{language}}'>
 	<div class="form-error" id="js-form-error"></div>
 	<div id="submit">send</div>
 </form>

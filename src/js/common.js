@@ -6,7 +6,8 @@ define([], function() {
     	pageId : bootstrap.pageId,
     	loggedIn : false,
     	pageLiked: bootstrap.pageLiked,
-    	pages: bootstrap.pages
+    	pages: bootstrap.pages,
+        lang : bootstrap.lang
     };
     return common;
 });

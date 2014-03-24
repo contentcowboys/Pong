@@ -68,6 +68,7 @@
 				$end = Carbon::now()->diffInHours(Carbon::createFromFormat($config['format'] , $config['endDate']), false);
 				$this->data['end'] = ($end > 0 ? "false" : "true");
 			}
+			$this->data['multiLanguage'] = $config['multiLanguage'];
 			$this->data['rootUrl'] = URL::root();
 		}
 
@@ -107,6 +108,7 @@
 		protected function initalizeFacebook()
 		{
 			$config = require('../app/config/facebook.php');
+			$appConfig = require('../app/config/app.php');
 			$debug = require('../app/config/debug.php');
 			
 			if(empty($config[$this->environment]['appId']) || empty($config[$this->environment]['secret'])) throw new Exception('Please set facebook config!');
@@ -125,7 +127,7 @@
 	            $this->data['onFacebook'] = true;
 	        }else{
 	        	$this->data['pageLiked'] = false;
-	            $this->data['userLanguage'] = "nl";
+	            $this->data['userLanguage'] = $appConfig["defaultLanguage"];
 	            $this->data['get'] =  $this->request->params();
 	            $this->data['onFacebook'] = false;
 	        }

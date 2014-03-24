@@ -26,10 +26,12 @@ require(
         'backbone',
         'jquery',
         'app',
+        'handlebars',
+        'handlebarHelpers',
         'jquery-validation',
         'jquery-placeholder'
     ],
-    function(common,Backbone, $, app, undefined, undefined){
+    function(common,Backbone, $, app, undefined, undefined, undefined, undefined){
         app.init();
     }
 );

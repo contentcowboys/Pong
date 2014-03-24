@@ -5,7 +5,8 @@ define([
     'jquery',
     'handlebars',
     'text!templates/form.hbs',
-    ], function(common, Backbone, $, Handlebars , template ) {
+    'controllers/language'
+    ], function(common, Backbone, $, Handlebars , template, language ) {
     var view = Backbone.View.extend({
         el : $("#js-form-page"),
         compiled : undefined,
@@ -14,11 +15,10 @@ define([
             "click #submit" : "submit"
         },
         initialize: function () {
-            
+            this.compiled = Handlebars.compile(template);
         },
         render: function () {
-            if(!this.compiled) this.compiled = Handlebars.compile(template);
-            this.$el.html(this.compiled());
+            this.$el.html(this.compiled({ language : common.lang }));
             this.dom.$form = this.$el.find("#js-form");
             this.dom.$formError = this.$el.find("#js-form-error");
             this.setPlaceholder();
@@ -30,7 +30,7 @@ define([
         },
         setError : function (error) {
             //#TODO : set correct error from language stuff;
-            this.dom.$formError.html(error);
+            this.dom.$formError.html( language.get( "formError" , error ) );
             this.dom.$formError.fadeIn();
         },
         setPlaceholder : function () {
@@ -46,7 +46,7 @@ define([
                 invalidHandler: function(event, validator) {
                     var errors = validator.numberOfInvalids();
                     if (errors) {
-                        this.setError("form");
+                        self.setError("form");
                     }else{
                         self.dom.$formError.fadeOut();
                     }
