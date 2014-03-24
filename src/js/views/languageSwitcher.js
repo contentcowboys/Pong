@@ -16,7 +16,7 @@ define([
         initialize: function(options){
             this.page = options.page;
             this.$el = $("#js-language-"+options.page);
-            this.render();
+            console.log(this.$el);
             return this;
         },
         render: function(){
@@ -35,7 +35,6 @@ define([
         },
         switchLang: function(lang){
             if(common.lang == lang) return false;
-            this.close();
             $('body').removeClass('nl').removeClass('fr').addClass(lang);
             common.lang = lang;
             this.render();

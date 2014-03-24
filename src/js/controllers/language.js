@@ -17,39 +17,39 @@ define(['common'], function(common) {
                 },
                 "tiebreaker" : {
                     nl : "tiebreaker",
-                    fr : ""
+                    fr : "tiebreakerFR"
                 },
                 "tiebreaker_extra" : {
                     nl : "tiebreaker_extra",
-                    fr : ""
+                    fr : "tiebreaker_extraFR"
                 },
                 "first_name" : {
                     nl : "first_name",
-                    fr : ""
+                    fr : "first_nameFR"
                 },
                 "last_name" : {
                     nl : "last_name",
-                    fr : ""
+                    fr : "last_nameFR"
                 },
                 "email" : {
                     nl : "email",
-                    fr : ""
+                    fr : "emailFR"
                 },
                 "gsm" : {
                     nl : "gsm",
-                    fr : ""
+                    fr : "gsmFR"
                 },
                 "adres" : {
                     nl : "adres",
-                    fr : ""
+                    fr : "adresFR"
                 },
                 "zip" : {
                     nl : "zip",
-                    fr : ""
+                    fr : "zipFR"
                 },
                 "city" : {
                     nl : "city",
-                    fr : ""
+                    fr : "cityFR"
                 },
             }, //end form
             "formError" : {

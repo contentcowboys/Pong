@@ -1,12 +1,13 @@
-/* views/howTo.js */
+/* views/form.js */
 define([
     'common',
     'backbone',
     'jquery',
     'handlebars',
     'text!templates/form.hbs',
-    'controllers/language'
-    ], function(common, Backbone, $, Handlebars , template, language ) {
+    'controllers/language',
+    'views/languageSwitcher'
+    ], function(common, Backbone, $, Handlebars , template, language , LanguageSwitcher ) {
     var view = Backbone.View.extend({
         el : $("#js-form-page"),
         compiled : undefined,
@@ -19,6 +20,12 @@ define([
         },
         render: function () {
             this.$el.html(this.compiled({ language : common.lang }));
+            if(common.multiLanguage){
+                if(this.languageSwitcher) this.languageSwitcher.remove();
+                this.languageSwitcher = new LanguageSwitcher({page: "form"});
+                this.languageSwitcher.render();
+            } 
+            
             this.dom.$form = this.$el.find("#js-form");
             this.dom.$formError = this.$el.find("#js-form-error");
             this.setPlaceholder();
@@ -67,7 +74,7 @@ define([
                 success: function () {
                     self.sending = false;
                     console.log(arguments);
-                    //#TODO: show new page
+                    Backbone.trigger("page:show:thankYou");
                 },
                 error : function (xhr) {
                     self.sending = false;

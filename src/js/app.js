@@ -28,14 +28,13 @@ define([
 				Backbone.on("page:show:thankYou", this.showThankYou, this);
 				Backbone.on("page:show:likeGate", this.showLikeGate, this);
 				Backbone.on("app:checkLiked", this.checkLiked, this);
+				Backbone.on("page:render" , this.pageRender, this);
 				if(bootstrap.end){ // if action is done
 					this.showEnd();
 				}else{ // if action is still running
 					if(!common.liked){
-						console.log("msg");
 						this.showForm();
 					}else{
-						console.log("msg2");
 						$.when( facebook.checkLogin() ).then(_.bind(this.checkLiked, this));
 					}
 				}
@@ -63,9 +62,14 @@ define([
 				this.pages.form.render();
 				this.switchPage("form");
 			},
+			showThankYou : function () {
+				if(!this.pages.thankYou) this.pages.thankYou = new ThankYou();
+				this.pages.thankYou.render();
+				this.switchPage("thankYou");
+			},
 			switchPage : function (page) {
 				//if current page is being rerendered return false
-				if(this.prevPage == page) return false;
+				if(this.currentPage == this.pages[page]) return false;
 				if(this.prevPage){
 					this.prevPage.$el.addClass(common.pages.effectOut).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 						$(this).removeClass("active");
@@ -77,6 +81,10 @@ define([
 				this.currentPage.$el.addClass(common.pages.effectIn).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 					$(this).removeClass(common.pages.effectIn);
 				});
+			},
+			pageRender : function (page) {
+				this.pages[page].render();
+				this.switchPage(page);
 			}
 		};
 		return app;

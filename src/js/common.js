@@ -7,7 +7,8 @@ define([], function() {
     	loggedIn : false,
     	pageLiked: bootstrap.pageLiked,
     	pages: bootstrap.pages,
-        lang : bootstrap.lang
+        lang : bootstrap.lang,
+        multiLanguage : bootstrap.multiLanguage
     };
     return common;
 });
