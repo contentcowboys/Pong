@@ -1,40 +1,49 @@
-//	Pong main sass file |  https://github.com/contentcowboys/Pong 
-//
-// 	Dont change any thing in this file.
-// 	Except for importing more of your own sass files
-
-// Normalize css in all browsers (http://necolas.github.io/normalize.css/)
-@import "libs/normilize"; 
-// import all sass variables
-@import "partials/variables"; 
-// import mixins file
-@import "partials/mixins"; 
-
-// import default styling
-@import "partials/defaults"; 
-
-// Importing your custom styling
-@import "custom";
-
-@import "animate";
+// Sass utilities
+@import "helpers/variables";
+@import "helpers/functions";
+@import "helpers/mixins";
+@import "helpers/helpers";
+ 
+// Vendors and external stylesheets
+@import "vendors/animate";
+ 
+// Base stuff
+@import "base/reset";
+@import "base/typography";
+ 
+// Layout related stylesheets
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/forms";
+ 
+// Components and modules
+@import "components/buttons";
+@import "components/navigation";
+ 
+// Page-specific stylesheets
+@import "pages/home";
+ 
+// Themes 
+@import "themes/theme";
 
 //PLEASE ADD TO REAL CSS
 
 .error{
-	background-color: red;
+  background-color: red;
 }
 .form-error{
-	display:none;
+  display:none;
 }
 
 
 .page{ //add transistions to this
-	display: none;
-	position: absolute;
-	top:0;
-	left:0;
-	right:0;
-	&.active{
-		display:block;
-	}
+  display: none;
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  &.active{
+    display:block;
+  }
 }

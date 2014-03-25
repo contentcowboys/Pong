@@ -12,7 +12,7 @@ gulp.task('sass' , function(){
 	gulp.src('src/bower/animate.css/animate.css')
 		.pipe(plumber())
 		.pipe(rename("_animate.scss"))
-	    .pipe(gulp.dest('src/sass'));
+	    .pipe(gulp.dest('src/sass/vendors'));
 	//compile sass
 	gulp.src('src/sass/main.scss')
 		.pipe(plumber())
