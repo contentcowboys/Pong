@@ -6,7 +6,8 @@ define([
 		'controllers/facebook',
 		'views/end',
 		'views/likeGate',
-		'views/form'
+		'views/form',
+		'views/thankYOu'
 	], function(
 		common,
 		Backbone,
@@ -15,14 +16,15 @@ define([
 		facebook,
 		EndView,
 		LikeGate,
-		Form
+		Form,
+		ThankYou
 	){
 		var app = {
 			pages: {},
 			currentPage: undefined,
 			prevPage: undefined,
 			init: function(){
-				//facebook.init();
+				facebook.init();
 				//set listeners
 				Backbone.on("page:show:form", this.showForm, this);
 				Backbone.on("page:show:thankYou", this.showThankYou, this);
@@ -32,7 +34,7 @@ define([
 				if(bootstrap.end){ // if action is done
 					this.showEnd();
 				}else{ // if action is still running
-					if(!common.liked){
+					if(common.liked){
 						this.showForm();
 					}else{
 						$.when( facebook.checkLogin() ).then(_.bind(this.checkLiked, this));

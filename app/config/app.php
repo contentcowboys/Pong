@@ -10,7 +10,7 @@
 		/**
 		* Online url
 		*/
-		'url' => 'http://f.cowb.eu/pong/tab/public/',
+		'url' => '',
 
 		/**
 		* Set end date
@@ -23,7 +23,7 @@
 
 		'format' => 'd-m-Y H',
 
-		'multiLanguage' => true,
+		'multiLanguage' => false,
 
 		'defaultLanguage' => "nl"
 
