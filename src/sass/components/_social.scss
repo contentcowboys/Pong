@@ -1,0 +1,37 @@
+.social-wrap button {
+	padding-right: 3em;
+	padding-left: 1em;
+	height: 2.188em;
+	background: none;
+	border: none;
+	display: block;
+	font-weight: bold;
+	background-size: 2.188em 2.188em;
+	background-position: right center;
+	background-repeat: no-repeat;
+	border-radius: 0.250em;
+	color: white;
+	font-size: 0.875em;
+	border-bottom: 0.125em solid transparent;
+	border-left: 0.063em solid transparent;
+	border-right: 0.063em solid transparent;
+	//box-shadow: 0 4px 2px -2px gray;
+	//text-shadow: rgba(0, 0, 0, .5) -1px -1px 0;
+	&.facebook {
+		border-color: #2d5073;
+		background-color: #3b5998;
+		background-image: url(http://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png);
+	}
+	&.twitter {
+		border-color: #007aa6;
+		background-color: #008cbf;
+		background-image: url(https://twitter.com/images/resources/twitter-bird-white-on-blue.png);
+	}
+	&.googleplus {
+		border-color: #111;
+		background-color: #222;
+		text-shadow: #333 -1px -1px 0;
+		background-image: url(http://i.tinyuploads.com/KBZc6n.png);
+	}
+}
+

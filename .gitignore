@@ -1,4 +1,5 @@
 /vendor
 /node_modules
 /src/bower
-/.sass-cache
+/.sass-cacihe
+/.idea
