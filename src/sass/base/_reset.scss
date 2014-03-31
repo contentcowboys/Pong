@@ -1,1 +1,7 @@
 @import "../vendors/reset";
+
+
+// revert everything to border-box resizing
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
