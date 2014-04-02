@@ -24,7 +24,7 @@ define([
             return this;
         },
         login: function(){
-            $.when(facebook.login()).then(function(){
+            $.when( facebook.login() ).then(function(){
                 Backbone.trigger("app:checkLiked");
             });
         },

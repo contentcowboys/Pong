@@ -11,6 +11,7 @@ define(
                 status     : true,
                 xfbml      : true
             });
+            FB.Canvas.setAutoGrow();
         },
         checkLogin : function(deferred){
             if(!deferred) deferred = $.Deferred();

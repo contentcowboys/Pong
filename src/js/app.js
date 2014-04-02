@@ -25,6 +25,8 @@ define([
 			prevPage: undefined,
 			init: function(){
 				facebook.init();
+				//check if old version of IE is running
+				this.checkOldIE();
 				//set listeners
 				Backbone.on("page:show:form", this.showForm, this);
 				Backbone.on("page:show:thankYou", this.showThankYou, this);
@@ -70,19 +72,45 @@ define([
 				this.switchPage("thankYou");
 			},
 			switchPage : function (page) {
-				//if current page is being rerendered return false
+				$("html, body").animate({ scrollTop: 0 });
+				FB.Canvas.scrollTo(0,0);
+				//if current page is being rendered return false
 				if(this.currentPage == this.pages[page]) return false;
 				if(this.prevPage){
-					this.prevPage.$el.addClass(common.pages.effectOut).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-						$(this).removeClass("active");
-					});
+					if(this.oldIE){
+						this.prevPage.$el.removeClass("active");
+					}else{
+						$("body").css("overflowY", "hidden");
+						this.prevPage.$el.addClass(common.pages.effectOut).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+							$("body").css("overflowY", "auto");
+							$(this).removeClass(common.pages.effectOut);
+							$(this).removeClass("active");
+						});
+					}
 				}
 				this.currentPage = this.pages[page];
 				this.prevPage = this.currentPage;
 				this.currentPage.$el.addClass("active");
-				this.currentPage.$el.addClass(common.pages.effectIn).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-					$(this).removeClass(common.pages.effectIn);
-				});
+				if(!this.oldIE){
+					this.currentPage.$el.addClass(common.pages.effectIn).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+						FB.Canvas.setAutoGrow();
+						$(this).removeClass(common.pages.effectIn);
+					});
+				}
+			},
+			checkOldIE : function () {
+			   if (navigator.appName == "Microsoft Internet Explorer") {
+				    var ua = navigator.userAgent;
+				    var re = new RegExp("MSIE ([0-9]{1,}[.0-9]{0,})");
+				    if (re.exec(ua) != null) {
+				        if(parseInt(RegExp.$1) == 8) this.oldIE = true;
+				        if(parseInt(RegExp.$1) == 9) this.oldIE = true;
+				    }else{
+				    	this.oldIE = false;
+				    }
+				}else{
+					this.oldIE = true;
+				}
 			},
 			pageRender : function (page) {
 				this.pages[page].render();
