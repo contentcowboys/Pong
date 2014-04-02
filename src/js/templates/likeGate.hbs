@@ -1,7 +1,9 @@
 <h1>Like Gate</h1>
+{{#unless onFacebook}}
 <div id="js-fb-login" class="fb-login">
 	facebook login
 </div>
+{{/unless}}
 <div class="fb-likebox">
 	<div class="fb-like-box" data-href="https://www.facebook.com/{{pageId}}" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false"></div>
 </div>

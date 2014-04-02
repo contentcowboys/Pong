@@ -10,8 +10,8 @@
 		 * 
 		 */
 		'development' =>  array(
-			'appId' => '',
-			'secret' => ''
+			'appId' => '199353350255638',
+			'secret' => '214d8ce5e8acf83ce4558c99de54e619'
 	 	),
 
 	 	/**
@@ -41,7 +41,7 @@
 	 	 * https://developers.facebook.com/tools/explorer/?method=GET&path=me%2Faccounts
 	 	 * 
 	 	 */
-	 	'pageId' => ''
+	 	'pageId' => '597788436952931'
 
  	);
 

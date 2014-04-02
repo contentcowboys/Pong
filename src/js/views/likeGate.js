@@ -19,7 +19,7 @@ define([
         },
         render: function(){
             if(!this.compiled) this.compiled = Handlebars.compile(template);
-            this.$el.html(this.compiled( {pageId : common.pageId } ));
+            this.$el.html(this.compiled( {pageId : common.pageId , onFacebook : common.onFacebook } ));
             FB.XFBML.parse(this.el);
             return this;
         },
