@@ -6,7 +6,7 @@
 	
 	return array(
 		'pageLiked' => false,
-		'onFacebook' => true,
+		'onFacebook' => false,
 		'userLanguage' => "nl"
 	);
 

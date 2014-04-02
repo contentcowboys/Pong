@@ -21,6 +21,12 @@
 
 
 	function fbtab_language($locale){
-		return substr($locale, 0, 2);
+		$config = require(URL::path().'app/config/app.php');
+		$lang =  strtolower(substr($locale, 0, 2));
+		if(in_array($lang, $config["allowedLanguages"])){
+			return $lang;
+		}else{
+			return $config["defaultLanguage"];
+		}
 	}
 ?>

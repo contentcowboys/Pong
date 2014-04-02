@@ -127,8 +127,12 @@
 	            $this->data['onFacebook'] = true;
 	        }else{
 	        	$this->data['pageLiked'] = false;
-	            $this->data['userLanguage'] = $appConfig["defaultLanguage"];
 	            $this->data['get'] =  $this->request->params();
+	            if(isset($this->data['get']['lang'])){
+	            	$this->data['userLanguage'] = $this->data['get']['lang'];
+	            }else{
+	            	$this->data['userLanguage'] = $appConfig["defaultLanguage"];
+	            }
 	            $this->data['onFacebook'] = false;
 	        }
 	        if($this->isDevelopment()){
