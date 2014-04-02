@@ -16,7 +16,7 @@
 		* Set end date
 		*/
 
-		'endDate' => '25-03-2014 12',
+		'endDate' => '11-04-2014 1',
 		/**
 		* Set end date format
 		*/

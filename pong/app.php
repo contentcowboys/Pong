@@ -65,8 +65,8 @@
 			if(empty($config['endDate'])){
 				$this->data['end'] = 'false';
 			}else{
-				$end = Carbon::now()->diffInHours(Carbon::createFromFormat($config['format'] , $config['endDate']), false);
-				$this->data['end'] = ($end > 0 ? "false" : "true");
+				$end = Carbon::now()->diffInMinutes(Carbon::createFromFormat($config['format'] , $config['endDate']), false);
+				$this->data['end'] = ($end >= 0 ? "false" : "true");
 			}
 			$this->data['multiLanguage'] = $config['multiLanguage'];
 			$this->data['rootUrl'] = URL::root();
