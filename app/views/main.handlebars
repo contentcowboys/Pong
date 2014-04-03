@@ -5,6 +5,12 @@
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<title>Pong</title>
 	<link rel="stylesheet" href="css/main.css">
+	<!-- add script tags when redirect is necesarry -->
+	<script>
+	{{#if redirect}}
+		window.location = "{{redirectUrl}}";
+	{{/if}}
+	</script>
 </head>
 <body class="{{ userLanguage }} {{#if onFacebook}}facebook{{else}}mobile{{/if}}">
 	<div id="fb-root"></div>
@@ -15,7 +21,6 @@
 </body>
 <script>
 	var bootstrap = {
-		
 		appId : {{appId}},
 		pageId : {{pageId}},
 		end : {{end}},

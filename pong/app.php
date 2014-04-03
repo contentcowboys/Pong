@@ -5,7 +5,6 @@
 
 	class App 
 	{
-		
 		public $router;
 		public $facebook;
 		public $request;
@@ -146,10 +145,18 @@
 			$this->data['pageId'] = $config['pageId'];
 		}
 
+		protected function checkRedirect() {
+			if( !$this->isDevelopment() && $this->data['deviceType'] == "computer" && !$this->data['onFacebook']){
+				$this->data['redirect'] = true;
+			 	$this->data['redirectUrl'] = $app->data['tabUrl'].'?'.http_build_query($app->request->params());
+			}else{
+				$this->data['redirect'] = false;
+			}
+		}
+
 		protected function detectEnvironment()
 		{
 			$environment = require(URL::path().'app/config/environments.php');
-
 			if(in_array(gethostname(), $environment['development']))
 			{
 				$this->environment = 'development';
@@ -180,16 +187,13 @@
 			    'collation' => 'utf8_unicode_ci',
 			    'prefix'    => '',
 			]);
-
 			$db->setAsGlobal();
 		}
-
 		protected function detectDevice()
 		{
 			$detect = new Mobile_Detect;
 			$this->data['deviceType'] = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 		}
-
 
 		public function isDevelopment()
 		{
