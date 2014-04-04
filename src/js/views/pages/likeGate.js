@@ -16,10 +16,17 @@ define([
             "click #js-fb-login" : "login"
         },
         initialize: function(){
+            //tracking stuff
+            if(common.onFacebook){
+                _gaq.push(['_trackEvent', 'likeGate-facebook', "show"]);
+            }else{
+                _gaq.push(['_trackEvent', 'likeGate-mobile', "show"]);
+            }
             this.name = "likeGate";
             FB.Event.subscribe('edge.create', _.bind(this.pageLiked, this));
         },
         render: function(){
+
             this.$el.html(this.compiledTemplate( {pageId : common.pageId , onFacebook : common.onFacebook } ));
             this.childViews();
             FB.XFBML.parse(this.el);
@@ -28,11 +35,17 @@ define([
         login: function(){
             $.when( facebook.login() ).then(function(){
                 Backbone.trigger("app:checkLiked");
+                _gaq.push(['_trackEvent', 'likeGate-mobile', "loggedIn"]);
             });
         },
         pageLiked : function () {
             common.liked = true;
             Backbone.trigger("app:checkLiked");
+            if(common.onFacebook){
+                _gaq.push(['_trackEvent', 'likeGate-facebook', "liked"]);
+            }else{
+                _gaq.push(['_trackEvent', 'likeGate-mobile', "liked"]);
+            }
         },
         childViews : function () {
             if(this.languageSwitcher) this.languageSwitcher.remove();

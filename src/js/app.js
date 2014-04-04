@@ -97,7 +97,7 @@ define([
 						$(this).removeClass(common.pages.effectIn);
 					});
 				}
-				_gaq.push(['_trackEvent', 'visitPage', page]);
+				_gaq.push(['_trackEvent', 'page', page]);
 			},
 			checkOldIE : function () {
 			   if (navigator.appName == "Microsoft Internet Explorer") {

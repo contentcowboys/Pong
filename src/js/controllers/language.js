@@ -78,7 +78,7 @@ define(['common'], function(common) {
                     nl : "voorwaarden error NL",
                     fr : "voorwaarden error FR"
                 }
-            },
+            }, // end formError
             "default" : {
                 "winner" : {
                     nl : "Winnaars",
@@ -94,6 +94,22 @@ define(['common'], function(common) {
                     nl: "FR",
                     fr: "FR"
                 }
+            }, //end defaults
+            "buttons" : {
+                "share" : {
+                    nl : "shareNL",
+                    fr : "shareFR"
+                }
+            }, //end buttons
+            "share" : {
+                "defaultBody" : {
+                    nl : "default share body NL",
+                    fr : "default share body FR",
+                },
+                "defaultTitle" : {
+                    nl : "default title body NL",
+                    fr : "default title body FR",
+                },
             }
         }
     };

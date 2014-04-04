@@ -6,8 +6,9 @@ define([
     'handlebars',
     'controllers/language',
     'views/partials/_languageSwitcher',
+    'views/partials/_share',
     'text!templates/pages/form.hbs'
-    ], function(common, Backbone, $, Handlebars, language , LanguageSwitcher ,template ) {
+    ], function(common, Backbone, $, Handlebars, language , LanguageSwitcher, Share ,template ) {
     var view = Backbone.View.extend({
         el : $("#js-form-page"),
         compiledTemplate : Handlebars.compile(template),
@@ -17,6 +18,7 @@ define([
         },
         initialize: function () {
             this.name = "form";
+            _gaq.push(['_trackEvent', 'form', "show"]);
         },
         render: function () {
             this.$el.html(this.compiledTemplate({ language : common.lang }));
@@ -43,6 +45,7 @@ define([
                     _.bind(self.sendAjax, self)();
                 },
                 invalidHandler: function(event, validator) {
+                    _gaq.push(['_trackEvent', 'form', "invalid"]);
                     var errors = validator.numberOfInvalids();
                     if (errors) {
                         if($("#voorwaarden:unchecked").length){
@@ -74,6 +77,7 @@ define([
                 type: "POST",
                 data : this.dom.$form.serialize(),
                 success: function () {
+                    _gaq.push(['_trackEvent', 'form', "success"]);
                     self.sending = false;
                     Backbone.trigger("page:show:thankYou");
                 },
@@ -82,8 +86,10 @@ define([
                     //#TODO: if error code is 409
                     // set same email error
                     if(xhr.status === 409){
+                        _gaq.push(['_trackEvent', 'form', "email-error"]);
                         self.setError("email");
                     }else{
+                        _gaq.push(['_trackEvent', 'form', "server-error"]);
                         self.setError("server");
                     }
                 }
@@ -91,7 +97,12 @@ define([
         },
         childViews : function () {
             if(this.languageSwitcher) this.languageSwitcher.remove();
+            
             if(common.multiLanguage) this.languageSwitcher = new LanguageSwitcher( { page: this.name } );
+
+            if(this.share) this.share.remove();
+            console.log(this.$el.find(".js-share"));
+            if(this.$el.find(".js-share").length) this.share = new Share( {parent: this , selector : this.$el.find(".js-share")} ).render();
         }
     });
     return view;
