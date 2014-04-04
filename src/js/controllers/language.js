@@ -51,19 +51,32 @@ define(['common'], function(common) {
                     nl : "city",
                     fr : "cityFR"
                 },
+                'accept' : {
+                    nl : "acceptNL",
+                    fr : "acceptFR"
+                },
+                'optin' : {
+                    nl : "optinNL",
+                    fr : "optinFR"
+                },
+
             }, //end form
             "formError" : {
                 "form" : {
-                    "nl" : "Form error",
+                    "nl" : "Form error NL",
                     "fr" : "Form error FR"
                 },
                 "server" : {
-                    "nl" : "server error",
+                    "nl" : "server error NL",
                     "fr" : "server error FR"
                 },
                 "email" : {
-                    "nl" : "email error",
+                    "nl" : "email error NL",
                     "fr" : "email error FR"
+                },
+                'voorwaarden' : {
+                    nl : "voorwaarden error NL",
+                    fr : "voorwaarden error FR"
                 }
             },
             "default" : {

@@ -29,13 +29,13 @@ gulp.task('requirejs' , function(){
 	    baseUrl: 'src/js',
 	    name: 'main',
 	    mainConfigFile : 'src/js/main.js',
-	    out: 'src/js/optimised.js'
+	    out: 'public/js/main.js'
 	};
 
 	requirejs.optimize(config, function (buildResponse) {
-	  		//gulp.src('./src/js/bower/requirejs/require.js' , './src/js/optimised.js')
-			// .pipe(concat('main.js',{newLine: ';'}))
-			// .pipe(gulp.dest('public/js/'))
+	  		gulp.src('src/bower/requirejs/require.js')
+				.pipe(plumber())
+			    .pipe(gulp.dest('public/js'));
 	}, function(err) {
 	    console.log(err);
 	});

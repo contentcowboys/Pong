@@ -25,7 +25,6 @@ define([
                 this.languageSwitcher = new LanguageSwitcher({page: "form"});
                 this.languageSwitcher.render();
             } 
-            
             this.dom.$form = this.$el.find("#js-form");
             this.dom.$formError = this.$el.find("#js-form-error");
             this.setPlaceholder();
@@ -34,11 +33,6 @@ define([
         },
         submit : function () {
             this.dom.$form.submit();
-        },
-        setError : function (error) {
-            //#TODO : set correct error from language stuff;
-            this.dom.$formError.html( language.get( "formError" , error ) );
-            this.dom.$formError.fadeIn();
         },
         setPlaceholder : function () {
             this.$el.find('input, textarea').placeholder();
@@ -53,7 +47,12 @@ define([
                 invalidHandler: function(event, validator) {
                     var errors = validator.numberOfInvalids();
                     if (errors) {
-                        self.setError("form");
+                        if($("#voorwaarden:unchecked").length){
+                            self.setError("voorwaarden");
+                        }else{
+                            //this looks hacky hacky, please fix
+                            self.setError("form");
+                        }
                     }else{
                         self.dom.$formError.fadeOut();
                     }
@@ -62,6 +61,11 @@ define([
                     //
                 }
             });
+        },
+        setError : function (error) {
+            //#TODO : set correct error from language stuff;
+            this.dom.$formError.html( language.get( "formError" , error ) );
+            this.dom.$formError.fadeIn();
         },
         sendAjax : function () { //when validation is done
             if(this.sending) return false;

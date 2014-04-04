@@ -1,4 +1,5 @@
 {{lang "form" "header"}}
+{{debug language}}
 <div id="js-language-form"></div>
 <form id="js-form" method="POST" action="#" name="form">
 	<input type="text" id="js-form-tiebreaker" name="tiebreaker" placeholder="{{lang "form" "tiebreaker"}}" required>
@@ -11,6 +12,8 @@
 	<input type="text" id="js-form-zip" name="zip" placeholder="{{lang "form" "zip"}}" value="{{user.zip}}" required>
 	<input type="text" id="js-form-city" name="city" placeholder="{{lang "form" "city"}}" value="{{user.city}}" required>
 	<input type="hidden" name="lang" id="js-form-lang" value='{{language}}'>
+	<input type="checkbox" name="voorwaarden" id="voorwaarden" required><label for="voorwaarden">{{lang "form" "accept"}}</label>
+	<input type="checkbox" name="optin" id="optin"><label for="optin">{{lang "form" "optin"}}</label>
 	<div class="form-error" id="js-form-error"></div>
 	<div id="submit">send</div>
 </form>

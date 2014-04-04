@@ -16,7 +16,7 @@
 		* Set end date
 		*/
 
-		'endDate' => '11-04-2014 12',
+		'endDate' => '',
 		/**
 		* Set end date format
 		*/
@@ -29,12 +29,10 @@
 		//these are the allowed languages, if facebook returns another language that isen't in the array
 		//the app selects the default language
 		'allowedLanguages' => [
-			"fr",
-			"nl"
 		],
 
 		//default language for the app
-		'defaultLanguage' => "nl"
+		'defaultLanguage' => ""
 
  	);
 ?>

@@ -14,7 +14,8 @@
 			'MyMac',
 			'LaptopWork',
 			'web-apaches-iMac.local',
-			'webapachesimac'
+			'webapachesimac',
+			'Simons-Mac-Pro.local'
 		)
 	);
 ?>
