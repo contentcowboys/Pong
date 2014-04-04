@@ -75,12 +75,10 @@ define([
                 data : this.dom.$form.serialize(),
                 success: function () {
                     self.sending = false;
-                    console.log(arguments);
                     Backbone.trigger("page:show:thankYou");
                 },
                 error : function (xhr) {
                     self.sending = false;
-                    console.log(arguments);
                     //#TODO: if error code is 409
                     // set same email error
                     if(xhr.status === 409){

@@ -98,8 +98,11 @@ define([
 					});
 				}
 				if(typeof _gaq !== 'undefined'){
+					console.log("using _gaq");
 					_gaq.push(['_trackPageview', page]);
+					
 				}else{
+					console.log("using ga");
 					ga('push', ['_trackPageview', page]);
 				}
 				console.log(page);

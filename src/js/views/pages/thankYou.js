@@ -4,8 +4,10 @@ define([
     'backbone',
     'jquery',
     'handlebars',
+    'views/partials/_languageSwitcher',
     'text!templates/pages/thankYou.hbs',
-    ], function(common, Backbone, $, Handlebars , template ) {
+
+    ], function(common, Backbone, $, Handlebars , LanguageSwitcher,  template ) {
     var view = Backbone.View.extend({
         el : $("#js-thankYou-page"),
         compiledTemplate : Handlebars.compile(template),
