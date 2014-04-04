@@ -7,12 +7,12 @@ class URL
 
 	public static function setRoot($url)
 	{
-		self::$baseUrl = substr($url, 0, strpos($url, "public/"));
+		self::$baseUrl = $url);
 	}
 
 	public static function setPath($path)
 	{
-		self::$basePath = substr($path, 0, strpos($path, "pong"));;
+		self::$basePath = $path;
 	}
 
 	public static function path()
