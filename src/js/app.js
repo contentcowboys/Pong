@@ -97,6 +97,12 @@ define([
 						$(this).removeClass(common.pages.effectIn);
 					});
 				}
+				if(typeof _gaq !== 'undefined'){
+					_gaq.push(['_trackPageview', page]);
+				}else{
+					ga('push', ['_trackPageview', page]);
+				}
+				console.log(page);
 			},
 			checkOldIE : function () {
 			   if (navigator.appName == "Microsoft Internet Explorer") {
