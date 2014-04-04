@@ -3,3 +3,5 @@
 /src/bower
 /.sass-cacihe
 /.idea
+/app/config/facebook.php
+/app/config/database.php
