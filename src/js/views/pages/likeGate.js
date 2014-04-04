@@ -8,7 +8,7 @@ define([
     'controllers/facebook',
     'views/partials/_languageSwitcher',
     'text!templates/pages/likeGate.hbs',
-    ], function(common, Backbone, $, Handlebars , FB, facebook, languageSwitcher , template  ) {
+    ], function(common, Backbone, $, Handlebars , FB, facebook, LanguageSwitcher , template  ) {
     var view = Backbone.View.extend({
         el : $("#js-likeGate-page"),
         compiledTemplate : Handlebars.compile(template),
