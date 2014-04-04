@@ -97,15 +97,8 @@ define([
 						$(this).removeClass(common.pages.effectIn);
 					});
 				}
-				if(typeof _gaq !== 'undefined'){
-					console.log("using _gaq");
-					_gaq.push(['_trackPageview', page]);
-					
-				}else{
-					console.log("using ga");
-					ga('push', ['_trackPageview', page]);
-				}
-				console.log(page);
+				_gaq.push(['_trackPageview', page]);
+				console.log(_gaq);
 			},
 			checkOldIE : function () {
 			   if (navigator.appName == "Microsoft Internet Explorer") {
