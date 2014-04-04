@@ -7,7 +7,7 @@ class URL
 
 	public static function setRoot($url)
 	{
-		self::$baseUrl = $url);
+		self::$baseUrl = $url;
 	}
 
 	public static function setPath($path)
