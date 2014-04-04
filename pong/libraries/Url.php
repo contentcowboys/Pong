@@ -12,6 +12,8 @@ class URL
 
 	public static function setPath($path)
 	{
+		//remove /pong
+		$path = substr($path, 0, - strlen(substr(strrchr($path,'/'), 1)));
 		self::$basePath = $path;
 	}
 
