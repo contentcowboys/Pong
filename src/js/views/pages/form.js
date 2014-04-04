@@ -4,29 +4,27 @@ define([
     'backbone',
     'jquery',
     'handlebars',
-    'text!templates/form.hbs',
     'controllers/language',
-    'views/languageSwitcher'
-    ], function(common, Backbone, $, Handlebars , template, language , LanguageSwitcher ) {
+    'views/partials/_languageSwitcher',
+    'text!templates/pages/form.hbs'
+    ], function(common, Backbone, $, Handlebars, language , LanguageSwitcher ,template ) {
     var view = Backbone.View.extend({
         el : $("#js-form-page"),
-        compiled : undefined,
+        compiledTemplate : Handlebars.compile(template),
         dom : {},
         events: {
             "click #submit" : "submit"
         },
         initialize: function () {
-            this.compiled = Handlebars.compile(template);
+            this.name = "form";
         },
         render: function () {
-            this.$el.html(this.compiled({ language : common.lang }));
-            if(common.multiLanguage){
-                if(this.languageSwitcher) this.languageSwitcher.remove();
-                this.languageSwitcher = new LanguageSwitcher({page: "form"});
-                this.languageSwitcher.render();
-            } 
+            this.$el.html(this.compiledTemplate({ language : common.lang }));
+            this.childViews();
+            //keep dom references for later use
             this.dom.$form = this.$el.find("#js-form");
             this.dom.$formError = this.$el.find("#js-form-error");
+            //set placeholder and initalise validator
             this.setPlaceholder();
             this.setValidation();
             return this;
@@ -92,6 +90,10 @@ define([
                     }
                 }
             });
+        },
+        childViews : function () {
+            if(this.languageSwitcher) this.languageSwitcher.remove();
+            if(common.multiLanguage) this.languageSwitcher = new LanguageSwitcher( { page: this.name } );
         }
     });
     return view;

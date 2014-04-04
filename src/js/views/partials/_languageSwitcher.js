@@ -4,10 +4,10 @@ define([
     'jquery',
     'facebook',
     'handlebars',
-    'text!templates/languageSwitcher.hbs',
-    ], function(common, Backbone, $, FB, Handlebars , LanguageTemplate ) {
+    'text!templates/partials/_languageSwitcher.hbs',
+    ], function(common, Backbone, $, FB, Handlebars , template ) {
     var LanguageSwitcherView = Backbone.View.extend({
-        compiled : undefined,
+        compiledTemplate : Handlebars.compile(template),
         events: {
             "click .active" : "open",
             "click #js-switch-nl" : "switchNL",
@@ -16,16 +16,13 @@ define([
         initialize: function(options){
             this.page = options.page;
             this.$el = $("#js-language-"+options.page);
-            console.log(this.$el);
             return this;
         },
         render: function(){
-            if(!this.compiled) this.compiled = Handlebars.compile(LanguageTemplate);
-            this.$el.html(this.compiled({language: common.lang }));
+            this.$el.html(this.compiledTemplate({language: common.lang }));
         },
         open : function(e){
             e.preventDefault();
-            //open
         },
         switchNL: function(){
             this.switchLang("nl");

@@ -4,18 +4,17 @@ define([
     'backbone',
     'jquery',
     'handlebars',
-    'text!templates/thankYou.hbs',
+    'text!templates/pages/end.hbs',
     ], function(common, Backbone, $, Handlebars , template ) {
     var view = Backbone.View.extend({
-        el : $("#js-thankYou-page"),
-        compiled : undefined,
+        el : $("#js-end-page"),
+        compiledTemplate : Handlebars.compile(template),
         events: {
         },
         initialize: function(){
-             if(!this.compiled) this.compiled = Handlebars.compile(template);
         },
         render: function(){
-            this.$el.html(this.compiled());
+            this.$el.html(this.compiledTemplate());
             return this;
         }
     });

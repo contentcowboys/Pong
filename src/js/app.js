@@ -4,10 +4,10 @@ define([
 		'jquery',
 		'underscore',
 		'controllers/facebook',
-		'views/end',
-		'views/likeGate',
-		'views/form',
-		'views/thankYOu'
+		'views/pages/end',
+		'views/pages/likeGate',
+		'views/pages/form',
+		'views/pages/thankYOu'
 	], function(
 		common,
 		Backbone,

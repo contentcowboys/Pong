@@ -4,22 +4,24 @@ define([
     'backbone',
     'jquery',
     'handlebars',
-    'text!templates/likeGate.hbs',
     'facebook',
-    'controllers/facebook'
-    ], function(common, Backbone, $, Handlebars , template , FB, facebook ) {
+    'controllers/facebook',
+    'views/partials/_languageSwitcher',
+    'text!templates/pages/likeGate.hbs',
+    ], function(common, Backbone, $, Handlebars , FB, facebook, languageSwitcher , template  ) {
     var view = Backbone.View.extend({
         el : $("#js-likeGate-page"),
-        compiled : undefined,
+        compiledTemplate : Handlebars.compile(template),
         events: {
             "click #js-fb-login" : "login"
         },
         initialize: function(){
+            this.name = "likeGate";
             FB.Event.subscribe('edge.create', _.bind(this.pageLiked, this));
         },
         render: function(){
-            if(!this.compiled) this.compiled = Handlebars.compile(template);
-            this.$el.html(this.compiled( {pageId : common.pageId , onFacebook : common.onFacebook } ));
+            this.$el.html(this.compiledTemplate( {pageId : common.pageId , onFacebook : common.onFacebook } ));
+            this.childViews();
             FB.XFBML.parse(this.el);
             return this;
         },
@@ -31,6 +33,10 @@ define([
         pageLiked : function () {
             common.liked = true;
             Backbone.trigger("app:checkLiked");
+        },
+        childViews : function () {
+            if(this.languageSwitcher) this.languageSwitcher.remove();
+            if(common.multiLanguage) this.languageSwitcher = new LanguageSwitcher( { page: this.name } );
         }
     });
     return view;
