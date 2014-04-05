@@ -32,6 +32,7 @@ define([
         },
         switchLang: function(lang){
             if(common.lang == lang) return false;
+            _gaq.push(['_trackEvent', 'language switch', lang+" to "+common.lang]);
             $('body').removeClass('nl').removeClass('fr').addClass(lang);
             common.lang = lang;
             this.render();
