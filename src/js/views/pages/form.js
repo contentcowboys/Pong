@@ -97,11 +97,9 @@ define([
         },
         childViews : function () {
             if(this.languageSwitcher) this.languageSwitcher.remove();
-            
-            if(common.multiLanguage) this.languageSwitcher = new LanguageSwitcher( { page: this.name } );
+            if(common.multiLanguage) this.languageSwitcher = new LanguageSwitcher( { page: this.name } ).render();
 
             if(this.share) this.share.remove();
-            console.log(this.$el.find(".js-share"));
             if(this.$el.find(".js-share").length) this.share = new Share( {parent: this , selector : this.$el.find(".js-share")} ).render();
         }
     });

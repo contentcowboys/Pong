@@ -27,7 +27,7 @@ define([
         },
         childViews : function () {
             if(this.languageSwitcher) this.languageSwitcher.remove();
-            if(common.multiLanguage) this.languageSwitcher = new LanguageSwitcher( { page: this.name } );
+            if(common.multiLanguage) this.languageSwitcher = new LanguageSwitcher( { page: this.name } ).render();
         }
     });
     return view;
