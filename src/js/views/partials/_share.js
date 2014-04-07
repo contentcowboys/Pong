@@ -45,7 +45,7 @@ define([
 			return this;
 		},
 		share : function () {
-			_gaq.push(['_trackEvent', 'share', this.name":open"]);
+			_gaq.push(['_trackEvent', 'share', this.name+":open"]);
 			var self = this;
 			FB.ui(
 			  {
@@ -58,10 +58,10 @@ define([
 			  },
 			  function(response) {
 			    if (response && response.post_id) {
-			    	_gaq.push(['_trackEvent', 'share', this.name":done"]);
+			    	_gaq.push(['_trackEvent', 'share', this.name+":done"]);
 			      self.parent.trigger("share:"+self.name+":true");
 			    } else {
-			    	_gaq.push(['_trackEvent', 'share', this.name":cancel"]);
+			    	_gaq.push(['_trackEvent', 'share', this.name+":cancel"]);
 			      self.parent.trigger("share:"+self.name+":false");
 			    }
 			  }
