@@ -152,7 +152,7 @@
 			// var_dump($this->data['onFacebook']);
 			if( !$this->isDevelopment() && $this->data['deviceType'] == "computer" && !$this->data['onFacebook']){
 				$this->data['redirect'] = true;
-			 	$this->data['redirectUrl'] = $app->data['tabUrl'].'?'.http_build_query($app->request->params());
+			 	$this->data['redirectUrl'] = $this->data['tabUrl'].'?'.http_build_query($this->request->params());
 			}else{
 				$this->data['redirect'] = false;
 			}
