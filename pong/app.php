@@ -51,6 +51,7 @@
 			$this->initalizeFacebook();
 			$this->initalizeHandlebars();
 			$this->initalizeORM();
+			$this->checkRedirect();
 
 		}
 
@@ -146,6 +147,9 @@
 		}
 
 		protected function checkRedirect() {
+			// var_dump($this->isDevelopment());
+			// var_dump($this->data['deviceType']);
+			// var_dump($this->data['onFacebook']);
 			if( !$this->isDevelopment() && $this->data['deviceType'] == "computer" && !$this->data['onFacebook']){
 				$this->data['redirect'] = true;
 			 	$this->data['redirectUrl'] = $app->data['tabUrl'].'?'.http_build_query($app->request->params());
