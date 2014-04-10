@@ -6,6 +6,8 @@
 		$post = $app->router->request->post();
 		$prev = DB::table('entries')->whereEmail($post['email'])->get();
 		if(!$prev){
+			if(isset($post['voorwaarden'])) unset($post['voorwaarden']);
+			$post["ip"] = $_SERVER['REMOTE_ADDR'];
 			$new = DB::table('entries')->insert($post);
 			$app->router->response->setStatus(200);
 		}else{

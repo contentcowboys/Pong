@@ -36,7 +36,7 @@ define([
 				if(bootstrap.end){ // if action is done
 					this.showEnd();
 				}else{ // if action is still running
-					if(common.liked){
+					if( common.pageLiked ){
 						this.showForm();
 					}else{
 						$.when( facebook.checkLogin() ).then(_.bind(this.checkLiked, this));
