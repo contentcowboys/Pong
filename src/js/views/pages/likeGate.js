@@ -39,7 +39,7 @@ define([
             });
         },
         pageLiked : function () {
-            common.liked = true;
+            common.pageLiked = true;
             Backbone.trigger("app:checkLiked");
             if(common.onFacebook){
                 _gaq.push(['_trackEvent', 'likeGate-facebook', "liked"]);
