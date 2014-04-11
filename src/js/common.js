@@ -11,7 +11,8 @@ define([], function() {
     	pageLiked: bootstrap.pageLiked,
     	pages: bootstrap.pages,
         lang : bootstrap.lang,
-        multiLanguage : bootstrap.multiLanguage
+        multiLanguage : bootstrap.multiLanguage,
+        showLikeGate : bootstrap.showLikeGate,
     };
     return common;
 });

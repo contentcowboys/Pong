@@ -34,7 +34,7 @@ define([
 					this.switchPage("end");
 					return false;
 				}
-				console.log(common);
+
 				if(!common.mobileEnabled && !common.onFacebook){
 					this.switchPage("notMobile");
 					return false;
@@ -51,6 +51,15 @@ define([
 
 				//check if old version of IE is running
 				this.checkOldIE();
+
+				//if likeGate is disabled don't show it
+				if(!common.showLikeGate){
+					console.log(common);
+					this.switchPage("form");
+					return false;
+				}
+
+
 
 				$.when( facebook.checkLogin() ).then(_.bind(this.checkLiked, this));
 			},
