@@ -7,75 +7,73 @@ define([
 		'views/pages/end',
 		'views/pages/likeGate',
 		'views/pages/form',
-		'views/pages/thankYOu'
+		'views/pages/thankYOu',
+		'views/pages/notMobile'
 	], function(
 		common,
 		Backbone,
 		$,
 		_,
 		facebook,
-		EndView,
+		End,
 		LikeGate,
 		Form,
-		ThankYou
+		ThankYou,
+		NotMobile
 	){
 		var app = {
 			pages: {},
 			currentPage: undefined,
 			prevPage: undefined,
 			init: function(){
+				//set listeners
+				Backbone.on("page:show", this.switchPage, this);
+
+				// if action is done
+				if(common.end){ 
+					this.switchPage("end");
+					return false;
+				}
+				console.log(common);
+				if(!common.mobileEnabled && !common.onFacebook){
+					this.switchPage("notMobile");
+					return false;
+				}
+
+				// if action is desktop only
+				if(bootstrap.end){ 
+					this.switchPage("notMobile");
+					return false;
+				}
+
+				//initalise facebook
 				facebook.init();
+
 				//check if old version of IE is running
 				this.checkOldIE();
-				//set listeners
-				Backbone.on("page:show:form", this.showForm, this);
-				Backbone.on("page:show:thankYou", this.showThankYou, this);
-				Backbone.on("page:show:likeGate", this.showLikeGate, this);
-				Backbone.on("app:checkLiked", this.checkLiked, this);
-				Backbone.on("page:render" , this.pageRender, this);
-				if(bootstrap.end){ // if action is done
-					this.showEnd();
-				}else{ // if action is still running
-					if( common.pageLiked ){
-						this.showForm();
-					}else{
-						$.when( facebook.checkLogin() ).then(_.bind(this.checkLiked, this));
-					}
-				}
+
+				$.when( facebook.checkLogin() ).then(_.bind(this.checkLiked, this));
 			},
 			checkLiked: function(){
 				if( common.pageLiked ) {
-					this.showForm();
+					this.switchPage("form");
 				} else {
-					this.showLikeGate();
+					this.switchPage("likeGate");
 				}
 			},
-			showEnd : function () {
-				if(!this.pages.end) this.pages.end = new EndView();
-				this.pages.end.render();
-				this.switchPage("end");
-			},
-			showLikeGate : function () {
-				console.log("showLikeGate");
-				if(!this.pages.likeGate) this.pages.likeGate = new LikeGate();
-				this.pages.likeGate.render();
-				this.switchPage("likeGate");
-			},
-			showForm : function () {
-				if(!this.pages.form) this.pages.form = new Form();
-				this.pages.form.render();
-				this.switchPage("form");
-			},
-			showThankYou : function () {
-				if(!this.pages.thankYou) this.pages.thankYou = new ThankYou();
-				this.pages.thankYou.render();
-				this.switchPage("thankYou");
-			},
 			switchPage : function (page) {
+				//if page doesn't exist yet, create it
+				if(!this.pages[page]) this.pages[page] = eval("new "+page[0].toUpperCase() + page.slice(1));
+				//render correct page
+				this.pages[page].render();
+
+				//animate to the top of the page
 				$("html, body").animate({ scrollTop: 0 });
 				FB.Canvas.scrollTo(0,0);
+
 				//if current page is being rendered return false
 				if(this.currentPage == this.pages[page]) return false;
+
 				if(this.prevPage){
 					if(this.oldIE){
 						this.prevPage.$el.removeClass("active");
@@ -88,15 +86,22 @@ define([
 						});
 					}
 				}
+
 				this.currentPage = this.pages[page];
-				this.prevPage = this.currentPage;
 				this.currentPage.$el.addClass("active");
+
+				//put effect 
 				if(!this.oldIE){
 					this.currentPage.$el.addClass(common.pages.effectIn).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 						FB.Canvas.setAutoGrow();
 						$(this).removeClass(common.pages.effectIn);
 					});
 				}
+
+				//make current page previous page for next page switch
+				this.prevPage = this.currentPage;
+
+				//track which page is visited
 				_gaq.push(['_trackEvent', 'page', page]);
 			},
 			checkOldIE : function () {
@@ -110,12 +115,8 @@ define([
 				    	this.oldIE = false;
 				    }
 				}else{
-					this.oldIE = true;
+					this.oldIE = false;
 				}
-			},
-			pageRender : function (page) {
-				this.pages[page].render();
-				this.switchPage(page);
 			}
 		};
 		return app;

@@ -69,6 +69,7 @@
 				$this->data['end'] = ($end >= 0 ? "false" : "true");
 			}
 			$this->data['multiLanguage'] = $config['multiLanguage'];
+			$this->data['mobileEnabled'] = $config['mobileEnabled'];
 			$this->data['rootUrl'] = URL::root();
 		}
 

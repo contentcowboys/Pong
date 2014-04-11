@@ -20,7 +20,12 @@ define(
                 console.log(response);
                 if (response.status === 'connected') {
                     common.loggedIn = true;
-                    that.checkLiked(deferred);
+                    if( ! common.pageLiked ){
+                        that.checkLiked(deferred);
+                    }else{
+                        deferred.resolve();
+                    } 
+                    
                 } else {
                     deferred.resolve();
                 }

@@ -4,23 +4,17 @@ define(['common'], function(common) {
             return this.lang[a][b][common.lang];
         },
         lang: {
-            "welcome": {
-                "header": {
-                    nl: "welcome header NL",
-                    fr: "welcome header FR"
-                }
-            }, //end welcome
             "form": {
                 "header": {
-                    nl: "form header NL",
-                    fr: "form header FR"
+                    nl: "",
+                    fr: ""
                 },
                 "tiebreaker" : {
-                    nl : "tiebreaker",
+                    nl : "Jouw antwoord",
                     fr : "tiebreakerFR"
                 },
                 "tiebreaker_extra" : {
-                    nl : "tiebreaker_extra",
+                    nl : "Jouw antwoord",
                     fr : "tiebreaker_extraFR"
                 },
                 "first_name" : {
@@ -79,12 +73,6 @@ define(['common'], function(common) {
                     fr : "voorwaarden error FR"
                 }
             }, // end formError
-            "default" : {
-                "winner" : {
-                    nl : "Winnaars",
-                    fr : ""
-                }
-            }, //end default
             "lang": {
                 "NL": {
                     nl: "NL",
@@ -97,18 +85,18 @@ define(['common'], function(common) {
             }, //end defaults
             "buttons" : {
                 "share" : {
-                    nl : "shareNL",
+                    nl : "Share",
                     fr : "shareFR"
                 }
             }, //end buttons
             "share" : {
                 "defaultBody" : {
-                    nl : "default share body NL",
-                    fr : "default share body FR",
+                    nl : "",
+                    fr : "",
                 },
                 "defaultTitle" : {
-                    nl : "default title body NL",
-                    fr : "default title body FR",
+                    nl : "",
+                    fr : "",
                 },
             }
         }

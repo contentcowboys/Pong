@@ -5,15 +5,15 @@ define([
     'jquery',
     'handlebars',
     'views/partials/_languageSwitcher',
-    'text!templates/pages/end.hbs',
+    'text!templates/pages/example.hbs',
     ], function(common, Backbone, $, Handlebars , LanguageSwitcher,  template ) {
     var view = Backbone.View.extend({
-        el : $("#js-end-page"),
+        el : $("#js-example-page"),
         compiledTemplate : Handlebars.compile(template),
         events: {
         },
         initialize: function(){
-            this.name = "end";
+            this.name = "example";
              if(!this.compiled) this.compiled = Handlebars.compile(template);
         },
         render: function(){

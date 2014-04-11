@@ -32,7 +32,13 @@
 		],
 
 		//default language for the app
-		'defaultLanguage' => ""
+		'defaultLanguage' => "",
+
+		//if like gate should be shown
+		'likeGate' => true,
+
+		//default page to show after likegate
+		'landingPage' => "info",
 
  	);
 ?>
