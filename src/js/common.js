@@ -13,6 +13,7 @@ define([], function() {
         lang : bootstrap.lang,
         multiLanguage : bootstrap.multiLanguage,
         showLikeGate : bootstrap.showLikeGate,
+        landingPage : bootstrap.landingPage,
     };
     return common;
 });

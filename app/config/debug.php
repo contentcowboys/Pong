@@ -5,9 +5,12 @@
 	 */
 	
 	return array(
-		'pageLiked' => false,
+		'pageLiked' => true,
 		'onFacebook' => true,
-		'userLanguage' => "nl"
+		'userLanguage' => "nl",
+		//set a landing page for debugging purpose
+		//if empty it will be ignored, does not have influence when in production
+		'landingPage' => ''
 	);
 
 ?>

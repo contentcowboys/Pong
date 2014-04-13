@@ -58,6 +58,7 @@
 		protected function getConfig(){
 			//fetch config from file
 			$config = require('../app/config/app.php');
+			$debug = require('../app/config/debug.php');
 			//set google analytiocs code to app data
 			$this->data['googleAnalyticsCode'] = $config['googleAnalyticsCode'];
 			$this->data['url'] = $config['url'];
@@ -71,6 +72,8 @@
 			$this->data['multiLanguage'] = $config['multiLanguage'];
 			$this->data['showLikeGate'] = $config['showLikeGate'];
 			$this->data['mobileEnabled'] = $config['mobileEnabled'];
+			$this->data['landingPage'] = $config['landingPage'];
+			if(!empty($debug['landingPage']) && $this->isDevelopment()) $this->data['landingPage'] = $debug['landingPage'];
 			$this->data['rootUrl'] = URL::root();
 		}
 

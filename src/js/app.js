@@ -54,8 +54,7 @@ define([
 
 				//if likeGate is disabled don't show it
 				if(!common.showLikeGate){
-					console.log(common);
-					this.switchPage("form");
+					this.switchPage(common.landingPage);
 					return false;
 				}
 
@@ -65,7 +64,7 @@ define([
 			},
 			checkLiked: function(){
 				if( common.pageLiked ) {
-					this.switchPage("form");
+					this.switchPage(common.landingPage);
 				} else {
 					this.switchPage("likeGate");
 				}
