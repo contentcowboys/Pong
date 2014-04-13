@@ -21,7 +21,8 @@
         "filp/whoops": "dev-master",
         "facebook/php-sdk": "dev-master",
         "mobiledetect/mobiledetectlib": "2.7.*",
-        "zeuxisoo/slim-whoops": "dev-master"
+        "zeuxisoo/slim-whoops": "dev-master",
+        "mailchimp/mailchimp": "dev-master"
     },
     "autoload": {
         "files": [

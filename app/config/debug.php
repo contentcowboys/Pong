@@ -9,7 +9,6 @@
 		'onFacebook' => true,
 		'userLanguage' => "nl",
 		//set a landing page for debugging purpose
-		//if empty it will be ignored, does not have influence when in production
 		'landingPage' => ''
 	);
 

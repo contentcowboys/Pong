@@ -35,7 +35,10 @@
 		'defaultLanguage' => "",
 
 		//if like gate should be shown
-		'likeGate' => true,
+		'showLikeGate' => true,
+
+		//if mobile is enabled
+		'mobileEnabled' => true,
 
 		//default page to show after likegate
 		'landingPage' => "info",

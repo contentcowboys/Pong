@@ -7,7 +7,8 @@ define([
 		'views/pages/end',
 		'views/pages/likeGate',
 		'views/pages/form',
-		'views/pages/thankYOu',
+		'views/pages/thankYou',
+		'views/pages/info',
 		'views/pages/notMobile'
 	], function(
 		common,
@@ -19,6 +20,7 @@ define([
 		LikeGate,
 		Form,
 		ThankYou,
+		Info,
 		NotMobile
 	){
 		var app = {

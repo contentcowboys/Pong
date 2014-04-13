@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "5a33fb4d610f92a947fe7c2c89f3b5ee",
+    "hash": "43c5e619824d7f66bc75921a0f31bd25",
     "packages": [
         {
             "name": "facebook/php-sdk",
@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/facebook-php-sdk.git",
-                "reference": "8e20b40868b6beb72a0d4452d2c275f48f25cbc5"
+                "reference": "8a992afce97122556c4e42b0f1c1d60b9d49276d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/facebook-php-sdk/zipball/8e20b40868b6beb72a0d4452d2c275f48f25cbc5",
-                "reference": "8e20b40868b6beb72a0d4452d2c275f48f25cbc5",
+                "url": "https://api.github.com/repos/facebook/facebook-php-sdk/zipball/8a992afce97122556c4e42b0f1c1d60b9d49276d",
+                "reference": "8a992afce97122556c4e42b0f1c1d60b9d49276d",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 "facebook",
                 "sdk"
             ],
-            "time": "2014-02-21 17:24:51"
+            "time": "2014-04-04 02:27:38"
         },
         {
             "name": "filp/whoops",
@@ -57,12 +57,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "64b31913794e3b9846f3b0dfc84139f577622d16"
+                "reference": "f6b790e41c4a870b4ebcd09b2a13840ed2263d1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/64b31913794e3b9846f3b0dfc84139f577622d16",
-                "reference": "64b31913794e3b9846f3b0dfc84139f577622d16",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/f6b790e41c4a870b4ebcd09b2a13840ed2263d1a",
+                "reference": "f6b790e41c4a870b4ebcd09b2a13840ed2263d1a",
                 "shasum": ""
             },
             "require": {
@@ -108,7 +108,7 @@
                 "whoops",
                 "zf2"
             ],
-            "time": "2014-03-13 10:51:45"
+            "time": "2014-03-31 09:08:37"
         },
         {
             "name": "illuminate/container",
@@ -117,19 +117,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "aad26110ba0a1577e72b9588a0441aa27cec1ddd"
+                "reference": "4b144fdb0f94d4d3c1879c0aee6c451a8662b804"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/aad26110ba0a1577e72b9588a0441aa27cec1ddd",
-                "reference": "aad26110ba0a1577e72b9588a0441aa27cec1ddd",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/4b144fdb0f94d4d3c1879c0aee6c451a8662b804",
+                "reference": "4b144fdb0f94d4d3c1879c0aee6c451a8662b804",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "3.7.*"
+                "phpunit/phpunit": "4.0.*"
             },
             "type": "library",
             "extra": {
@@ -154,7 +154,7 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2014-02-26 21:37:09"
+            "time": "2014-03-23 03:31:12"
         },
         {
             "name": "illuminate/database",
@@ -163,19 +163,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "5140981e84352363b7236a4df84043a9fa4ac621"
+                "reference": "c3bfb08451192dd1c23e06242a8f1b3a7e6ddd11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/5140981e84352363b7236a4df84043a9fa4ac621",
-                "reference": "5140981e84352363b7236a4df84043a9fa4ac621",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/c3bfb08451192dd1c23e06242a8f1b3a7e6ddd11",
+                "reference": "c3bfb08451192dd1c23e06242a8f1b3a7e6ddd11",
                 "shasum": ""
             },
             "require": {
                 "illuminate/container": "4.2.*",
                 "illuminate/events": "4.2.*",
                 "illuminate/support": "4.2.*",
-                "nesbot/carbon": "1.*",
+                "nesbot/carbon": "~1.0",
                 "php": ">=5.4.0"
             },
             "require-dev": {
@@ -185,7 +185,7 @@
                 "illuminate/pagination": "4.2.*",
                 "illuminate/support": "4.2.*",
                 "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "3.7.*"
+                "phpunit/phpunit": "4.0.*"
             },
             "type": "library",
             "extra": {
@@ -216,7 +216,7 @@
                 "orm",
                 "sql"
             ],
-            "time": "2014-03-09 18:42:31"
+            "time": "2014-04-11 21:11:09"
         },
         {
             "name": "illuminate/events",
@@ -225,12 +225,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
-                "reference": "736dfc7df80fd87623efd464a6dfaeeed08a3f1a"
+                "reference": "067d70d1cf756f028f67bc1593797cb530df9b84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/events/zipball/736dfc7df80fd87623efd464a6dfaeeed08a3f1a",
-                "reference": "736dfc7df80fd87623efd464a6dfaeeed08a3f1a",
+                "url": "https://api.github.com/repos/illuminate/events/zipball/067d70d1cf756f028f67bc1593797cb530df9b84",
+                "reference": "067d70d1cf756f028f67bc1593797cb530df9b84",
                 "shasum": ""
             },
             "require": {
@@ -240,7 +240,7 @@
             },
             "require-dev": {
                 "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "3.7.*"
+                "phpunit/phpunit": "4.0.*"
             },
             "type": "library",
             "extra": {
@@ -265,7 +265,7 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2014-02-25 18:34:24"
+            "time": "2014-03-20 19:38:32"
         },
         {
             "name": "illuminate/support",
@@ -274,22 +274,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "e22504b78685b08edfe3744984bf58f14d778cc1"
+                "reference": "7010086da0d76ab934f44defddf5f6108a1ab546"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/e22504b78685b08edfe3744984bf58f14d778cc1",
-                "reference": "e22504b78685b08edfe3744984bf58f14d778cc1",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/7010086da0d76ab934f44defddf5f6108a1ab546",
+                "reference": "7010086da0d76ab934f44defddf5f6108a1ab546",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "jeremeamia/superclosure": "1.0.*",
+                "jeremeamia/superclosure": "~1.0",
                 "mockery/mockery": "0.9.*",
                 "patchwork/utf8": "1.1.*",
-                "phpunit/phpunit": "3.7.*"
+                "phpunit/phpunit": "4.0.*"
             },
             "type": "library",
             "extra": {
@@ -317,7 +317,50 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2014-03-07 10:32:53"
+            "time": "2014-04-11 02:33:06"
+        },
+        {
+            "name": "mailchimp/mailchimp",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/mailchimp/mailchimp-api-php.git",
+                "reference": "190cf58000ee4ed47900c78d5d4ef58c4cae0b49"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/mailchimp/mailchimp-api-php/get/190cf58000ee4ed47900c78d5d4ef58c4cae0b49.zip",
+                "reference": "190cf58000ee4ed47900c78d5d4ef58c4cae0b49",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mailchimp": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "MailChimp Devs",
+                    "email": "api@mailchimp.com",
+                    "homepage": "http://mailchimp.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "API client library for the MailChimp bulk email as a service platform",
+            "homepage": "https://bitbucket.org/mailchimp/mailchimp-api-php",
+            "keywords": [
+                "api",
+                "email"
+            ],
+            "time": "2013-10-17 10:16:33"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
@@ -419,16 +462,16 @@
         },
         {
             "name": "slim/slim",
-            "version": "2.4.2",
+            "version": "2.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codeguy/Slim.git",
-                "reference": "3a2ac723f17b5d81607287ff28575d38b9fbc70e"
+                "reference": "4906b77a07c7bd6ff1a99aea903e940a2d4fa106"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeguy/Slim/zipball/3a2ac723f17b5d81607287ff28575d38b9fbc70e",
-                "reference": "3a2ac723f17b5d81607287ff28575d38b9fbc70e",
+                "url": "https://api.github.com/repos/codeguy/Slim/zipball/4906b77a07c7bd6ff1a99aea903e940a2d4fa106",
+                "reference": "4906b77a07c7bd6ff1a99aea903e940a2d4fa106",
                 "shasum": ""
             },
             "require": {
@@ -461,7 +504,7 @@
                 "rest",
                 "router"
             ],
-            "time": "2014-02-16 18:18:25"
+            "time": "2014-04-05 18:33:59"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -469,12 +512,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "f791cfb1c62a6d5a82f4a6c067716ee64e33354b"
+                "reference": "4f7a8b30aea0e580849a814876cdd8343277efc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/f791cfb1c62a6d5a82f4a6c067716ee64e33354b",
-                "reference": "f791cfb1c62a6d5a82f4a6c067716ee64e33354b",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/4f7a8b30aea0e580849a814876cdd8343277efc2",
+                "reference": "4f7a8b30aea0e580849a814876cdd8343277efc2",
                 "shasum": ""
             },
             "require": {
@@ -512,7 +555,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2014-03-13 08:32:17"
+            "time": "2014-04-03 05:12:31"
         },
         {
             "name": "xamin/handlebars.php",
@@ -520,12 +563,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/XaminProject/handlebars.php.git",
-                "reference": "7f6dcf6c3e1fdc5d277d493566894590d7060121"
+                "reference": "81f3efbb84eadba729bb6cb37ee9fca6825b37d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/XaminProject/handlebars.php/zipball/7f6dcf6c3e1fdc5d277d493566894590d7060121",
-                "reference": "7f6dcf6c3e1fdc5d277d493566894590d7060121",
+                "url": "https://api.github.com/repos/XaminProject/handlebars.php/zipball/81f3efbb84eadba729bb6cb37ee9fca6825b37d1",
+                "reference": "81f3efbb84eadba729bb6cb37ee9fca6825b37d1",
                 "shasum": ""
             },
             "require-dev": {
@@ -554,7 +597,7 @@
             ],
             "description": "Handlebars processor for php",
             "homepage": "https://github.com/XaminProject/handlebars.php",
-            "time": "2014-03-17 10:14:21"
+            "time": "2014-03-27 07:33:35"
         },
         {
             "name": "zeuxisoo/slim-whoops",
@@ -562,12 +605,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zeuxisoo/php-slim-whoops.git",
-                "reference": "3f602b5518be325b885aca1d09f75e2ced40ab76"
+                "reference": "189d6f8907e0f78d18513bb14897a91dd68a423f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zeuxisoo/php-slim-whoops/zipball/3f602b5518be325b885aca1d09f75e2ced40ab76",
-                "reference": "3f602b5518be325b885aca1d09f75e2ced40ab76",
+                "url": "https://api.github.com/repos/zeuxisoo/php-slim-whoops/zipball/189d6f8907e0f78d18513bb14897a91dd68a423f",
+                "reference": "189d6f8907e0f78d18513bb14897a91dd68a423f",
                 "shasum": ""
             },
             "require": {
@@ -604,7 +647,7 @@
                 "slim",
                 "whoops"
             ],
-            "time": "2014-02-26 11:27:48"
+            "time": "2014-04-02 04:57:23"
         }
     ],
     "packages-dev": [
@@ -619,7 +662,8 @@
         "swiftmailer/swiftmailer": 20,
         "filp/whoops": 20,
         "facebook/php-sdk": 20,
-        "zeuxisoo/slim-whoops": 20
+        "zeuxisoo/slim-whoops": 20,
+        "mailchimp/mailchimp": 20
     },
     "platform": [
 

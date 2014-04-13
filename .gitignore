@@ -6,3 +6,4 @@
 /app/config/facebook.php
 /app/config/database.php
 /app/config/app.php
+/app/config/mailchimp.php

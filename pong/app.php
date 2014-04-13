@@ -51,6 +51,7 @@
 			$this->initalizeFacebook();
 			$this->initalizeHandlebars();
 			$this->initalizeORM();
+			$this->initalizeMailchimp();
 			$this->checkRedirect();
 
 		}
@@ -75,6 +76,13 @@
 			$this->data['landingPage'] = $config['landingPage'];
 			if(!empty($debug['landingPage']) && $this->isDevelopment()) $this->data['landingPage'] = $debug['landingPage'];
 			$this->data['rootUrl'] = URL::root();
+		}
+
+		protected function initalizeMailchimp(){
+			$config = require('../app/config/mailchimp.php');
+			if(empty($config['apiKey'])) return false;
+			$this->mc = new Mailchimp($config['apiKey']);
+			$this->mcConfig = $config;
 		}
 
 		protected function initalizeWhoops()

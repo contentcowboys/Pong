@@ -8,7 +8,19 @@
 		if(!$prev){
 			if(isset($post['voorwaarden'])) unset($post['voorwaarden']);
 			$post["ip"] = $_SERVER['REMOTE_ADDR'];
-			$new = DB::table('entries')->insert($post);
+			DB::table('entries')->insert($post);
+			if(isset($app->mc) && $app->mcConfig['optIn']){
+				try {
+					$app->mc->lists->subscribe(
+						$app->mcConfig['listId'], 
+						[ "email" => $post['email'] ],
+						[ "FNAME" => $post['first_name'] , "LNAME" => $post['last_name'] ]
+					);
+				} catch (Exception $e) {
+					//when fails do nothing
+				}
+				
+			}
 			$app->router->response->setStatus(200);
 		}else{
 			$app->router->response->setStatus(409);
