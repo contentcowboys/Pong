@@ -3,13 +3,14 @@
 	use Illuminate\Database\Capsule\Manager as DB;
 
 	$app->router->post('/api/entry', function() use ($app) {
+		//CLEAN UP PLEASE
 		$post = $app->router->request->post();
 		$prev = DB::table('entries')->whereEmail($post['email'])->get();
 		if(!$prev){
 			if(isset($post['voorwaarden'])) unset($post['voorwaarden']);
 			$post["ip"] = $_SERVER['REMOTE_ADDR'];
 			DB::table('entries')->insert($post);
-			if(isset($app->mc) && $app->mcConfig['optIn']){
+			if(isset($app->mc) && $app->mcConfig['optIn'] && isset($post["optin"])){
 				try {
 					$app->mc->lists->subscribe(
 						$app->mcConfig['listId'], 
