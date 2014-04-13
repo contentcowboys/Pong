@@ -2265,6 +2265,12 @@ table {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+.error {
+  background-color: red; }
+
+.form-error {
+  display: none; }
+
 .social-wrap button {
   padding-right: 3em;
   padding-left: 1em;
@@ -2296,12 +2302,6 @@ table {
     text-shadow: #333 -1px -1px 0;
     background-image: url(http://i.tinyuploads.com/KBZc6n.png); }
 
-.error {
-  background-color: red; }
-
-.form-error {
-  display: none; }
-
 .page {
   display: none;
   position: absolute;
@@ -2310,3 +2310,8 @@ table {
   right: 0; }
   .page.active {
     display: block; }
+
+.loading {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 60px; }

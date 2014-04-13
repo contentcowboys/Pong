@@ -1,0 +1,10 @@
+.page{ //add transistions to this
+  display: none;
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  &.active{
+    display:block;
+  }
+}

@@ -4,6 +4,7 @@ define([
 		'jquery',
 		'underscore',
 		'controllers/facebook',
+		'controllers/preloader',
 		'views/pages/end',
 		'views/pages/likeGate',
 		'views/pages/form',
@@ -16,6 +17,7 @@ define([
 		$,
 		_,
 		facebook,
+		preloader,
 		End,
 		LikeGate,
 		Form,
@@ -54,22 +56,28 @@ define([
 				//check if old version of IE is running
 				this.checkOldIE();
 
-				//if likeGate is disabled don't show it
-				if(!common.showLikeGate){
-					this.switchPage(common.landingPage);
-					return false;
-				}
-
-
-
 				$.when( facebook.checkLogin() ).then(_.bind(this.checkLiked, this));
 			},
 			checkLiked: function(){
-				if( common.pageLiked ) {
-					this.switchPage(common.landingPage);
-				} else {
-					this.switchPage("likeGate");
+				var self = this;
+				$.when(this.loaded()).then(function(){
+					if( common.pageLiked || !common.showLikeGate ) {
+						self.switchPage(common.landingPage);
+					} else {
+						self.switchPage("likeGate");
+					}
+				});
+				
+			},
+			loaded : function () {
+				var deferred = $.Deferred();
+				if(common.showLoading) this.prevPage = {$el : $("#js-loading-page")};
+				if(!common.preloadImages){
+					deferred.resolve();
+				}else{
+					preloader.preload(deferred);
 				}
+				return deferred.promise();
 			},
 			switchPage : function (page) {
 				//if page doesn't exist yet, create it

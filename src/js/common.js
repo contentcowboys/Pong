@@ -14,6 +14,8 @@ define([], function() {
         multiLanguage : bootstrap.multiLanguage,
         showLikeGate : bootstrap.showLikeGate,
         landingPage : bootstrap.landingPage,
+        showLoading : bootstrap.showLoading,
+        preloadImages : bootstrap.preloadImages,
     };
     return common;
 });

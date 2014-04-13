@@ -18,7 +18,12 @@
 </head>
 <body class="{{ userLanguage }} {{#if onFacebook}}facebook{{else}}mobile{{/if}}">
 	<div id="fb-root"></div>
-	<div id="js-likeGate-page" class="animated likeGate page"></div>
+	{{#if showLoading}}
+		<div id="js-loading-page" class="animated loading page active">
+			LOADING...
+		</div>
+	{{/if}}
+	<div id="js-likeGate-page" class="animated likeGate page"></div>	
 	<div id="js-form-page" class="animated form page"></div>
 	<div id="js-thankYou-page" class="animated thankYou page"></div>
 	<div id="js-end-page" class="animated end page"></div>
@@ -40,6 +45,8 @@
 		multiLanguage : {{#if multiLanguage}}true{{else}}false{{/if}},
 		mobileEnabled : {{#if mobileEnabled}}true{{else}}false{{/if}},
 		showLikeGate : {{#if showLikeGate}}true{{else}}false{{/if}},
+		showLoading : {{#if showLoading}}true{{else}}false{{/if}},
+		preloadImages : {{#if preloadImages}}true{{else}}false{{/if}},
 		landingPage : "{{landingPage}}",
 		lang : "{{userLanguage}}"
 	};

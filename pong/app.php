@@ -74,6 +74,8 @@
 			$this->data['showLikeGate'] = $config['showLikeGate'];
 			$this->data['mobileEnabled'] = $config['mobileEnabled'];
 			$this->data['landingPage'] = $config['landingPage'];
+			$this->data['showLoading'] = $config['showLoading'];
+			$this->data['preloadImages'] = $config['preloadImages'];
 			if(!empty($debug['landingPage']) && $this->isDevelopment()) $this->data['landingPage'] = $debug['landingPage'];
 			$this->data['rootUrl'] = URL::root();
 		}
