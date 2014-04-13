@@ -7,10 +7,14 @@
 	<link rel="stylesheet" href="css/main.css">
 	<!-- add script tags when redirect is necesarry -->
 	<script>
-	{{#if redirect}}
-		window.location = "{{redirectUrl}}";
-	{{/if}}
+		{{#if redirect}}
+			window.location = "{{redirectUrl}}";
+		{{/if}}
+		var $buoop = {};
+		if(!console.log) console.log = function(){};
+		if(!console.trace) console.trace = function(){};
 	</script>
+	<script src="//browser-update.org/update.js"></script>
 </head>
 <body class="{{ userLanguage }} {{#if onFacebook}}facebook{{else}}mobile{{/if}}">
 	<div id="fb-root"></div>
@@ -50,7 +54,7 @@
 	var _gaq = _gaq || []; 
 	_gaq.push(['_setAccount', '{{ googleAnalyticsCode }}']); 
 	_gaq.push(['_trackPageview']); 
-	_gaq.push(['_trackEvent', 'original language', "{{ userLanguage }}"]);
+	_gaq.push(['_trackEvent', 'original language', bootstrap.lang]);
     (function() {
 	  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
 	  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; 

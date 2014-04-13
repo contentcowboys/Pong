@@ -43,5 +43,11 @@
 		//default page to show after likegate
 		'landingPage' => "info",
 
+		//show loading screen
+        'showLoading' => true,
+
+        //preload images ( only works if showLoading is true)
+        'preloadImages' => true
+
  	);
 ?>
