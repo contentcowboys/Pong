@@ -18,35 +18,35 @@ define(['common'], function(common) {
                     fr : "tiebreaker_extraFR"
                 },
                 "first_name" : {
-                    nl : "first_name",
+                    nl : "Voornaam",
                     fr : "first_nameFR"
                 },
                 "last_name" : {
-                    nl : "last_name",
+                    nl : "Naam",
                     fr : "last_nameFR"
                 },
                 "email" : {
-                    nl : "email",
+                    nl : "E-mailadres",
                     fr : "emailFR"
                 },
                 "gsm" : {
-                    nl : "gsm",
+                    nl : "Telefoonnummer",
                     fr : "gsmFR"
                 },
                 "adres" : {
-                    nl : "adres",
+                    nl : "Straat + nummer",
                     fr : "adresFR"
                 },
                 "zip" : {
-                    nl : "zip",
+                    nl : "Postcode",
                     fr : "zipFR"
                 },
                 "city" : {
-                    nl : "city",
+                    nl : "Gemeente",
                     fr : "cityFR"
                 },
                 'accept' : {
-                    nl : "acceptNL",
+                    nl : "Ik ga akkoord met de wedstrijdvoorwaarden.",
                     fr : "acceptFR"
                 },
                 'optin' : {
@@ -57,20 +57,20 @@ define(['common'], function(common) {
             }, //end form
             "formError" : {
                 "form" : {
-                    "nl" : "Form error NL",
-                    "fr" : "Form error FR"
+                    "nl" : "Gelieve alle velden correct in te vullen.",
+                    "fr" : "Complétez tous les champs"
                 },
                 "server" : {
-                    "nl" : "server error NL",
-                    "fr" : "server error FR"
+                    "nl" : "Oeps, er is iets fout gelopen. Probeer het nog een keer!",
+                    "fr" : "Oups, un problème est survenu. Veuillez réessayer."
                 },
                 "email" : {
-                    "nl" : "email error NL",
-                    "fr" : "email error FR"
+                    "nl" : "Je hebt al eens deelgenomen met dit e-mailadres",
+                    "fr" : "Vous avez déjà participé une fois avec cette adresse e-mail"
                 },
                 'voorwaarden' : {
-                    nl : "voorwaarden error NL",
-                    fr : "voorwaarden error FR"
+                    nl : "Gelieve de voorwaarden te accepteren.",
+                    fr : "Veuillez accepter les conditions du concours"
                 }
             }, // end formError
             "lang": {
