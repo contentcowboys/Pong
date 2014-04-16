@@ -32,6 +32,16 @@ require(
         'jquery-placeholder'
     ],
     function(common,Backbone, $, app, undefined, undefined, undefined, undefined){
+        // Track AJAX errors (jQuery API)
+        $(document).ajaxError(function(e, request, settings) {
+            _gaq.push([
+                '_trackEvent',
+                'Ajax error',
+                settings.url,
+                e.result,
+                true
+            ]);
+        });
         app.init();
     }
 );
