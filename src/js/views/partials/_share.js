@@ -35,9 +35,7 @@ define([
 			}else{
 				this.copy.body = language.get( "share" , "defaultBody" );
 			}
-
 			this.image = this.images[this.name];
-
 			return this;
 		},
 		render: function () {

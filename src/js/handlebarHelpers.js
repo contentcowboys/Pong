@@ -25,7 +25,7 @@ define(['common', 'handlebars', 'controllers/language'], function (common, Handl
             return new Handlebars.SafeString(languageController.lang[a][b][common.lang]);
         } else {
             console.trace();
-            console.log('%cLanguage particle not found -> ' + a + ":" + b, "color: red; font-size: x-large");
+            console.log('%cLanguage particle not found -> ' + a + ":" + b, "color: red");
         }
 
     });
