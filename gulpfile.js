@@ -12,15 +12,18 @@ gulp.task('sass' , function(){
 	gulp.src('src/bower/animate.css/animate.css')
 		.pipe(plumber())
 		.pipe(rename("_animate.scss"))
-	    .pipe(gulp.dest('src/sass/vendors'));
-	//compile sass
-	gulp.src('src/sass/main.scss')
-		.pipe(plumber())
-		.pipe(sass())
-		.pipe(gulp.dest('public/css/'))
-		.pipe(minifyCSS({}))
-		.pipe(rename("main.min.css"))
-    	.pipe(gulp.dest('public/css/'))
+	    .pipe(gulp.dest('src/sass/vendors'))
+        .on("end", function(){
+        //compile sass
+        gulp.src('src/sass/main.scss')
+            .pipe(plumber())
+            .pipe(sass())
+            .pipe(gulp.dest('public/css/'))
+            .pipe(minifyCSS({}))
+            .pipe(rename("main.min.css"))
+            .pipe(gulp.dest('public/css/'));
+    });
+
 });
 
 gulp.task('requirejs' , function(){
