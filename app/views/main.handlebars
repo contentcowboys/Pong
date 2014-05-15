@@ -14,6 +14,9 @@
 		{{/if}}
 </head>
 <body class="{{ userLanguage }} {{#if onFacebook}}facebook{{else}}mobile{{/if}}">
+    {{#if multiLanguage}}
+        <div class="language-switcher" id="js-language-switcher"></div>
+    {{/if}}
 	<div id="fb-root"></div>
 	{{#if showLoading}}
 		<div id="js-loading-page" class="animated loading page active">

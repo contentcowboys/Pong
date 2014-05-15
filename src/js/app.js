@@ -37,6 +37,8 @@ define([
 		        $("body").on("click", ".js-conditions", this.conditions.bind(this));
 				//set listeners
 				Backbone.on("page:show", this.switchPage, this);
+                //if loading
+                if(common.showLoading) this.prevPage = { $el : $("#js-loading-page") };
 				// if action is done
 				if(common.end){ 
 					this.switchPage("end");
@@ -63,7 +65,8 @@ define([
 			},
 			loaded : function () {
 				var deferred = $.Deferred();
-				if(common.showLoading) this.prevPage = {$el : $("#js-loading-page")};
+
+                console.log(this.prevPage);
 				if(!common.preloadImages){
 					deferred.resolve();
 				}else{
