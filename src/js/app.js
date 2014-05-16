@@ -65,8 +65,6 @@ define([
 			},
 			loaded : function () {
 				var deferred = $.Deferred();
-
-                console.log(this.prevPage);
 				if(!common.preloadImages){
 					deferred.resolve();
 				}else{

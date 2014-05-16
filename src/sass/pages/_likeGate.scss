@@ -1,0 +1,15 @@
+.likeGate{
+  h1{
+     padding-top: 20px;
+      &:first-child{
+        padding-top: 40px;
+      }
+    padding-bottom: 15px;
+  }
+  p{
+    text-align : center;
+  }
+  .legal{
+    margin-top: 20px;
+  }
+}

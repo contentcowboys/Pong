@@ -4,6 +4,59 @@ define(['common'], function(common) {
             return this.lang[a][b][common.lang];
         },
         lang: {
+            "likeGate" : {
+                "header" : {
+                    nl : "Maak kans op een prijs",
+                    fr : ""
+                },
+                "desktop-like" : {
+                    nl : "Word fan en waag je kans!",
+                    fr : ""
+                },
+                "mobile-like-header" : {
+                    nl : "Word fan!",
+                    fr : ""
+                },
+                "mobile-like-copy" : {
+                    nl : "En maak kans op tickets",
+                    fr : ""
+                },
+                "mobile-login" : {
+                    nl : "Log dan eerst in op Facebook",
+                    fr : ""
+                },
+                "legal" : {
+                    nl : "Je gegevens en wedstrijddeelname worden niet gebruikt of gedeeld op je Facebook timeline. We gebruiken je gegevens alleen om de wedstrijd op een eerlijke manier te laten verlopen. Door deel te nemen aan de actie ga je akkoord met de wedstrijdvoorwaarden. ",
+                    fr : ""
+                }
+            },
+            "info" : {
+                "header" : {
+                    nl : "Maak kans op een prijs",
+                    fr : ""
+                },
+                "copy" : {
+                    nl : "Bacon ipsum dolor sit amet kevin flank andouille tail bresaola, pancetta cow chuck tenderloin porchetta doner spare ribs short loin venison pig.",
+                    fr : ""
+                },
+                "option1" : {
+                    nl : "Optie 1",
+                    fr : ""
+                },
+                "option2" : {
+                    nl : "Optie 2",
+                    fr : ""
+                },
+                "option3" : {
+                    nl : "Optie 3",
+                    fr : ""
+                },
+                "option4" : {
+                    nl : "Optie 4",
+                    fr : ""
+                }
+
+            },
             "form": {
                 "header": {
                     nl: "",
@@ -86,19 +139,23 @@ define(['common'], function(common) {
             "buttons" : {
                 "share" : {
                     nl : "Share",
-                    fr : "shareFR"
+                    fr : ""
+                },
+                "send" : {
+                    nl : "Verzenden",
+                    fr : ""
                 }
             }, //end buttons
             "share" : {
                 "defaultBody" : {
                     nl : "",
-                    fr : "",
+                    fr : ""
                 },
                 "defaultTitle" : {
                     nl : "",
-                    fr : "",
-                },
-            }
+                    fr : ""
+                }
+            } //end share
         }
     };
 });

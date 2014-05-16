@@ -76,6 +76,13 @@
 			$this->data['landingPage'] = $config['landingPage'];
 			$this->data['showLoading'] = $config['showLoading'];
 			$this->data['preloadImages'] = $config['preloadImages'];
+            if(isset($config['typekit'])){
+                $this->data['typekitId'] = $config['typekit'];
+                $this->data['typekitUsed'] = true;
+            }else{
+                $this->data['typekitUsed'] = false;
+            }
+
 			if(!empty($debug['landingPage']) && $this->isDevelopment()) $this->data['landingPage'] = $debug['landingPage'];
 			$this->data['rootUrl'] = URL::root();
 		}

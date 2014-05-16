@@ -12,6 +12,13 @@
 		*/
 		'url' => '',
 
+        /**
+         * typekit
+         */
+
+
+        'typekit' => '',
+
 		/**
 		* Set end date
 		*/

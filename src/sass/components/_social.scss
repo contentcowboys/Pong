@@ -17,6 +17,8 @@
 	border-right: 0.063em solid transparent;
 	//box-shadow: 0 4px 2px -2px gray;
 	//text-shadow: rgba(0, 0, 0, .5) -1px -1px 0;
+
+
 	&.facebook {
 		border-color: #2d5073;
 		background-color: #3b5998;
@@ -35,3 +37,14 @@
 	}
 }
 
+.social-wrap {
+  width: 110px;
+  margin : auto;
+  padding-top: 20px;
+  padding-bottom : 20px;
+}
+
+.fb-likebox{
+  width: 300px;
+  margin: auto;
+}
