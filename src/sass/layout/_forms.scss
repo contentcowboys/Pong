@@ -1,6 +1,28 @@
-.error{
-  background-color: red;
+.error {
+    background-color: red;
 }
-.form-error{
-  display:none;
+
+.form-error {
+    display: none;
+}
+
+@include placeholder($placeholder-color, uppercase);
+
+
+input {
+    font-size: 16px;
+    color: $secondary-color;
+    text-transform: uppercase;
+    width: 100%;
+    box-shadow: none;
+    border: 1px solid $light-grey;
+    padding: 12px 18px;
+    @include rc(5px);
+    &:focus {
+        color: $secondary-color;
+        border: 1px solid $secondary-color;
+        outline: none;
+        box-shadow: none;
+        @include rc(5px);
+    }
 }

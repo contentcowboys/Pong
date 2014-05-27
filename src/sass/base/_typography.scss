@@ -10,13 +10,20 @@ h1,h2,.button {
   @include headerFont();
 }
 
-h1{
-  font-size: 26px;
+h1,h2{
   text-transform: uppercase;
   color: $main-color;
   text-align : center;
   padding-top: 15px;
   padding-bottom: 15px;
+}
+
+h1 {
+    font-size: 26px;
+}
+
+h2{
+    font-size: 18px;
 }
 
 body {

@@ -59,16 +59,36 @@ define(['common'], function(common) {
             },
             "form": {
                 "header": {
-                    nl: "",
-                    fr: ""
+                    nl: "The Duh-Vinci Code!",
+                    fr: "FR : The Duh-Vinci Code!"
                 },
-                "tiebreaker" : {
-                    nl : "Jouw antwoord",
-                    fr : "sdjkqsd"
+                "copy" : {
+                    nl : "Je hoeft enkel nog de schiftingsvraag in te vullen en je gegevens achter te laten.<br/>Zo weten we naar welke lucky winner we de prijzen kunnen versturen.",
+                    fr : "FR : Uhh… also, comes with double prize money."
                 },
-                "tiebreaker_extra" : {
-                    nl : "Jouw antwoord",
-                    fr : "tiebreaker_extraFR"
+                "tiebreaker_header" : {
+                    nl : "Lethal Inspection",
+                    fr : "FR : Lethal Inspection"
+                },
+                "tiebreaker_copy" : {
+                    nl : "And until then, I can never die?",
+                    fr : "FR : And until then, I can never die?"
+                },
+                "tiebreaker_placeholder" : {
+                    nl : "Jouw Antwoord",
+                    fr : "FR : Jouw Antwoord"
+                },
+                "tiebreaker_extra_header" : {
+                    nl : "Rebirth",
+                    fr : "FR : Rebirth"
+                },
+                "tiebreaker_extra_copy" : {
+                    nl : "Your best is an idiot!",
+                    fr : "FR : Your best is an idiot!"
+                },
+                "form_header" : {
+                    nl : "Vul je gegevens in",
+                    fr : "FR : Vul je gegevens in!"
                 },
                 "first_name" : {
                     nl : "Voornaam",
@@ -97,6 +117,22 @@ define(['common'], function(common) {
                 "city" : {
                     nl : "Gemeente",
                     fr : "cityFR"
+                },
+                "birthdate" : {
+                    nl : "Geboortedatum",
+                    fr : "FR : Geboortedatum"
+                },
+                "bday" : {
+                    nl : "DD",
+                    fr : "DD"
+                },
+                "bmonth" : {
+                    nl : "MM",
+                    fr : "MM"
+                },
+                "byear" : {
+                    nl : "JJJJ",
+                    fr : "AAAA"
                 },
                 'accept' : {
                     nl : "Ik ga akkoord met de wedstrijdvoorwaarden.",

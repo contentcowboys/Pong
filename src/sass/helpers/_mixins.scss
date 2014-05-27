@@ -1,12 +1,42 @@
 @mixin rc($radius: 0.5em) {
-	-webkit-border-radius: $radius;
-	-moz-border-radius: $radius;
-	border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
 }
 
-@mixin placeholder($color: black) {
-	::-webkit-input-placeholder { color: $color; }
-	:-moz-placeholder { color: $color; }
-	::-moz-placeholder { color: $color; }
-	:-ms-input-placeholder { color: $color; }
+@mixin placeholder($color: black, $text-transform : capitalize) {
+    ::-webkit-input-placeholder {
+        color: $color;
+        text-transform: $text-transform;
+    }
+    :-moz-placeholder {
+        color: $color;
+        text-transform: $text-transform;
+    }
+    ::-moz-placeholder {
+        color: $color;
+        text-transform: $text-transform;
+    }
+    :-ms-input-placeholder {
+        color: $color;
+        text-transform: $text-transform;
+    }
+}
+
+$media: screen;
+$feature: min-width;
+@mixin mq($breakpoint) {
+    @if $breakpoint == mp { // mobile portrait
+        @media #{$media} and ($feature: 320px) {
+            @content;
+        }
+    } @else if $breakpoint == ml { // mobile landscape
+        @media #{$media} and ($feature: 480px) {
+            @content;
+        }
+    } @else if $breakpoint == fb { // facebook duh!
+        @media #{$media} and ($feature: 800px) {
+            @content;
+        }
+    }
 }

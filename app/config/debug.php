@@ -9,5 +9,12 @@
 		'onFacebook' => false,
 		'userLanguage' => "nl",
 		//set a landing page for debugging purpose
+<<<<<<< HEAD
 		'landingPage' => 'info'
 	);
+=======
+		'landingPage' => 'form'
+	);
+
+?>
+>>>>>>> workin on da form
