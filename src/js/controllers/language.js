@@ -126,6 +126,16 @@ define(['common'], function(common) {
                     fr : "Veuillez accepter les conditions du concours"
                 }
             }, // end formError
+            "thankYou" : {
+                "header": {
+                    nl: "Bedankt!",
+                    fr: "FR"
+                },
+                "copy": {
+                    nl : "Bacon ipsum dolor sit amet kevin flank andouille tail bresaola, pancetta cow chuck tenderloin porchetta doner spare ribs short loin venison pig.",
+                    fr : "FR"
+                }
+            },
             "lang": {
                 "nl": {
                     nl: "NL",
