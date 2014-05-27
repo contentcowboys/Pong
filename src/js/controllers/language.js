@@ -171,7 +171,17 @@ define(['common'], function(common) {
                     nl : "Bacon ipsum dolor sit amet kevin flank andouille tail bresaola, pancetta cow chuck tenderloin porchetta doner spare ribs short loin venison pig.",
                     fr : "FR"
                 }
-            },
+            }, // end thankYou
+            "end" : {
+                "header": {
+                    nl: "Helaas!",
+                    fr: "FR"
+                },
+                "copy": {
+                    nl : "Bacon ipsum dolor sit amet kevin flank andouille tail bresaola, pancetta cow chuck tenderloin porchetta doner spare ribs short loin venison pig.",
+                    fr : "FR"
+                }
+            }, // end thankYou
             "lang": {
                 "nl": {
                     nl: "NL",

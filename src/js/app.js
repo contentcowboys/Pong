@@ -45,6 +45,13 @@ define([
 				Backbone.on("page:render:current", this.renderCurrentPage, this);
                 //if loading
                 if(common.showLoading) this.prevPage = { $el : $("#js-loading-page") };
+
+
+                if(common.multiLanguage){
+                    this.languageSwitcher = new LanguageSwitcher();
+                    this.languageSwitcher.render();
+                }
+
 				// if action is done
 				if(common.end){ 
 					this.switchPage("end");
@@ -60,10 +67,6 @@ define([
 				//check if old version of IE is running
 				this.checkOldIE();
 
-                if(common.multiLanguage){
-                    this.languageSwitcher = new LanguageSwitcher();
-                    this.languageSwitcher.render();
-                }
 				
 				$.when( facebook.checkLogin() , this.loaded() ).then(_.bind(this.checkLiked, this));
 			},
@@ -117,9 +120,7 @@ define([
                 this.shareView();
 			},
             shareView : function(){
-
                 var self = this;
-
                 this.shareViews.forEach(function(view){
                    view.remove();
                 });
