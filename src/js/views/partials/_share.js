@@ -11,31 +11,34 @@ define([
 		compiled: Handlebars.compile(template),
 		copy : {},
 		images : {
-			'default' : "http:"+common.url+"images/share.png"
+			'default' : "http:"+common.url+"images/share/default.png"
 		},
 		events: {
-			"click" : "share",
+			"click" : "share"
 		},
 		initialize: function (options) {
 			this.parent = options.parent;
-			this.$el = options.selector;
-			console.log(this);
-			if(options.name){
-				this.name = options.name;
+			this.$el = options.$el;
+			if(this.$el.attr("share-name")){
+				this.name = this.$el.attr("share-name");
 			}else{
 				this.name = "default";
 			}
-			if(options.title){
-				this.copy.title = language.get( "share" , options.title );
+			if(this.$el.attr("share-title")){
+				this.copy.title = language.get( "share" , this.$el.attr("share-title") );
 			}else{
 				this.copy.title = language.get( "share" , "defaultTitle" );
 			}
-			if(options.body){
-				this.copy.body = language.get( "share" , options.body );
+			if(this.$el.attr("share-body")){
+				this.copy.body = language.get( "share" , this.$el.attr("share-body") );
 			}else{
 				this.copy.body = language.get( "share" , "defaultBody" );
 			}
-			this.image = this.images[this.name];
+            if(this.$el.attr("share-image")){
+                this.image = "http:"+common.url+"images/share/"+this.$el.attr("share-image")+".png";
+            }else{
+                this.image = "http:"+common.url+"images/share/default.png";
+            }
 			return this;
 		},
 		render: function () {
@@ -44,8 +47,10 @@ define([
 		},
 		share : function () {
 			_gaq.push(['_trackEvent', 'share', this.name+":open"]);
-			var self = this;
-			FB.ui(
+
+            var self = this;
+
+            FB.ui(
 			  {
 			    method: 'feed',
 			    name: this.copy.title,
@@ -57,10 +62,10 @@ define([
 			  function(response) {
 			    if (response && response.post_id) {
 			    	_gaq.push(['_trackEvent', 'share', this.name+":done"]);
-			      self.parent.trigger("share:"+self.name+":true");
+			        self.parent.trigger("share:"+self.name+":true");
 			    } else {
 			    	_gaq.push(['_trackEvent', 'share', this.name+":cancel"]);
-			      self.parent.trigger("share:"+self.name+":false");
+			        self.parent.trigger("share:"+self.name+":false");
 			    }
 			  }
 			);

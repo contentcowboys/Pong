@@ -9,7 +9,5 @@
 		'onFacebook' => false,
 		'userLanguage' => "nl",
 		//set a landing page for debugging purpose
-		'landingPage' => 'thankYou'
+		'landingPage' => 'info'
 	);
-
-?>

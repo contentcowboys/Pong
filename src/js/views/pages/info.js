@@ -21,15 +21,7 @@ define([
         render: function(){
             common.selected = undefined;
             this.$el.html(this.compiledTemplate());
-            this.childViews();
             return this;
-        },
-        removeChildViews : function () {
-            if (this.languageSwitch) this.languageSwitch.remove();
-        },
-        childViews : function () {
-            if(this.languageSwitcher) this.languageSwitcher.remove();
-            if(common.multiLanguage) this.languageSwitcher = new LanguageSwitcher( { page: this.name } ).render();
         },
         optionClicked: function(e){
             var target = $(e.currentTarget);

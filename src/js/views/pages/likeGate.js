@@ -26,9 +26,7 @@ define([
             FB.Event.subscribe('edge.create', _.bind(this.pageLiked, this));
         },
         render: function(){
-
             this.$el.html(this.compiledTemplate( {pageId : common.pageId , onFacebook : common.onFacebook } ));
-            this.childViews();
             FB.XFBML.parse(this.el);
             return this;
         },
@@ -46,10 +44,6 @@ define([
             }else{
                 _gaq.push(['_trackEvent', 'likeGate-mobile', "liked"]);
             }
-        },
-        childViews : function () {
-            if(this.languageSwitcher) this.languageSwitcher.remove();
-            if(common.multiLanguage) this.languageSwitcher = new LanguageSwitcher( { page: this.name } ).render();
         }
     });
     return view;

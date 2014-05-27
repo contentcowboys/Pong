@@ -5,10 +5,8 @@ define([
     'jquery',
     'handlebars',
     'controllers/language',
-    'views/partials/_languageSwitcher',
-    'views/partials/_share',
     'text!templates/pages/form.hbs'
-    ], function(common, Backbone, $, Handlebars, language , LanguageSwitcher, Share ,template ) {
+    ], function(common, Backbone, $, Handlebars, language ,template ) {
     var view = Backbone.View.extend({
         el : $("#js-form-page"),
         compiledTemplate : Handlebars.compile(template),
@@ -22,7 +20,6 @@ define([
         },
         render: function () {
             this.$el.html(this.compiledTemplate({ language : common.lang }));
-            this.childViews();
             //keep dom references for later use
             this.dom.$form = this.$el.find("#js-form");
             this.dom.$formError = this.$el.find("#js-form-error");
@@ -94,12 +91,6 @@ define([
                     }
                 }
             });
-        },
-        childViews : function () {
-            if(this.languageSwitcher) this.languageSwitcher.remove();
-            if(common.multiLanguage) this.languageSwitcher = new LanguageSwitcher( { page: this.name } ).render();
-            if(this.share) this.share.remove();
-            if(this.$el.find(".js-share").length) this.share = new Share( {parent: this , selector : this.$el.find(".js-share")} ).render();
         }
     });
     return view;

@@ -11,7 +11,8 @@ define([
 		'views/pages/thankYou',
 		'views/pages/info',
 		'views/pages/notMobile',
-        'views/partials/_languageSwitcher'
+        'views/partials/_languageSwitcher',
+        'views/partials/_share'
 	], function(
 		common,
 		Backbone,
@@ -25,12 +26,14 @@ define([
 		ThankYou,
 		Info,
 		NotMobile,
-        LanguageSwitcher
+        LanguageSwitcher,
+        Share
 	){
 		var app = {
-			pages: {},
-			currentPage: undefined,
-			prevPage: undefined,
+			pages : {},
+			currentPage : undefined,
+			prevPage : undefined,
+            shareViews : [],
 			init: function(){
 				// Track AJAX errors (jQuery API)
 		        $(document).ajaxError(function(e, request, settings) {
@@ -110,7 +113,25 @@ define([
 				}
 				//make current page previous page for next page switch
 				this.prevPage = this.currentPage;
+
+                this.shareView();
 			},
+            shareView : function(){
+
+                var self = this;
+
+                this.shareViews.forEach(function(view){
+                   view.remove();
+                });
+
+                this.shareViews = [];
+                this.currentPage.$el.find(".js-share").each(function(){
+                    self.shareViews.push(new Share({
+                        parent : self.currentPage,
+                        $el : $(this)
+                    }));
+                });
+            },
 			noEffectPageSwitch : function() {
 				if(this.prevPage){
 					this.prevPage.$el.removeClass("active");
@@ -132,7 +153,6 @@ define([
 					$(this).removeClass(common.pages.effectIn);
 				});
 			},
-			//check user agent for IE 7-8-9
 			checkOldIE : function () {
 			   if (navigator.appName == "Microsoft Internet Explorer") {
 				    var ua = navigator.userAgent;
