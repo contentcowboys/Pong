@@ -3,16 +3,54 @@
   padding: 10px;
   margin : 10px 0px;
   width: 100%;
+  @include rc(5px);
   &.main {
     color : $main-button-font;
     background-color : $main-button-background;
+    &:hover{
+      background-color : darken($main-button-background,5);
+    }
+    @media  (min-width: 550px) {
+      max-width: 250px;
+      margin: auto;
+    }
   }
+
   &.grey {
     color : $grey-button-font;
     background-color : $grey-button-background;
+    &:hover{
+      color : $main-button-font;
+      background-color : $main-button-background;
+    }
   }
+
+  &.share{
+    width: 140px;
+    margin: auto;
+  }
+
   &.option {
     color : $option-button-font;
-    background-color : $option-button-background;
+    background : $option-button-background url('../images/unchecked.png') no-repeat 15px 11px;
+    &:hover{
+      background-color : $option-button-background-hover;
+    }
+    &.active{
+      color: white;
+      background : $option-button-background-active url('../images/checked.png') no-repeat 15px 11px;
+    }
+    @media  (min-width: 750px) {
+      margin: 5px;
+      width: 48%;
+      &:nth-child(1n){
+        float: left;
+
+      }
+      &:nth-child(2n){
+        float: right;
+
+      }
+    }
   }
 }

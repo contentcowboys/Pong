@@ -3,6 +3,9 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+.clear {
+  clear: both; }
+
 /*!
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license
@@ -2309,16 +2312,44 @@ p {
   cursor: pointer;
   padding: 10px;
   margin: 10px 0px;
-  width: 100%; }
+  width: 100%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
   .button.main {
     color: white;
     background-color: #dd033f; }
+    .button.main:hover {
+      background-color: #c40339; }
+    @media (min-width: 550px) {
+      .button.main {
+        max-width: 250px;
+        margin: auto; } }
   .button.grey {
     color: white;
     background-color: #dfdfe1; }
+    .button.grey:hover {
+      color: white;
+      background-color: #dd033f; }
+  .button.share {
+    width: 140px;
+    margin: auto; }
   .button.option {
     color: #4e4e4e;
-    background-color: #dfdfe1; }
+    background: #dfdfe1 url('../images/unchecked.png') no-repeat 15px 11px; }
+    .button.option:hover {
+      background-color: #c0c0c3; }
+    .button.option.active {
+      color: white;
+      background: #003067 url('../images/checked.png') no-repeat 15px 11px; }
+    @media (min-width: 750px) {
+      .button.option {
+        margin: 5px;
+        width: 48%; }
+        .button.option:nth-child(1n) {
+          float: left; }
+        .button.option:nth-child(2n) {
+          float: right; } }
 
 .social-wrap button {
   padding-right: 3em;
@@ -2434,6 +2465,13 @@ hr {
   margin-top: 50px;
   font-size: 60px; }
 
+
+.info ul {
+  padding: 20px 0 20px 0; }
+.info .send {
+  margin-bottom: 20px; }
+.info .share {
+  margin-top: 20px; }
 
 .likeGate h1:first-child {
   padding-top: 40px; }

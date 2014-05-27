@@ -1,6 +1,4 @@
 define([], function() {
-
-    console.log(JSON.parse(bootstrap.languages));
     var common = {
         apiUrl : bootstrap.url+"api/",
         url : bootstrap.url,

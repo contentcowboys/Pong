@@ -11,12 +11,15 @@ define([
         el : $("#js-info-page"),
         compiledTemplate : Handlebars.compile(template),
         events: {
+            "click li" : "optionClicked",
+            "click #js-send" : "optionCheck"
         },
         initialize: function(){
             this.name = "example";
              if(!this.compiled) this.compiled = Handlebars.compile(template);
         },
         render: function(){
+            common.selected = undefined;
             this.$el.html(this.compiledTemplate());
             this.childViews();
             return this;
@@ -27,6 +30,22 @@ define([
         childViews : function () {
             if(this.languageSwitcher) this.languageSwitcher.remove();
             if(common.multiLanguage) this.languageSwitcher = new LanguageSwitcher( { page: this.name } ).render();
+        },
+        optionClicked: function(e){
+            var target = $(e.currentTarget);
+            this.$el.find('li.active').removeClass("active");
+            common.selected = target.attr("data-value");
+            target.addClass("active");
+        },
+        optionCheck : function(){
+            if(!common.selected){
+                this.$el.find("ul").addClass("shake").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                    $(this).removeClass("shake");
+                });
+            }else{
+                Backbone.trigger("page:show", "form");
+            }
+
         }
     });
     return view;
