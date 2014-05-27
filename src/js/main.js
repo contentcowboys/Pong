@@ -6,8 +6,8 @@ require.config({
         handlebars: '../bower/handlebars/handlebars.min',
         facebook: '//connect.facebook.net/en_US/all',
         text: '../bower/requirejs-text/text',
-        "jquery-validation" : '../bower/jquery-validation/jquery.validate',
-        "jquery-placeholder" : '../bower/jquery-placeholder/jquery.placeholder',
+        "jquery-validation" : '../bower/jquery-validation/dist/jquery.validate.min',
+        "jquery-placeholder" : '../bower/jquery-placeholder/jquery.placeholder'
     },
     shim: {
         "jquery-validation" : ["jquery"],
