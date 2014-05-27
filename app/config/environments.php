@@ -15,7 +15,8 @@
 			'LaptopWork',
 			'web-apaches-iMac.local',
 			'webapachesimac',
-			'Simons-Mac-Pro.local'
+			'Simons-Mac-Pro.local',
+			'webapachesimac.fritz.box',
 		)
 	);
 ?>

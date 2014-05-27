@@ -64,7 +64,7 @@ define(['common'], function(common) {
                 },
                 "tiebreaker" : {
                     nl : "Jouw antwoord",
-                    fr : "tiebreakerFR"
+                    fr : "sdjkqsd"
                 },
                 "tiebreaker_extra" : {
                     nl : "Jouw antwoord",

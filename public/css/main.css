@@ -2272,7 +2272,9 @@ h1 {
   font-size: 26px;
   text-transform: uppercase;
   color: #dd033f;
-  text-align: center; }
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px; }
 
 body {
   font-family: "open-sans";
@@ -2281,14 +2283,38 @@ body {
   line-height: 1.3em; }
 
 .legal {
+  margin-top: 20px;
   font-size: 11px;
   color: #777; }
+
+p {
+  text-align: center; }
+
+.button {
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase; }
 
 .error {
   background-color: red; }
 
 .form-error {
   display: none; }
+
+.button {
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px 0px;
+  width: 100%; }
+  .button.main {
+    color: white;
+    background-color: #dd033f; }
+  .button.grey {
+    color: white;
+    background-color: #dfdfe1; }
+  .button.option {
+    color: #4e4e4e;
+    background-color: #dfdfe1; }
 
 .social-wrap button {
   padding-right: 3em;
@@ -2360,17 +2386,19 @@ body {
   position: relative; }
 
 .header {
-  background: url("http://placehold.it/320x180") no-repeat;
   width: 100%;
-  padding-bottom: 56.25%;
-  background-size: 100% auto; }
-  @media (min-width: 320px) {
+  background: url("http://placehold.it/320x180") no-repeat;
+  background-size: 100% auto;
+  padding-bottom: 56.25%; }
+  @media (min-width: 321px) {
     .header {
       background: url("http://placehold.it/480x250") no-repeat;
-      padding-bottom: 65.78947%; } }
+      background-size: 100% auto;
+      padding-bottom: 52.08333%; } }
   @media (min-width: 480px) {
     .header {
       background: url("http://placehold.it/810x307") no-repeat;
+      background-size: 100% auto;
       padding-bottom: 37.90123%; } }
 
 hr {
@@ -2383,12 +2411,6 @@ hr {
   margin-top: 50px;
   font-size: 60px; }
 
-.likeGate h1 {
-  padding-top: 20px;
-  padding-bottom: 15px; }
-  .likeGate h1:first-child {
-    padding-top: 40px; }
-.likeGate p {
-  text-align: center; }
-.likeGate .legal {
-  margin-top: 20px; }
+
+.likeGate h1:first-child {
+  padding-top: 40px; }
