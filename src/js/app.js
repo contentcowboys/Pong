@@ -10,7 +10,8 @@ define([
 		'views/pages/form',
 		'views/pages/thankYou',
 		'views/pages/info',
-		'views/pages/notMobile'
+		'views/pages/notMobile',
+        'views/partials/_languageSwitcher'
 	], function(
 		common,
 		Backbone,
@@ -23,7 +24,8 @@ define([
 		Form,
 		ThankYou,
 		Info,
-		NotMobile
+		NotMobile,
+        LanguageSwitcher
 	){
 		var app = {
 			pages: {},
@@ -53,6 +55,11 @@ define([
 				facebook.init();
 				//check if old version of IE is running
 				this.checkOldIE();
+
+                if(common.multiLanguage){
+                    this.languageSwitcher = new LanguageSwitcher();
+                    this.languageSwitcher.render();
+                }
 				
 				$.when( facebook.checkLogin() , this.loaded() ).then(_.bind(this.checkLiked, this));
 			},
@@ -76,6 +83,8 @@ define([
 				gaq.push(['_trackEvent', 'conditions', 'condition link clicked']);
 			},
 			switchPage : function (page) {
+                //PLEASE FIX THIS
+                $("#js-language-switcher").fadeIn();
 				//if page doesn't exist yet, create it
 				if(!this.pages[page]) this.pages[page] = eval("new "+page[0].toUpperCase() + page.slice(1));
 				//render correct page

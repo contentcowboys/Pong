@@ -1,4 +1,6 @@
 define([], function() {
+
+    console.log(JSON.parse(bootstrap.languages));
     var common = {
         apiUrl : bootstrap.url+"api/",
         url : bootstrap.url,
@@ -11,11 +13,12 @@ define([], function() {
     	pageLiked: bootstrap.pageLiked,
     	pages: bootstrap.pages,
         lang : bootstrap.lang,
+        languages : JSON.parse(bootstrap.languages),
         multiLanguage : bootstrap.multiLanguage,
         showLikeGate : bootstrap.showLikeGate,
         landingPage : bootstrap.landingPage,
         showLoading : bootstrap.showLoading,
-        preloadImages : bootstrap.preloadImages,
+        preloadImages : bootstrap.preloadImages
     };
     return common;
 });

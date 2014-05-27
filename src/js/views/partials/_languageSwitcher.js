@@ -10,25 +10,16 @@ define([
         compiledTemplate : Handlebars.compile(template),
         events: {
             "click .active" : "open",
-            "click #js-switch-nl" : "switchNL",
-            "click #js-switch-fr" : "switchFR"
         },
-        initialize: function(options){
-            this.page = options.page;
-            this.$el = $("#js-language-"+options.page);
+        initialize: function(){
+            this.$el = $("#js-language-switcher");
             return this;
         },
         render: function(){
-            this.$el.html(this.compiledTemplate({language: common.lang }));
+            this.$el.html(this.compiledTemplate({language: common.lang, languages: common.languages }));
         },
         open : function(e){
             e.preventDefault();
-        },
-        switchNL: function(){
-            this.switchLang("nl");
-        },
-        switchFR: function(){
-            this.switchLang("fr");
         },
         switchLang: function(lang){
             if(common.lang == lang) return false;

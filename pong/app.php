@@ -157,11 +157,17 @@
 	            }
 	            $this->data['onFacebook'] = false;
 	        }
+
+
+            $this->data['languages'] = json_encode($appConfig["allowedLanguages"]);
+
+
 	        if($this->isDevelopment()){
 	        	$this->data['pageLiked'] = $debug['pageLiked'];
 	        	$this->data['userLanguage'] = $debug['userLanguage'];
 	        	$this->data['onFacebook'] = $debug['onFacebook'];
 	        }
+
 			$this->data['appId'] = $config[$this->environment]['appId'];
 			$this->data["onlineAppId"] = $config["online"]['appId'];
 			$this->data['tabUrl'] = $config['tabUrl'];

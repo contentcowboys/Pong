@@ -2295,6 +2295,10 @@ p {
   text-align: center;
   text-transform: uppercase; }
 
+.language-switcher {
+  font-size: 17px;
+  color: #f6f5f4; }
+
 .error {
   background-color: red; }
 
@@ -2356,6 +2360,25 @@ p {
 .fb-likebox {
   width: 300px;
   margin: auto; }
+
+.language-switcher {
+  position: absolute;
+  display: none;
+  z-index: 2;
+  right: 20px;
+  top: 20px; }
+  .language-switcher li {
+    cursor: pointer;
+    margin: 0;
+    display: inline-block;
+    padding: 9px;
+    background-color: #b2152d; }
+    .language-switcher li:first-child {
+      border-radius: 5px 0px 0px 5px; }
+    .language-switcher li:last-child {
+      border-radius: 0px 5px 5px 0px; }
+    .language-switcher li.active {
+      background-color: #dd033f; }
 
 .page {
   display: none;

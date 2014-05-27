@@ -127,11 +127,11 @@ define(['common'], function(common) {
                 }
             }, // end formError
             "lang": {
-                "NL": {
+                "nl": {
                     nl: "NL",
                     fr: "NL"
                 },
-                "FR": {
+                "fr": {
                     nl: "FR",
                     fr: "FR"
                 }
