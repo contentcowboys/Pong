@@ -1,7 +1,7 @@
 <ul>
     <!--
     {{#each languages}}
-        --><li class="js-switch-lang " data-lang="{{this}}"><p >{{lang "lang" this}}</p></li><!--
+        --><li class="js-switch-lang {{#if_eq ../language this}}active{{/if_eq}}" data-lang="{{this}}"><p >{{lang "lang" this}}</p></li><!--
     {{/each}}
     -->
 </ul>

@@ -21,6 +21,7 @@ define(['common', 'handlebars', 'controllers/language'], function (common, Handl
 
     //lang helper
     Handlebars.registerHelper('lang', function (a, b) {
+        console.log(a,b, common.lang);
         if (languageController.lang[a] && languageController.lang[a][b] && languageController.lang[a][b][common.lang]) {
             return new Handlebars.SafeString(languageController.lang[a][b][common.lang]);
         } else {

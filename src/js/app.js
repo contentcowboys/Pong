@@ -39,6 +39,7 @@ define([
 		        $("body").on("click", ".js-conditions", this.conditions.bind(this));
 				//set listeners
 				Backbone.on("page:show", this.switchPage, this);
+				Backbone.on("page:render:current", this.renderCurrentPage, this);
                 //if loading
                 if(common.showLoading) this.prevPage = { $el : $("#js-loading-page") };
 				// if action is done
@@ -82,6 +83,9 @@ define([
 			conditions : function(e){
 				gaq.push(['_trackEvent', 'conditions', 'condition link clicked']);
 			},
+            renderCurrentPage: function(){
+                this.currentPage.render();
+            },
 			switchPage : function (page) {
                 //PLEASE FIX THIS
                 $("#js-language-switcher").fadeIn();
