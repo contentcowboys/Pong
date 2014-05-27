@@ -7,3 +7,4 @@
 /app/config/database.php
 /app/config/app.php
 /app/config/mailchimp.php
+.DS_Store

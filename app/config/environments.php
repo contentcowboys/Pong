@@ -17,6 +17,7 @@
 			'webapachesimac',
 			'Simons-Mac-Pro.local',
 			'webapachesimac.fritz.box',
+			'Benjamin.local'
 		)
 	);
 ?>

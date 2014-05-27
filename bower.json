@@ -19,6 +19,6 @@
     "handlebars": "1.*",
     "animate.css": "3.*",
     "jquery-placeholder": "~2.0.7",
-    "jquery-validation": "~1.11.2"
+    "jquery-validation": "~1.*"
   }
 }
