@@ -1,5 +1,55 @@
 .page.form {
     input {
         @include headerFont();
+        width: 100%;
+
     }
+
+    .tiebreakerWrapper,
+    .tiebreakerExtraWrapper {
+        p {
+            @include mq(n) {
+                text-align: left;
+            }
+        }
+        input {
+            @include mq(n) {
+                width: 75%;
+                float: right;
+            }
+        }
+    }
+
+    .col-birthdate {
+        line-height: 28px;
+        @include mq(n) {
+            text-align: center;
+            line-height: 48px;
+        }
+    }
+    @include mq(n) {
+
+        .col-general {
+            width: 50%;
+        }
+
+        .col-zip,
+        .col-birthdate {
+            width: 37.5%;
+        }
+
+        .col-city {
+            width: 62.5%;
+        }
+
+        .col-bday,
+        .col-bmonth {
+            width: 18.75%;
+        }
+
+        .col-byear {
+            width: 25%;
+        }
+    }
+
 }

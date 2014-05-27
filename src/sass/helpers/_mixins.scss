@@ -34,6 +34,10 @@ $feature: min-width;
         @media #{$media} and ($feature: 480px) {
             @content;
         }
+    } @else if $breakpoint == n { // note
+        @media #{$media} and ($feature: 643px) {
+            @content;
+        }
     } @else if $breakpoint == fb { // facebook duh!
         @media #{$media} and ($feature: 800px) {
             @content;
