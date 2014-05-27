@@ -8,25 +8,27 @@
     <form id="js-form" method="POST" action="#" name="form">
         <div class="grid">
             <div class="tiebreakerWrapper">
-
                 <h2>{{lang "form" "tiebreaker_header"}}</h2>
 
                 <div class="row">
                     <div class="grid">
                         <div class="col-general"><p>{{lang "form" "tiebreaker_copy"}}</p></div>
                         <div class="col-general"><input type="text" id="js-form-tiebreaker" name="tiebreaker"
-                                                     placeholder="{{lang "form" "tiebreaker_placeholder"}}"
-                                                     required></div>
+                                                        placeholder="{{lang "form" "tiebreaker_placeholder"}}"
+                                                        required></div>
                     </div>
                 </div>
             </div>
             <div class="tiebreakerExtraWrapper">
                 <h2>{{lang "form" "tiebreaker_extra_header"}}</h2>
+
                 <div class="row">
                     <div class="grid">
                         <div class="col-general"><p>{{lang "form" "tiebreaker_extra_copy"}}</p></div>
-                        <div class="col-general"><input type="text" id="js-form-tiebreakerExtra" name="tiebreaker_extra"
-                                                     placeholder="{{lang "form" "tiebreaker_placeholder"}}"></div>
+                        <div class="col-general">
+                            <div id="js-share-tiebreaker" class="button main">Share</div>
+                            <input class="hidden" type="text" id="js-form-tiebreakerExtra" name="tiebreaker_extra"
+                                                        placeholder="{{lang "form" "tiebreaker_placeholder"}}"></div>
                     </div>
                 </div>
             </div>
@@ -75,7 +77,7 @@
                                                      value="{{user.city}}"
                                                      required></div>
                     </div>
-                    <div class="row">
+                    <div class="row birthday">
                         <div class="col-birthdate">
                             <label for="birthdate">{{lang "form" "birthdate"}}</label>
                         </div>
@@ -93,16 +95,21 @@
                                                       required></div>
                     </div>
                     <input type="hidden" name="lang" id="js-form-lang" value='{{language}}'>
-                    <input type="checkbox" name="voorwaarden" id="voorwaarden" required><label
-                        for="voorwaarden">{{lang "form" "accept"}}</label>
-                    <input type="checkbox" name="optin" id="optin"><label for="optin">{{lang "form" "optin"}}</label>
 
+                    <div class="checkboxWrapper">
+                        <div><input type='checkbox' name='voorwaarden' value='' id="voorwaarden"/><label for="voorwaarden"></label></div>
+                        <div><label for="voorwaarden">{{lang "form" "accept"}}</label></div>
+                    </div>
+                    <div class="checkboxWrapper">
+                        <div><input type="checkbox" name="optin" id="optin"><label for="optin"></label></div>
+                        <div><label for="optin">{{lang "form" "optin"}}</label></div>
+                    </div>
                     <div class="form-error" id="js-form-error"></div>
-                    <div id="submit">send</div>
-                    <div class="button main send" id="js-send">{{lang "buttons" "send"}}</div>
+                    <div id="submit" class="button main send" id="js-send">{{lang "buttons" "send"}}</div>
                 </div>
             </div>
         </div>
     </form>
-    <div class="js-share"></div>
+    <hr/>
+    <div class="button grey share js-share">{{lang "buttons" "share"}}</div>
 </div>
