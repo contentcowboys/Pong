@@ -71,8 +71,8 @@ define(['common'], function(common) {
                     fr : "FR : Lethal Inspection"
                 },
                 "tiebreaker_copy" : {
-                    nl : "And until then, I can never die?",
-                    fr : "FR : And until then, I can never die?"
+                    nl : "Hoeveel deelnemers zullen op 17/04/14 (10h00) deelgenomen hebben aan deze wedstrijd?",
+                    fr : "FR : Hoeveel deelnemers zullen op 17/04/14 (10h00) deelgenomen hebben aan deze wedstrijd?"
                 },
                 "tiebreaker_placeholder" : {
                     nl : "Jouw Antwoord",
@@ -83,8 +83,8 @@ define(['common'], function(common) {
                     fr : "FR : Rebirth"
                 },
                 "tiebreaker_extra_copy" : {
-                    nl : "Your best is an idiot!",
-                    fr : "FR : Your best is an idiot!"
+                    nl : "Hoeveel deelnemers zullen op 17/04/14 (10h00) deelgenomen hebben aan deze wedstrijd?",
+                    fr : "FR : Hoeveel deelnemers zullen op 17/04/14 (10h00) deelgenomen hebben aan deze wedstrijd?"
                 },
                 "form_header" : {
                     nl : "Vul je gegevens in",
@@ -135,11 +135,11 @@ define(['common'], function(common) {
                     fr : "AAAA"
                 },
                 'accept' : {
-                    nl : "Ik ga akkoord met de wedstrijdvoorwaarden.",
+                    nl : "Door deel te nemen aan de actie ga je akkoord met de wedstrijdvoorwaarden.",
                     fr : "acceptFR"
                 },
                 'optin' : {
-                    nl : "optinNL",
+                    nl : "Ik wil op de hotogte blijven van alle coole wedstrijden & give-aways.",
                     fr : "optinFR"
                 },
 

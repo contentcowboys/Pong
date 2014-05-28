@@ -6,6 +6,9 @@
 .clear {
   clear: both; }
 
+.hidden {
+  display: none; }
+
 /*!
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license
@@ -23,6 +26,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both; }
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
 
 .animated.hinge {
   -webkit-animation-duration: 2s;
@@ -112,6 +119,57 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .pulse {
   -webkit-animation-name: pulse;
   animation-name: pulse; }
+
+@-webkit-keyframes rubberBand {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+
+  30% {
+    -webkit-transform: scaleX(1.25) scaleY(0.75);
+    transform: scaleX(1.25) scaleY(0.75); }
+
+  40% {
+    -webkit-transform: scaleX(0.75) scaleY(1.25);
+    transform: scaleX(0.75) scaleY(1.25); }
+
+  60% {
+    -webkit-transform: scaleX(1.15) scaleY(0.85);
+    transform: scaleX(1.15) scaleY(0.85); }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
+@keyframes rubberBand {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); }
+
+  30% {
+    -webkit-transform: scaleX(1.25) scaleY(0.75);
+    -ms-transform: scaleX(1.25) scaleY(0.75);
+    transform: scaleX(1.25) scaleY(0.75); }
+
+  40% {
+    -webkit-transform: scaleX(0.75) scaleY(1.25);
+    -ms-transform: scaleX(0.75) scaleY(1.25);
+    transform: scaleX(0.75) scaleY(1.25); }
+
+  60% {
+    -webkit-transform: scaleX(1.15) scaleY(0.85);
+    -ms-transform: scaleX(1.15) scaleY(0.85);
+    transform: scaleX(1.15) scaleY(0.85); }
+
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); } }
+
+.rubberBand {
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand; }
 
 @-webkit-keyframes shake {
   0%, 100% {
@@ -337,6 +395,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     transform: scale(0.9); }
 
   100% {
+    opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1); } }
 
@@ -359,6 +418,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     transform: scale(0.9); }
 
   100% {
+    opacity: 1;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1); } }
@@ -2081,6 +2141,58 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp; }
 
+@-webkit-keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0); } }
+
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp; }
+
+@-webkit-keyframes slideOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px); } }
+
+@keyframes slideOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px); } }
+
+.slideOutDown {
+  -webkit-animation-name: slideOutDown;
+  animation-name: slideOutDown; }
+
 @-webkit-keyframes hinge {
   0% {
     -webkit-transform: rotate(0);
@@ -2109,11 +2221,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   80% {
     -webkit-transform: rotate(60deg) translateY(0);
     transform: rotate(60deg) translateY(0);
-    opacity: 1;
     -webkit-transform-origin: top left;
     transform-origin: top left;
     -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out; }
+    animation-timing-function: ease-in-out;
+    opacity: 1; }
 
   100% {
     -webkit-transform: translateY(700px);
@@ -2155,12 +2267,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     -webkit-transform: rotate(60deg) translateY(0);
     -ms-transform: rotate(60deg) translateY(0);
     transform: rotate(60deg) translateY(0);
-    opacity: 1;
     -webkit-transform-origin: top left;
     -ms-transform-origin: top left;
     transform-origin: top left;
     -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out; }
+    animation-timing-function: ease-in-out;
+    opacity: 1; }
 
   100% {
     -webkit-transform: translateY(700px);
@@ -2269,7 +2381,8 @@ table {
   box-sizing: border-box; }
 
 h1, h2, .button {
-  font-family: "futura-pt-condensed"; }
+  font-family: "futura-pt-condensed";
+  font-weight: 800; }
 
 h1, h2 {
   text-transform: uppercase;
@@ -2279,16 +2392,22 @@ h1, h2 {
   padding-bottom: 15px; }
 
 h1 {
-  font-size: 26px; }
+  font-size: 24px; }
+  @media screen and (min-width: 643px) {
+    h1 {
+      font-size: 26px; } }
 
 h2 {
   font-size: 18px; }
+  @media screen and (min-width: 643px) {
+    h2 {
+      font-size: 20px; } }
 
 body {
   font-family: "open-sans";
   color: #4e4e4e;
   font-size: 13px;
-  line-height: 1.3em; }
+  line-height: 1.6em; }
 
 .legal {
   margin-top: 20px;
@@ -2323,7 +2442,7 @@ p {
         padding-right: 0; } }
 
 .error {
-  background-color: red; }
+  border: 1px solid #dd033f; }
 
 .form-error {
   display: none; }
@@ -2366,7 +2485,7 @@ input {
 
 .button {
   cursor: pointer;
-  padding: 10px;
+  padding: 15px;
   margin: 10px 0px;
   width: 100%;
   -webkit-border-radius: 5px;
@@ -2523,33 +2642,87 @@ hr {
   .loading img {
     max-width: 50%; }
 
-.page.form input {
-  font-family: "futura-pt-condensed";
-  width: 100%; }
-@media screen and (min-width: 643px) {
-  .page.form .tiebreakerWrapper p, .page.form .tiebreakerExtraWrapper p {
-    text-align: left; } }
-@media screen and (min-width: 643px) {
-  .page.form .tiebreakerWrapper input, .page.form .tiebreakerExtraWrapper input {
-    width: 75%;
-    float: right; } }
-.page.form .col-birthdate {
-  line-height: 28px; }
+.page.form {
+  padding-bottom: 30px; }
+  .page.form .copy {
+    padding-bottom: 30px; }
+  .page.form hr {
+    margin: 15px 0; }
+  .page.form input {
+    font-family: "futura-pt-condensed";
+    font-weight: 800;
+    width: 100%; }
+    .page.form input[type=checkbox] {
+      display: none; }
+    .page.form input[type=checkbox] + label {
+      background-image: url('../images/icon-unchecked.svg');
+      background-repeat: none;
+      background-size: cover;
+      height: 16px;
+      width: 16px;
+      display: inline-block;
+      margin: 0 8px 0 0px; }
+    .page.form input[type=checkbox]:checked + label {
+      background-image: url('../images/icon-checked.svg'); }
   @media screen and (min-width: 643px) {
-    .page.form .col-birthdate {
-      text-align: center;
-      line-height: 48px; } }
-@media screen and (min-width: 643px) {
-  .page.form .col-general {
-    width: 50%; }
-  .page.form .col-zip, .page.form .col-birthdate {
-    width: 37.5%; }
-  .page.form .col-city {
-    width: 62.5%; }
-  .page.form .col-bday, .page.form .col-bmonth {
-    width: 18.75%; }
-  .page.form .col-byear {
-    width: 25%; } }
+    .page.form .tiebreakerWrapper p, .page.form .tiebreakerWrapper h2, .page.form .tiebreakerExtraWrapper p, .page.form .tiebreakerExtraWrapper h2 {
+      text-align: left; } }
+  @media screen and (min-width: 643px) {
+    .page.form .tiebreakerWrapper input, .page.form .tiebreakerExtraWrapper input {
+      width: 75%;
+      float: right; } }
+  @media screen and (min-width: 643px) {
+    .page.form .tiebreakerWrapper .button, .page.form .tiebreakerExtraWrapper .button {
+      width: 50%;
+      float: right; } }
+  .page.form .col-birthdate {
+    font-family: "futura-pt-condensed";
+    font-weight: 800;
+    line-height: 28px;
+    font-size: 20px;
+    color: #c9c8c8;
+    text-transform: uppercase;
+    text-align: left; }
+    @media screen and (min-width: 643px) {
+      .page.form .col-birthdate {
+        text-align: center;
+        line-height: 48px; } }
+  .page.form .col-bday, .page.form .col-bmonth, .page.form .col-byear {
+    width: 33%;
+    padding-right: 10px; }
+    .page.form .col-bday:last-of-type, .page.form .col-bmonth:last-of-type, .page.form .col-byear:last-of-type {
+      padding-right: 0; }
+  @media screen and (min-width: 643px) {
+    .page.form .col-general {
+      width: 50%; }
+    .page.form .col-zip, .page.form .col-birthdate {
+      width: 37.5%; }
+    .page.form .col-city {
+      width: 62.5%; }
+    .page.form .col-bday, .page.form .col-bmonth {
+      width: 18.75%; }
+    .page.form .col-byear {
+      width: 25%; } }
+  .page.form .checkboxWrapper {
+    display: table-row; }
+    .page.form .checkboxWrapper > div {
+      display: table-cell;
+      vertical-align: top; }
+      .page.form .checkboxWrapper > div input {
+        width: 15px;
+        height: 15px; }
+      .page.form .checkboxWrapper > div label {
+        font-size: 12px; }
+        @media screen and (min-width: 643px) {
+          .page.form .checkboxWrapper > div label {
+            font-size: 13px; } }
+  .page.form .birthday {
+    padding-bottom: 30px; }
+  .page.form .button.send {
+    margin: 30px auto 50px auto; }
+  .page.form .form-error {
+    padding-top: 20px;
+    color: #dd033f; }
 
 .info ul {
   padding: 20px 0 20px 0; }

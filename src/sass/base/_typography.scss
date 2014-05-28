@@ -1,56 +1,64 @@
-@mixin bodyFont(){
-  font-family: "open-sans";
+@mixin bodyFont() {
+    font-family: "open-sans";
 }
 
-@mixin headerFont(){
-  font-family: "futura-pt-condensed";
+@mixin headerFont() {
+    font-family: "futura-pt-condensed";
+    font-weight: 800;
 }
 
-h1,h2,.button {
-  @include headerFont();
+h1, h2, .button {
+    @include headerFont();
 }
 
-h1,h2{
-  text-transform: uppercase;
-  color: $main-color;
-  text-align : center;
-  padding-top: 15px;
-  padding-bottom: 15px;
+h1, h2 {
+    text-transform: uppercase;
+    color: $main-color;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 h1 {
-    font-size: 26px;
+    font-size: 24px;
+
+    @include mq(n) {
+        font-size: 26px;
+    }
 }
 
-h2{
+h2 {
     font-size: 18px;
+
+    @include mq(n) {
+        font-size: 20px;
+    }
 }
 
 body {
-  @include bodyFont();
-  color : $black;
-  font-size: 13px;
-  line-height: 1.3em;
+    @include bodyFont();
+    color: $black;
+    font-size: 13px;
+    line-height: 1.6em;
 }
-
 
 .legal {
-  margin-top: 20px;
-  font-size: 11px;
-  color: $legal;
+    margin-top: 20px;
+    font-size: 11px;
+    color: $legal;
 }
 
-p{
-  text-align : center;
+p {
+    text-align: center;
 }
 
-.button{
-  font-size: 20px;
-  text-align: center;
-  text-transform : uppercase;
+.button {
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-.language-switcher{
-  font-size: 17px;
-  color: $language-switch-font;
+.language-switcher {
+    font-size: 17px;
+    color: $language-switch-font;
 }

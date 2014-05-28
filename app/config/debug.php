@@ -11,3 +11,4 @@
 		//set a landing page for debugging purpose
 		'landingPage' => 'form'
 	);
+

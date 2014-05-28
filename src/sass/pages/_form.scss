@@ -1,32 +1,88 @@
 .page.form {
+    padding-bottom: 30px;
+
+    .copy {
+        padding-bottom: 30px;
+    }
+
+    hr {
+        margin: 15px 0;
+    }
+
     input {
         @include headerFont();
         width: 100%;
 
+        &[type=checkbox] {
+            display: none;
+        }
+
+        &[type=checkbox] {
+            + label {
+                background-image: url('../images/icon-unchecked.svg');
+                background-repeat: none;
+                background-size: cover;
+                height: 16px;
+                width: 16px;
+                display: inline-block;
+                margin: 0 8px 0 0px;
+            }
+            &:checked {
+                + label {
+                    background-image: url('../images/icon-checked.svg');
+                }
+            }
+        }
     }
 
     .tiebreakerWrapper,
     .tiebreakerExtraWrapper {
-        p {
+
+        p, h2 {
             @include mq(n) {
                 text-align: left;
             }
         }
+
         input {
             @include mq(n) {
                 width: 75%;
                 float: right;
             }
         }
+
+        .button {
+            @include mq(n) {
+                width: 50%;
+                float: right;
+            }
+        }
     }
 
     .col-birthdate {
+        @include headerFont();
         line-height: 28px;
+        font-size: 20px;
+        color: $light-grey;
+        text-transform: uppercase;
+        text-align: left;
+
         @include mq(n) {
             text-align: center;
             line-height: 48px;
         }
     }
+
+    .col-bday,
+    .col-bmonth,
+    .col-byear {
+        width: 33%;
+        padding-right: 10px;
+        &:last-of-type {
+            padding-right: 0;
+        }
+    }
+
     @include mq(n) {
 
         .col-general {
@@ -52,4 +108,38 @@
         }
     }
 
+    .checkboxWrapper {
+        display: table-row;
+
+        > div {
+            display: table-cell;
+            vertical-align: top;
+
+            input {
+                width: 15px;
+                height: 15px;
+            }
+
+            label {
+                font-size: 12px;
+
+                @include mq(n) {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+    .birthday {
+        padding-bottom: 30px;
+    }
+
+    .button.send {
+        margin: 30px auto 50px auto;
+    }
+
+    .form-error {
+        padding-top: 20px;
+        color: $main-color;
+    }
 }
