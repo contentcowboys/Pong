@@ -62,10 +62,9 @@ define([
 			  function(response) {
 			    if (response && response.post_id) {
 			    	_gaq.push(['_trackEvent', 'share', this.name+":done"]);
-			        self.parent.trigger("share:"+self.name+":true");
+			        self.parent.trigger("share:"+self.name);
 			    } else {
 			    	_gaq.push(['_trackEvent', 'share', this.name+":cancel"]);
-			        self.parent.trigger("share:"+self.name+":false");
 			    }
 			  }
 			);

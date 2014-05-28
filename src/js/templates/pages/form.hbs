@@ -26,7 +26,7 @@
                     <div class="grid">
                         <div class="col-general"><p>{{lang "form" "tiebreaker_extra_copy"}}</p></div>
                         <div class="col-general">
-                            <div id="js-share-tiebreaker" class="button main">Share</div>
+                            <div id="js-share-tiebreaker" class="button main js-share" share-name="extra">Share</div>
                             <input class="hidden" type="text" id="js-form-tiebreakerExtra" name="tiebreaker_extra"
                                                         placeholder="{{lang "form" "tiebreaker_placeholder"}}"></div>
                     </div>
@@ -95,9 +95,10 @@
                                                       required></div>
                     </div>
                     <input type="hidden" name="lang" id="js-form-lang" value='{{language}}'>
+                    <input type="hidden" name="selected" id="js-form-selected" value='{{selected}}'>
 
                     <div class="checkboxWrapper">
-                        <div><input type='checkbox' name='voorwaarden' value='' id="voorwaarden"/><label for="voorwaarden"></label></div>
+                        <div><input type='checkbox' name='voorwaarden' id="voorwaarden" required><label for="voorwaarden" ></label></div>
                         <div><label for="voorwaarden">{{lang "form" "accept"}}</label></div>
                     </div>
                     <div class="checkboxWrapper">

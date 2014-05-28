@@ -8,6 +8,12 @@
 		$prev = DB::table('entries')->whereEmail($post['email'])->get();
 		if(!$prev){
 			if(isset($post['voorwaarden'])) unset($post['voorwaarden']);
+			if(isset($post['bday'])){
+                $post['birthdate'] = $post['bday'] . " " . $post['bmonth'] . " " . $post['byear'];
+                unset($post['bday']);
+                unset($post['bmonth']);
+                unset($post['byear']);
+            }
 			$post["ip"] = $_SERVER['REMOTE_ADDR'];
 			DB::table('entries')->insert($post);
 			if(isset($app->mc) && $app->mcConfig['optIn'] && isset($post["optin"])){

@@ -19,6 +19,8 @@ DB::schema()->create('entries', function($table){
 	$table->string('city');
 	$table->string('ip');
 	$table->string('optin');
+	$table->string('birthdate');
+	$table->string('selected');
 	$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 	 echo "done";
 });

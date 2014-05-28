@@ -14,7 +14,8 @@
         width: 100%;
 
         &[type=checkbox] {
-            display: none;
+            visibility: hidden;
+          height: 0;
         }
 
         &[type=checkbox] {

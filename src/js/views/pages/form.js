@@ -15,11 +15,12 @@ define([
             "click #submit" : "submit"
         },
         initialize: function () {
+            this.on("share:extra", this.shareExtra, this);
             this.name = "form";
             _gaq.push(['_trackEvent', 'form', "show"]);
         },
         render: function () {
-            this.$el.html(this.compiledTemplate({ language : common.lang }));
+            this.$el.html(this.compiledTemplate({ language : common.lang , selected : common.selected }));
             //keep dom references for later use
             this.dom.$form = this.$el.find("#js-form");
             this.dom.$formError = this.$el.find("#js-form-error");
@@ -27,6 +28,10 @@ define([
             this.setPlaceholder();
             this.setValidation();
             return this;
+        },
+        shareExtra : function(){
+            $("#js-share-tiebreaker").hide();
+            $("#js-form-tiebreakerExtra").show();
         },
         submit : function () {
             this.dom.$form.submit();
@@ -44,8 +49,9 @@ define([
                 invalidHandler: function(event, validator) {
                     _gaq.push(['_trackEvent', 'form', "invalid"]);
                     var errors = validator.numberOfInvalids();
+
                     if (errors) {
-                        if($("#voorwaarden:unchecked").length){
+                        if($("#voorwaarden:unchecked").length) {
                             self.setError("voorwaarden");
                         }else{
                             //this looks hacky hacky, please fix
@@ -76,7 +82,7 @@ define([
                 success: function () {
                     _gaq.push(['_trackEvent', 'form', "success"]);
                     self.sending = false;
-                    Backbone.trigger("page:show:thankYou");
+                    Backbone.trigger("page:show", "thankYou");
                 },
                 error : function (xhr) {
                     self.sending = false;

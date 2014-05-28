@@ -15,12 +15,13 @@ $main-button-font : white;
 $grey-button-background : $light-grey;
 $grey-button-font : white;
 
-$option-button-background : $light-grey;
+$option-button-background : #e6e6e9;
 $option-button-background-hover :  #c0c0c3;
 $option-button-background-active :  $secondary-color;
-$option-button-font : $black;
 
-
+$option-button-font : #515254;
+$option-button-font-hover : #343536;
+$option-button-font-active : #ffffff;
 
 //language switch colors
 $language-switch-bg :#b2152d;

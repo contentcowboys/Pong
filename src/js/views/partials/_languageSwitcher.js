@@ -33,7 +33,7 @@ define([
         remove: function() {
           this.stopListening();
           return this;
-        },
+        }
     });
     return LanguageSwitcherView;
 });

@@ -1,6 +1,6 @@
 <?php
 	/**
-	 * All these settings only reflect on the development version of 
+	 * All these settings only reflect on the development version of
 	 * the app wich is running on your localhost
 	 */
 	
@@ -9,6 +9,5 @@
 		'onFacebook' => true,
 		'userLanguage' => "nl",
 		//set a landing page for debugging purpose
-		'landingPage' => 'form'
+		'landingPage' => ''
 	);
-

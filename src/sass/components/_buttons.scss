@@ -31,13 +31,15 @@
   }
 
   &.option {
+    padding: 8px;
     color : $option-button-font;
     background : $option-button-background url('../images/unchecked.png') no-repeat 15px 11px;
     &:hover{
+      color : $option-button-font-hover;
       background-color : $option-button-background-hover;
     }
     &.active{
-      color: white;
+      color : $option-button-font-active;
       background : $option-button-background-active url('../images/checked.png') no-repeat 15px 11px;
     }
     @media  (min-width: 750px) {

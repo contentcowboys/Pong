@@ -56,6 +56,9 @@ p {
     font-size: 20px;
     text-align: center;
     text-transform: uppercase;
+    &.option {
+      font-size: 16px;
+    }
 }
 
 .language-switcher {

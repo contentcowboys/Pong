@@ -204,11 +204,11 @@ define(['common'], function(common) {
             }, //end buttons
             "share" : {
                 "defaultBody" : {
-                    nl : "",
+                    nl : "share body",
                     fr : ""
                 },
                 "defaultTitle" : {
-                    nl : "",
+                    nl : "share title",
                     fr : ""
                 }
             } //end share
