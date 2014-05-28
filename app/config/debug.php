@@ -6,8 +6,8 @@
 	
 	return array(
 		'pageLiked' => true,
-		'onFacebook' => false,
+		'onFacebook' => true,
 		'userLanguage' => "nl",
 		//set a landing page for debugging purpose
-		'landingPage' => 'info'
+		'landingPage' => 'form'
 	);
