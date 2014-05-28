@@ -2407,7 +2407,7 @@ body {
   font-family: "open-sans";
   color: #4e4e4e;
   font-size: 13px;
-  line-height: 1.3em; }
+  line-height: 1.6em; }
 
 .legal {
   margin-top: 20px;
@@ -2442,7 +2442,7 @@ p {
         padding-right: 0; } }
 
 .error {
-  background-color: red; }
+  border: 1px solid #dd033f; }
 
 .form-error {
   display: none; }
@@ -2718,6 +2718,9 @@ hr {
     padding-bottom: 30px; }
   .page.form .button.send {
     margin: 30px auto 50px auto; }
+  .page.form .form-error {
+    padding-top: 20px;
+    color: #dd033f; }
 
 .info ul {
   padding: 20px 0 20px 0; }

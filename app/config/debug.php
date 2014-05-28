@@ -9,6 +9,6 @@
 		'onFacebook' => false,
 		'userLanguage' => "nl",
 		//set a landing page for debugging purpose
-		'landingPage' => 'info'
+		'landingPage' => 'form'
 	);
 ?>
