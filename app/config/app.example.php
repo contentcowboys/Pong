@@ -1,37 +1,24 @@
 <?php
 	return array(
-
-        'name' => '',
-
 		'googleAnalyticsCode' => '',
 
-		/**
-		* Online url
-		*/
+		//online url
+
 		'url' => '',
-
-        /**
-         * typekit
-         */
-
 
         'typekit' => '',
 
-		/**
-		* Set end date
-		*/
 
 		'endDate' => '',
-		/**
-		* Set end date format
-		*/
+
+		//Set end date format
 
 		'format' => 'd-m-Y H',
 
 		//is this is set to false defaultLanguage is always selected
 		'multiLanguage' => false,
 
-		//these are the allowed languages, if facebook returns another language that isen't in the array
+		//these are the allowed languages, if facebook returns another language that isn't in the array
 		//the app selects the default language
 		'allowedLanguages' => [
 		],

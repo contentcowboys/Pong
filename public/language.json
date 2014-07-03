@@ -1,0 +1,37 @@
+{
+    "header": {
+        "nl": "Maak kans op een prijs",
+        "fr": "frans toevoegen",
+        "en": ""
+    },
+    "desktop-like": {
+        "nl": "Word fan en waag je kans!",
+        "fr": "",
+        "en": ""
+    },
+    "mobile-like-header": {
+        "nl": "Word fan!",
+        "fr": "",
+        "en": ""
+    },
+    "mobile-like-copy": {
+        "nl": "En maak kans op tickets",
+        "fr": "",
+        "en": ""
+    },
+    "mobile-login": {
+        "nl": "Log dan eerst in op Facebook",
+        "fr": "",
+        "en": ""
+    },
+    "legal": {
+        "nl": "legal copy",
+        "fr": "",
+        "en": ""
+    },
+    "legal-copy": {
+        "nl": "tits",
+        "fr": "",
+        "en": ""
+    }
+}

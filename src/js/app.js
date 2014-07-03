@@ -4,6 +4,7 @@ define([
 		'jquery',
 		'underscore',
 		'controllers/facebook',
+		'controllers/language',
 		'controllers/preloader',
 		'views/pages/end',
 		'views/pages/likeGate',
@@ -19,6 +20,7 @@ define([
 		$,
 		_,
 		facebook,
+		language,
 		preloader,
 		End,
 		LikeGate,
@@ -46,12 +48,6 @@ define([
                 //if loading
                 if(common.showLoading) this.prevPage = { $el : $("#js-loading-page") };
 
-
-                if(common.multiLanguage){
-                    this.languageSwitcher = new LanguageSwitcher();
-                    this.languageSwitcher.render();
-                }
-
 				// if action is done
 				if(common.end){ 
 					this.switchPage("end");
@@ -67,10 +63,19 @@ define([
 				//check if old version of IE is running
 				this.checkOldIE();
 
+
+                var self = this;
 				
-				$.when( facebook.checkLogin() , this.loaded() ).then(_.bind(this.checkLiked, this));
+				$.when( facebook.checkLogin() , language.init()  , this.loaded() ).then(function(){
+                    if(common.multiLanguage){
+                        self.languageSwitcher = new LanguageSwitcher();
+                        self.languageSwitcher.render();
+                    }
+                    self.checkLiked.call(self);
+                });
 			},
 			checkLiked: function(){
+
 				if( common.pageLiked || !common.showLikeGate ) {
 					this.switchPage(common.landingPage);
 				} else {

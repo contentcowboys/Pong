@@ -60,6 +60,7 @@
 			//fetch config from file
 			$config = require('../app/config/app.php');
 			$debug = require('../app/config/debug.php');
+			$language = require('../app/config/language.php');
 			//set google analytiocs code to app data
 			$this->data['googleAnalyticsCode'] = $config['googleAnalyticsCode'];
 			$this->data['url'] = $config['url'];
@@ -76,6 +77,9 @@
 			$this->data['landingPage'] = $config['landingPage'];
 			$this->data['showLoading'] = $config['showLoading'];
 			$this->data['preloadImages'] = $config['preloadImages'];
+
+            $this->data['languageFile'] = $language[$this->environment];
+
             if(isset($config['typekit'])){
                 $this->data['typekitId'] = $config['typekit'];
                 $this->data['typekitUsed'] = true;
@@ -103,7 +107,6 @@
 
 		protected function initalizeHandlebars()
 		{
-			//dd(__DIR__.'/../app/views');
 			$this->handleBars = new Handlebars(array(
 			    'loader' => new \Handlebars\Loader\FilesystemLoader(__DIR__.'/../app/views'),
 			    'partials_loader' => new \Handlebars\Loader\FilesystemLoader(
@@ -175,9 +178,6 @@
 		}
 
 		protected function checkRedirect() {
-			// var_dump($this->isDevelopment());
-			// var_dump($this->data['deviceType']);
-			// var_dump($this->data['onFacebook']);
 			if( !$this->isDevelopment() && $this->data['deviceType'] == "computer" && !$this->data['onFacebook']){
 				$this->data['redirect'] = true;
 			 	$this->data['redirectUrl'] = $this->data['tabUrl'].'?'.http_build_query($this->request->params());

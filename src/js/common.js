@@ -11,6 +11,7 @@ define([], function() {
     	pageLiked: bootstrap.pageLiked,
     	pages: bootstrap.pages,
         lang : bootstrap.lang,
+        languageFile : bootstrap.languageFile,
         languages : JSON.parse(bootstrap.languages),
         multiLanguage : bootstrap.multiLanguage,
         showLikeGate : bootstrap.showLikeGate,

@@ -1,20 +1,19 @@
 <div class="header"></div>
 <div class="inner-container">
     <div class="copy">
-        <h1>{{lang "form" "header"}}</h1>
-
-        <p>{{lang "form" "copy"}}</p>
+        <h1>{{lang "form_header"}}</h1>
+        <p>{{lang "form_copy"}}</p>
     </div>
     <form id="js-form" method="POST" action="#" name="form">
         <div class="grid">
             <div class="tiebreakerWrapper">
-                <h2>{{lang "form" "tiebreaker_header"}}</h2>
+                <h2>{{lang "form_tiebreaker_header"}}</h2>
 
                 <div class="row">
                     <div class="grid">
-                        <div class="col-general"><p>{{lang "form" "tiebreaker_copy"}}</p></div>
+                        <div class="col-general"><p>{{lang "form_tiebreaker_copy"}}</p></div>
                         <div class="col-general"><input type="text" id="js-form-tiebreaker" name="tiebreaker"
-                                                        placeholder="{{lang "form" "tiebreaker_placeholder"}}"
+                                                        placeholder="{{lang "form_tiebreaker_placeholder"}}"
                                                         required></div>
                     </div>
                 </div>
@@ -24,7 +23,7 @@
 
                 <div class="row">
                     <div class="grid">
-                        <div class="col-general"><p>{{lang "form" "tiebreaker_extra_copy"}}</p></div>
+                        <div class="col-general"><p>{{lang "form_tiebreaker_extra_copy"}}</p></div>
                         <div class="col-general">
                             <div id="js-share-tiebreaker" class="button main js-share" share-name="extra">Share</div>
                             <input class="hidden" type="text" id="js-form-tiebreakerExtra" name="tiebreaker_extra"
@@ -34,46 +33,46 @@
             </div>
             <hr/>
             <div class="formWrapper">
-                <h2>{{lang "form" "form_header"}}</h2>
+                <h2>{{lang "form_form_header"}}</h2>
 
                 <div class="grid">
                     <div class="row">
                         <div class="col-general">
                             <input type="text" id="js-form-firstName" name="first_name"
-                                   placeholder="{{lang "form" "first_name"}}"
+                                   placeholder="{{lang "form_first_name"}}"
                                    value="{{user.first_name}}" required>
                         </div>
                         <div class="col-general">
                             <input type="text" id="js-form-lastName" name="last_name"
-                                   placeholder="{{lang "form" "last_name"}}"
+                                   placeholder="{{lang "form_last_name"}}"
                                    value="{{user.last_name}}" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-general"><input type="text" id="js-form-email" name="email"
-                                                        placeholder="{{lang "form" "email"}}"
+                                                        placeholder="{{lang "form_email"}}"
                                                         value="{{user.email}}"
                                                         required></div>
                         <div class="col-general"><input type="text" id="js-form-gsm" name="gsm"
-                                                        placeholder="{{lang "form" "gsm"}}"
+                                                        placeholder="{{lang "form_gsm"}}"
                                                         value="{{user.gsm}}"
                                                         required></div>
                     </div>
 
                     <div class="row">
                         <div class="col-address">
-                            <input type="text" id="js-form-adres" name="adres" placeholder="{{lang "form" "adres"}}"
+                            <input type="text" id="js-form-adres" name="adres" placeholder="{{lang "form_adres"}}"
                                    value="{{user.adres}}"
                                    required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-zip"><input type="text" id="js-form-zip" name="zip"
-                                                    placeholder="{{lang "form" "zip"}}"
+                                                    placeholder="{{lang "form_zip"}}"
                                                     value="{{user.zip}}"
                                                     required></div>
                         <div class="col-city"><input type="text" id="js-form-city" name="city"
-                                                     placeholder="{{lang "form" "city"}}"
+                                                     placeholder="{{lang "form_city"}}"
                                                      value="{{user.city}}"
                                                      required></div>
                     </div>
@@ -82,15 +81,15 @@
                             <label for="birthdate">{{lang "form" "birthdate"}}</label>
                         </div>
                         <div class="col-bday"><input type="text" id="js-form-bday" name="bday"
-                                                     placeholder="{{lang "form" "bday"}}"
+                                                     placeholder="{{lang "form_bday"}}"
                                                      value="{{user.bday}}"
                                                      required></div>
                         <div class="col-bmonth"><input type="text" id="js-form-bmonth" name="bmonth"
-                                                       placeholder="{{lang "form" "bmonth"}}"
+                                                       placeholder="{{lang "form_bmonth"}}"
                                                        value="{{user.bmonth}}"
                                                        required></div>
                         <div class="col-byear"><input type="text" id="js-form-byear" name="byear"
-                                                      placeholder="{{lang "form" "byear"}}"
+                                                      placeholder="{{lang "form_byear"}}"
                                                       value="{{user.byear}}"
                                                       required></div>
                     </div>
@@ -99,18 +98,18 @@
 
                     <div class="checkboxWrapper">
                         <div><input type='checkbox' name='voorwaarden' id="voorwaarden" required><label for="voorwaarden" ></label></div>
-                        <div><label for="voorwaarden">{{lang "form" "accept"}}</label></div>
+                        <div><label for="voorwaarden">{{lang "form_accept"}}</label></div>
                     </div>
                     <div class="checkboxWrapper">
                         <div><input type="checkbox" name="optin" id="optin"><label for="optin"></label></div>
-                        <div><label for="optin">{{lang "form" "optin"}}</label></div>
+                        <div><label for="optin">{{lang "form_optin"}}</label></div>
                     </div>
                     <div class="form-error" id="js-form-error"></div>
-                    <div id="submit" class="button main send" id="js-send">{{lang "buttons" "send"}}</div>
+                    <div id="submit" class="button main send" id="js-send">{{lang "buttons_send"}}</div>
                 </div>
             </div>
         </div>
     </form>
     <hr/>
-    <div class="button grey share js-share">{{lang "buttons" "share"}}</div>
+    <div class="button grey share js-share">{{lang "buttons_share"}}</div>
 </div>

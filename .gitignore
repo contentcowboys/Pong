@@ -7,5 +7,6 @@
 /app/config/database.php
 /app/config/app.php
 /app/config/mailchimp.php
+/app/config/language.php
 .DS_Store
 /*/.DS_Store
