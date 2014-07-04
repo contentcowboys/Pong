@@ -6,6 +6,7 @@ var rename = require("gulp-rename");
 var minifyCSS = require("gulp-minify-css");
 var requirejs = require('requirejs');
 var concat = require('gulp-concat');
+var livereload = require('gulp-livereload');
 
 gulp.task('sass' , function(){
 	//copy animate.css
@@ -21,7 +22,8 @@ gulp.task('sass' , function(){
             .pipe(gulp.dest('public/css/'))
             .pipe(minifyCSS({}))
             .pipe(rename("main.min.css"))
-            .pipe(gulp.dest('public/css/'));
+            .pipe(gulp.dest('public/css/'))
+            .pipe(livereload());
     });
 
 });
@@ -45,6 +47,7 @@ gulp.task('requirejs' , function(){
 });
 
 gulp.task('default' , function(){
+	livereload.listen();
 	gulp.watch('**/*.scss', ['sass']);
 	gulp.watch('src/js/**/*.js', ['requirejs']);
 });
