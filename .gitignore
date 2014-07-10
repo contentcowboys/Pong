@@ -1,12 +1,86 @@
-/vendor
-/node_modules
-/src/bower
-/.sass-cacihe
-/.idea
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# REMOVE these after init pong
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 /app/config/facebook.php
 /app/config/database.php
 /app/config/app.php
 /app/config/mailchimp.php
 /app/config/language.php
+
+
+
+
+# ###############################
+#         Node
+# ###############################
+node_modules/
+
+# ###############################
+#         Composer
+# ###############################
+vendor
+composer.phar
+
+# ###############################
+#         Sass   
+# ###############################
+.sass-cache
+
+# ###############################
+#         JetBrains IDE's   
+# ###############################
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+atlassian-ide-plugin.xml
+
+# ###############################
+#         Sublime Text
+# ###############################
+*.sublime-workspace
+*.sublime-project
+sftp-config.json
+
+# ###############################
+#         Vim
+# ###############################
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+# ###############################
+#         Logs 
+# ###############################
+logs/
+error.log
+access.log
+
+# ###############################
+#         Apple 
+# ###############################
 .DS_Store
-/*/.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.AppleDB
+.AppleDesktop
+.apdisk
+
+# ###############################
+#         Windows 
+# ###############################
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
