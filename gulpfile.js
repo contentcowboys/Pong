@@ -50,4 +50,5 @@ gulp.task('default' , function(){
 	livereload.listen();
 	gulp.watch('**/*.scss', ['sass']);
 	gulp.watch('src/js/**/*.js', ['requirejs']);
+	gulp.watch('src/js/**/*.hbs', ['requirejs']);
 });
