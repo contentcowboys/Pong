@@ -7,8 +7,10 @@
 /app/config/mailchimp.php
 /app/config/language.php
 
-
-
+# ###############################
+#         Bower
+# ###############################
+src/bower/
 
 # ###############################
 #         Node
