@@ -31,24 +31,25 @@ gulp.task('sass' , function(){
 gulp.task('requirejs' , function(){
 	//first requirejs
 	var config = {
-	    baseUrl: 'src/js',
-	    name: 'main',
-	    mainConfigFile : 'src/js/main.js',
-	    out: 'public/js/main.js'
+		baseUrl: 'src/js',
+		name: 'main',
+		mainConfigFile : 'src/js/main.js',
+		out: 'public/js/main.js'
 	};
 
 	requirejs.optimize(config, function (buildResponse) {
-	  		gulp.src('src/bower/requirejs/require.js')
-				.pipe(plumber())
-			    .pipe(gulp.dest('public/js'));
+		gulp.src('src/bower/requirejs/require.js')
+			.pipe(plumber())
+			.pipe(gulp.dest('public/js'))
+			.pipe(livereload());
 	}, function(err) {
-	    console.log(err);
+		console.log(err);
 	});
 });
-
 gulp.task('default' , function(){
 	livereload.listen();
 	gulp.watch('**/*.scss', ['sass']);
 	gulp.watch('src/js/**/*.js', ['requirejs']);
 	gulp.watch('src/js/**/*.hbs', ['requirejs']);
+	gulp.watch('src/js/**/*.hbs').on('change', livereload.changed);
 });
