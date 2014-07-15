@@ -6,6 +6,7 @@ var rename = require("gulp-rename");
 var minifyCSS = require("gulp-minify-css");
 var requirejs = require('requirejs');
 var concat = require('gulp-concat');
+var livereload = require('gulp-livereload');
 
 gulp.task('sass' , function(){
 	//copy animate.css
@@ -21,7 +22,8 @@ gulp.task('sass' , function(){
             .pipe(gulp.dest('public/css/'))
             .pipe(minifyCSS({}))
             .pipe(rename("main.min.css"))
-            .pipe(gulp.dest('public/css/'));
+            .pipe(gulp.dest('public/css/'))
+            .pipe(livereload());
     });
 
 });
@@ -29,22 +31,25 @@ gulp.task('sass' , function(){
 gulp.task('requirejs' , function(){
 	//first requirejs
 	var config = {
-	    baseUrl: 'src/js',
-	    name: 'main',
-	    mainConfigFile : 'src/js/main.js',
-	    out: 'public/js/main.js'
+		baseUrl: 'src/js',
+		name: 'main',
+		mainConfigFile : 'src/js/main.js',
+		out: 'public/js/main.js'
 	};
 
 	requirejs.optimize(config, function (buildResponse) {
-	  		gulp.src('src/bower/requirejs/require.js')
-				.pipe(plumber())
-			    .pipe(gulp.dest('public/js'));
+		gulp.src('src/bower/requirejs/require.js')
+			.pipe(plumber())
+			.pipe(gulp.dest('public/js'))
+			.pipe(livereload());
 	}, function(err) {
-	    console.log(err);
+		console.log(err);
 	});
 });
-
 gulp.task('default' , function(){
+	livereload.listen();
 	gulp.watch('**/*.scss', ['sass']);
 	gulp.watch('src/js/**/*.js', ['requirejs']);
+	gulp.watch('src/js/**/*.hbs', ['requirejs']);
+	gulp.watch('src/js/**/*.hbs').on('change', livereload.changed);
 });

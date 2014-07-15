@@ -13,7 +13,11 @@ class URL
 	public static function setPath($path)
 	{
 		//remove /pong
-		$path = substr($path, 0, - strlen(substr(strrchr($path,'/'), 1)));
+		 if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+		    $path = substr($path, 0, - strlen(substr(strrchr($path,'\\'), 1)));
+        	}else{
+        		 $path = substr($path, 0, - strlen(substr(strrchr($path,'/'), 1)));
+        	}
 		self::$basePath = $path;
 	}
 
