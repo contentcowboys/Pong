@@ -41,10 +41,13 @@ define([
 		        $(document).ajaxError(function(e, request, settings) {
 		            _gaq.push([ '_trackEvent' , 'Ajax error' , settings.url , e.result , true ]);
 		        });
+
 		        $("body").on("click", ".js-conditions", this.conditions.bind(this));
+
 				//set listeners
 				Backbone.on("page:show", this.switchPage, this);
 				Backbone.on("page:render:current", this.renderCurrentPage, this);
+
                 //if loading
                 if(common.showLoading) this.prevPage = { $el : $("#js-loading-page") };
 
@@ -75,7 +78,6 @@ define([
                 });
 			},
 			checkLiked: function(){
-
 				if( common.pageLiked || !common.showLikeGate ) {
 					this.switchPage(common.landingPage);
 				} else {
@@ -96,6 +98,7 @@ define([
 			},
             renderCurrentPage: function(){
                 this.currentPage.render();
+                this.shareView();
             },
 			switchPage : function (page) {
                 //PLEASE FIX THIS
@@ -106,7 +109,7 @@ define([
 				this.pages[page].render();
 				//animate to the top of the page
 				$("html, body").animate({ scrollTop: 0 });
-				FB.Canvas.scrollTo(0,0);
+				FB.Canvas.scrollTo(370,370);
 				//if current page is being rendered return false
 				if(this.currentPage == this.pages[page]) return false;
 				//make page currentPage

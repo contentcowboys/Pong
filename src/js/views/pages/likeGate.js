@@ -13,7 +13,8 @@ define([
         el : $("#js-likeGate-page"),
         compiledTemplate : Handlebars.compile(template),
         events: {
-            "click #js-fb-login" : "login"
+            "click #js-fb-login" : "login",
+            "click .js-next" : "next"
         },
         initialize: function(){
             //tracking stuff
@@ -30,12 +31,6 @@ define([
             FB.XFBML.parse(this.el);
             return this;
         },
-        login: function(){
-            $.when( facebook.login() ).then(function(){
-                Backbone.trigger("app:checkLiked");
-                _gaq.push(['_trackEvent', 'likeGate-mobile', "loggedIn"]);
-            });
-        },
         pageLiked : function () {
             common.pageLiked = true;
             Backbone.trigger("app:checkLiked");
@@ -44,6 +39,9 @@ define([
             }else{
                 _gaq.push(['_trackEvent', 'likeGate-mobile', "liked"]);
             }
+        },
+        next : function(){
+            Backbone.trigger("page:show" , common.landingPage);
         }
     });
     return view;

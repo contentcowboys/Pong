@@ -1,37 +1,186 @@
 {
-    "header": {
+    "likeGate:header": {
         "nl": "Maak kans op een prijs",
-        "fr": "frans toevoegen",
-        "en": ""
+        "fr": " "
     },
-    "desktop-like": {
+    "likeGate:desktop-like": {
         "nl": "Word fan en waag je kans!",
-        "fr": "",
-        "en": ""
+        "fr": " "
     },
-    "mobile-like-header": {
-        "nl": "Word fan!",
-        "fr": "",
-        "en": ""
+    "likeGate:mobile-like-copy": {
+        "nl": "En maak kans op een prijs",
+        "fr": " "
     },
-    "mobile-like-copy": {
-        "nl": "En maak kans op tickets",
-        "fr": "",
-        "en": ""
+    "likeGate:legal": {
+        "nl" : "Je gegevens en wedstrijddeelname worden niet gebruikt of gedeeld op je Facebook timeline. We gebruiken je gegevens alleen om de wedstrijd op een eerlijke manier te laten verlopen. Door deel te nemen aan de actie ga je akkoord met de wedstrijdvoorwaard",
+        "fr" : " "
     },
-    "mobile-login": {
-        "nl": "Log dan eerst in op Facebook",
-        "fr": "",
-        "en": ""
+    "info:header": {
+        "nl": "Maak kans op een prijs",
+        "fr": " "
     },
-    "legal": {
-        "nl": "legal copy",
-        "fr": "",
-        "en": ""
+    "info:copy": {
+        "nl": "Bacon ipsum dolor sit amet kevin flank andouille tail bresaola, pancetta cow chuck tenderloin porchetta doner spare ribs short loin venison pig.",
+        "fr": " "
     },
-    "legal-copy": {
-        "nl": "tits",
-        "fr": "",
-        "en": ""
+    "info:option1": {
+        "nl": "Optie 1",
+        "fr": " "
+    },
+    "info:option2": {
+        "nl": "Optie 2",
+        "fr": " "
+    },
+    "info:option3": {
+        "nl": "Optie 3",
+        "fr": " "
+    },
+    "info:option4": {
+        "nl": "Optie 4",
+        "fr": " "
+    },
+    "form:header": {
+        "nl": "The DuhVinci Code!",
+        "fr": "The DuhVinci Code!"
+    },
+    "form:copy": {
+        "nl": "Je hoeft enkel nog de schiftingsvraag in te vullen en je gegevens achter te laten.<br/>Zo weten we naar welke lucky winner we de prijzen kunnen versturen.",
+        "fr": "Uhh… also, comes with double prize money."
+    },
+    "form:tiebreaker-header": {
+        "nl": "Lethal Inspection",
+        "fr": "Lethal Inspection"
+    },
+    "form:tiebreaker-copy": {
+        "nl": "Hoeveel deelnemers zullen op 17/04/14 (10h00) deelgenomen hebben aan deze wedstrijd?",
+        "fr": "Hoeveel deelnemers zullen op 17/04/14 (10h00) deelgenomen hebben aan deze wedstrijd?"
+    },
+    "form:tiebreaker-placeholder": {
+        "nl": "Jouw Antwoord",
+        "fr": "Jouw Antwoord"
+    },
+    "form:tiebreaker-extra-header": {
+        "nl": "Rebirth",
+        "fr": "Rebirth"
+    },
+    "form:tiebreaker-extra-copy": {
+        "nl": "Hoeveel deelnemers zullen op 17/04/14 (10h00) deelgenomen hebben aan deze wedstrijd?",
+        "fr": "Hoeveel deelnemers zullen op 17/04/14 (10h00) deelgenomen hebben aan deze wedstrijd?"
+    },
+    "form:form-header": {
+        "nl": "Vul je gegevens in",
+        "fr": "Vul je gegevens in!"
+    },
+    "form:first-name": {
+        "nl": "Voornaam",
+        "fr": "first_namefr"
+    },
+    "form:last-name": {
+        "nl": "Naam",
+        "fr": "last_namefr"
+    },
+    "form:email": {
+        "nl": "Emailadres",
+        "fr": "emailfr"
+    },
+    "form:gsm": {
+        "nl": "Telefoonnummer",
+        "fr": "gsmfr"
+    },
+    "form:adres": {
+        "nl": "Straat + nummer",
+        "fr": "adresfr"
+    },
+    "form:zip": {
+        "nl": "Postcode",
+        "fr": "zip"
+    },
+    "form:city": {
+        "nl": "Gemeente",
+        "fr": "cityfr"
+    },
+    "form:birthdate": {
+        "nl": "Geboortedatum",
+        "fr": "Geboortedatum"
+    },
+    "form:bday": {
+        "nl": "DD",
+        "fr": "DD"
+    },
+    "form:bmonth": {
+        "nl": "MM",
+        "fr": "MM"
+    },
+    "form:byear": {
+        "nl": "JJJJ",
+        "fr": "AAAA"
+    },
+    "form:accept": {
+        "nl": "Door deel te nemen aan de actie ga je akkoord met de wedstrijdvoorwaarden.",
+        "fr": "acceptfr"
+    },
+    "form:optin": {
+        "nl": "Ik wil op de hotogte blijven van alle coole wedstrijden & giveaways.",
+        "fr": "optinfr"
+    },
+    "formError:form": {
+        "nl": "Gelieve alle velden correct in te vullen.",
+        "fr": "Complétez tous les champs"
+    },
+    "formError:server": {
+        "nl": "Oeps, er is iets fout gelopen. Probeer het nog een keer!",
+        "fr": "Oups, un problème est survenu. Veuillez réessayer."
+    },
+    "formError:email": {
+        "nl": "Je hebt al eens deelgenomen met dit emailadres",
+        "fr": "Vous avez déjà participé une fois avec cette adresse email"
+    },
+    "formError:voorwaarden": {
+        "nl": "Gelieve de voorwaarden te accepteren.",
+        "fr": "Veuillez accepter les conditions du concours"
+    },
+    "thankYou:header": {
+        "nl": "Bedankt!",
+        "fr": "fr"
+    },
+    "thankYou:copy": {
+        "nl": "Bacon ipsum dolor sit amet kevin flank andouille tail bresaola, pancetta cow chuck tenderloin porchetta doner spare ribs short loin venison pig.",
+        "fr": "fr"
+    },
+    "end:header": {
+        "nl": "Helaas!",
+        "fr": "fr"
+    },
+    "end:copy": {
+        "nl": "Bacon ipsum dolor sit amet kevin flank andouille tail bresaola, pancetta cow chuck tenderloin porchetta doner spare ribs short loin venison pig.",
+        "fr": "fr"
+    },
+    "lang:nl": {
+        "nl": "NL",
+        "fr": "NL"
+    },
+    "lang:fr": {
+        "nl": "FR",
+        "fr": "FR"
+    },
+    "buttons:share": {
+        "nl": "Share",
+        "fr": " "
+    },
+    "buttons:send": {
+        "nl": "Verzenden",
+        "fr": " "
+    },
+    "buttons:next": {
+        "nl": "Ga verder",
+        "fr": " "
+    },
+    "share:defaultBody": {
+        "nl": "share body",
+        "fr": " "
+    },
+    "share:defaultTitle": {
+        "nl": "share title",
+        "fr": " "
     }
 }

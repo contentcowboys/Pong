@@ -21,10 +21,11 @@ define(['common', 'handlebars', 'controllers/language'], function (common, Handl
 
     //lang helper
     Handlebars.registerHelper('lang', function (a, b) {
-        if (languageController.lang[a] && languageController.lang[a][b] && languageController.lang[a][b][common.lang]) {
-            return new Handlebars.SafeString(languageController.lang[a][b][common.lang]);
+        if (typeof b == "string") a = a + ":" + b;
+        if (languageController.lang[a] && languageController.lang[a][common.lang]) {
+            return new Handlebars.SafeString(languageController.lang[a][common.lang]);
         } else {
-            console.log('%cLanguage particle not found -> ' + a + ":" + b, "color: red");
+            console.log('%cLanguage particle not found -> ' + a , "color: red");
         }
     });
 });

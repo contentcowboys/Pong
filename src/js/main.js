@@ -31,7 +31,7 @@ require(
         'jquery-validation',
         'jquery-placeholder'
     ],
-    function(common,Backbone, $, app, undefined, undefined, undefined, undefined){
+    function(common,Backbone, $, app){
         app.init();
     }
 );

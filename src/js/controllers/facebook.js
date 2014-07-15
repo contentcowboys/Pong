@@ -17,7 +17,6 @@ define(
             if(!deferred) deferred = $.Deferred();
             var that = this;
             FB.getLoginStatus(function(response) {
-                console.log(response);
                 if (response.status === 'connected') {
                     common.loggedIn = true;
                     if( ! common.pageLiked ){

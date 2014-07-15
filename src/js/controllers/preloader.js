@@ -9,7 +9,7 @@ define(
         reponsive : true,
         breakPoints : [
             //FROM LARGE TO SMALL
-            320 , 800 , 1024
+            320 , 420 , 810
         ],
     	imageArray : [
             // PATH , FILENAME, RESPONSIVE
@@ -38,7 +38,6 @@ define(
             }else{
                 img.src = image[0]+this.breakPoint+"-"+image[1];
             }
-            
         },
     	imgLoaded : function(){
     		this.loaded += 1;
