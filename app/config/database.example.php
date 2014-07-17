@@ -8,9 +8,9 @@
 		 * 
 		 */
 		'development' => array(
-			'user' => '',
-			'password' => '',
-			'host' => '',
+			'user' => 'root',
+			'password' => 'root',
+			'host' => 'localhost',
 			'database' => ''
 	 	),
 
@@ -22,7 +22,7 @@
 	 	'online' => array(
 			'user' => '',
 			'password' => '',
-			'host' => '',
+			'host' => 'localhost',
 			'database' => ''
 	 	)
  	);
