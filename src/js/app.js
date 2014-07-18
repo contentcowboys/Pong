@@ -62,12 +62,12 @@ define([
 				$.when( facebook.checkLogin() , language.init()  , this.loaded() ).then(function(){
                     // if action is done
                     if(common.end){
-                        this.switchPage("end");
+                        self.switchPage("end");
                         return false;
                     }
                     //check if mobile is enabled
                     if(!common.mobileEnabled && !common.onFacebook){
-                        this.switchPage("notMobile");
+                        self.switchPage("notMobile");
                         return false;
                     }
                     if(common.multiLanguage){
