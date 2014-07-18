@@ -20,7 +20,7 @@ define([
             _gaq.push(['_trackEvent', 'form', "show"]);
         },
         render: function () {
-            this.$el.html(this.compiledTemplate({ language : common.lang , selected : common.selected }));
+            this.$el.html(this.compiledTemplate({ language : common.lang , selected : common.selected, lang_set_id : common.lang_set_id }));
             //keep dom references for later use
             this.dom.$form = this.$el.find("#js-form");
             this.dom.$formError = this.$el.find("#js-form-error");

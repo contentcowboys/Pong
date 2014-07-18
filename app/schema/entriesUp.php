@@ -11,7 +11,8 @@ DB::schema()->create('entries', function($table){
 	$table->bigInteger('tiebreaker_extra');
 	$table->string('first_name');
 	$table->string('last_name');
-	$table->string('email')->unique();
+	$table->string('lang_set_id');
+	$table->string('email');
 	$table->string('gsm');
 	$table->string('lang');
 	$table->string('adres');

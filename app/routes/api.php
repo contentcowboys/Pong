@@ -5,7 +5,7 @@
 	$app->router->post('/api/entry', function() use ($app) {
 		//CLEAN UP PLEASE
 		$post = $app->router->request->post();
-		$prev = DB::table('entries')->whereEmail($post['email'])->get();
+		$prev = DB::table('entries')->whereEmail($post['email'])->whereLangSetId($post['lang_set_id'])->get();
 		if(!$prev){
 			if(isset($post['voorwaarden'])) unset($post['voorwaarden']);
 			if(isset($post['bday'])){

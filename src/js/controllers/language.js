@@ -8,6 +8,8 @@ define(['common', 'jquery'], function(common , $) {
                 type : "GET"
             }).success(function(data){
                 self.lang = data;
+                if(data.id == 0) common.end = true;
+                common.lang_set_id = data.id;
             }).error(function(){
                 console.log("language error");
                 console.log(arguments);
