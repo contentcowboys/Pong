@@ -20,6 +20,7 @@ define(['common', 'handlebars', 'controllers/language'], function (common, Handl
     });
 
     //lang helper
+
     Handlebars.registerHelper('lang', function (a, b) {
         if (typeof b == "string") a = a + ":" + b;
         if (languageController.lang[a] && languageController.lang[a][common.lang]) {
