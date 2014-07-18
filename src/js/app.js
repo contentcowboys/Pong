@@ -51,25 +51,25 @@ define([
                 //if loading
                 if(common.showLoading) this.prevPage = { $el : $("#js-loading-page") };
 
-				// if action is done
-				if(common.end){ 
-					this.switchPage("end");
-					return false;
-				}
-				//check if mobile is enabled
-				if(!common.mobileEnabled && !common.onFacebook){
-					this.switchPage("notMobile");
-					return false;
-				}
+
 				//initalise facebook
 				facebook.init();
 				//check if old version of IE is running
 				this.checkOldIE();
 
-
                 var self = this;
 				
 				$.when( facebook.checkLogin() , language.init()  , this.loaded() ).then(function(){
+                    // if action is done
+                    if(common.end){
+                        this.switchPage("end");
+                        return false;
+                    }
+                    //check if mobile is enabled
+                    if(!common.mobileEnabled && !common.onFacebook){
+                        this.switchPage("notMobile");
+                        return false;
+                    }
                     if(common.multiLanguage){
                         self.languageSwitcher = new LanguageSwitcher();
                         self.languageSwitcher.render();
