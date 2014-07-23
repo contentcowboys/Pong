@@ -47,6 +47,7 @@ define([
 				//set listeners
 				Backbone.on("page:show", this.switchPage, this);
 				Backbone.on("page:render:current", this.renderCurrentPage, this);
+				Backbone.on("app:checkLiked", this.checkLiked, this);
 
                 //if loading
                 if(common.showLoading) this.prevPage = { $el : $("#js-loading-page") };
