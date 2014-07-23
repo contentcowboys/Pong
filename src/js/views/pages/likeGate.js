@@ -24,7 +24,9 @@ define([
                 _gaq.push(['_trackEvent', 'likeGate-mobile', "show"]);
             }
             this.name = "likeGate";
-            FB.Event.subscribe('edge.create', _.bind(this.pageLiked, this));
+            
+            var self = this;
+			FB.Event.subscribe('edge.create', _.bind(self.pageLiked, self));
         },
         render: function(){
             this.$el.html(this.compiledTemplate( {pageId : common.pageId , onFacebook : common.onFacebook } ));
